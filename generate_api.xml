@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webix-api" default="help" basedir="." xmlns:if="ant:if" xmlns:unless="ant:unless">
+
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="build" />
+	<property name="work.dir" location="${build.dir}/work" />
+	<property name="tools.dir" location="${build.dir}/tools" />
+	<property name="lib.dir" location="${build.dir}/lib" />
+	<property name="build.config.dir" location="build-config" />
+	<property name="jtidy.download.url" value="http://central.maven.org/maven2/net/sf/jtidy/jtidy/r938/jtidy-r938.jar" />
+
+	<!--===================================================================-->
+
+	<macrodef name="macro_print_header">
+		<attribute name="message" />
+		<sequential>
+			<echo message="------------------------------------------------------------" />
+			<echo message="@{message}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_get_and_checksum">
+		<attribute name="src-file" />
+		<attribute name="dest-file" />
+		<sequential>
+			<local name="dest_dir" />
+			<dirname property="dest_dir" file="@{dest-file}" />
+
+			<local name="dest_basename" />
+			<basename property="dest_basename" file="@{dest-file}" />
+
+			<local name="file_exists" />
+			<condition property="file_exists">
+				<and>
+					<resourceexists>
+						<file file="${dest_dir}/${dest_basename}.sha1" />
+					</resourceexists>
+					<resourceexists>
+						<file file="${dest_dir}/${dest_basename}" />
+					</resourceexists>
+				</and>
+			</condition>
+
+			<get unless:set="file_exists" dest="${dest_dir}">
+				<url url="@{src-file}" />
+				<url url="@{src-file}.sha1" />
+				<firstmatchmapper>
+					<globmapper from="@{src-file}.sha1" to="${dest_basename}.sha1" />
+					<globmapper from="@{src-file}" to="${dest_basename}" />
+				</firstmatchmapper>
+			</get>
+
+			<fail message="Checksum error, file: @{dest-file}, checksum file: ${dest_basename}.sha1">
+				<condition>
+					<not>
+						<checksum file="@{dest-file}" algorithm="sha" fileext=".sha1" />
+					</not>
+				</condition>
+			</fail>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_init_step">
+		<attribute name="dest-dir" />
+		<sequential>
+			<mkdir dir="@{dest-dir}/descriptor-source" />
+			<mkdir dir="@{dest-dir}/descriptor-ready" />
+			<mkdir dir="@{dest-dir}/descriptor-ready/type" />
+			<mkdir dir="@{dest-dir}/descriptor-ready/component" />
+			<mkdir dir="@{dest-dir}/source" />
+			<mkdir dir="@{dest-dir}/tidy" />
+			<mkdir dir="@{dest-dir}/model" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_download_source">
+		<attribute name="url-file" />
+		<attribute name="dest-dir" />
+		<element name="src-fileset" />
+		<sequential>
+			<macro_print_header message="Prepare url list, out: @{url-file}" />
+
+			<concat destfile="@{url-file}.tmp" ignoreempty="false" overwrite="true">
+				<src-fileset />
+				<filterchain>
+					<fixcrlf eol="lf" tab="remove" tablength="2" />
+					<linecontainsregexp>
+						<regexp pattern="&lt;source-url&gt;[^&lt;]+://[^&lt;]+&lt;/source-url&gt;" />
+					</linecontainsregexp>
+					<striplinebreaks linebreaks=" " />
+					<replacetokens begintoken="&lt;" endtoken="&gt;">
+						<token key="source-url" value="" />
+						<token key="/source-url" value="" />
+					</replacetokens>
+					<sortfilter />
+				</filterchain>
+			</concat>
+
+			<macro_print_header message="Download source, out: @{dest-dir}" />
+
+			<dependset>
+				<srcfilelist files="@{url-file}" />
+				<targetfileset dir="@{dest-dir}" includes="**/*.*" />
+			</dependset>
+
+			<local name="download_not_required" />
+			<condition property="download_not_required">
+				<or>
+					<resourcecount count="1" when="less">
+						<file file="@{url-file}.tmp" />
+					</resourcecount>
+					<filesmatch file1="@{url-file}.tmp" file2="@{url-file}" />
+				</or>
+			</condition>
+
+			<echo if:set="download_not_required" message="Download skipped" />
+
+			<copy unless:set="download_not_required" file="@{url-file}.tmp" tofile="@{url-file}" />
+
+			<get unless:set="download_not_required" dest="@{dest-dir}">
+				<resourcelist>
+					<file file="@{url-file}" />
+				</resourcelist>
+			</get>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_apply_tidy">
+		<attribute name="dest-dir" />
+		<element name="src-fileset" />
+		<sequential>
+			<macro_print_header message="Apply tidy, out: @{dest-dir}" />
+
+			<taskdef name="tidy" classname="org.w3c.tidy.ant.JTidyTask">
+				<classpath path="${lib.dir}/jtidy.jar" />
+			</taskdef>
+			<tidy destdir="@{dest-dir}" failonerror="true">
+				<parameter name="output-xhtml" value="true" />
+				<parameter name="output-encoding" value="utf8" />
+				<parameter name="drop-empty-paras" value="false" />
+				<parameter name="wrap" value="0" />
+				<parameter name="doctype" value="omit" />
+				<src-fileset />
+			</tidy>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_apply_xslt">
+		<attribute name="dest-dir" />
+		<attribute name="style-file" />
+		<attribute name="current-step" />
+		<attribute name="next-step" />
+		<element name="src-fileset" />
+		<sequential>
+			<macro_print_header message="Apply XSLT, out: @{dest-dir}" />
+
+			<xslt destdir="@{dest-dir}" style="@{style-file}" extension=".xml" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
+				<param name="step.current" expression="@{current-step}" />
+				<param name="step.next" expression="@{next-step}" />
+				<src-fileset />
+			</xslt>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_transform_source">
+		<attribute name="current-step" />
+		<attribute name="next-step" />
+		<sequential>
+			<local name="current_work_dir" />
+			<property name="current_work_dir" location="${work.dir}/@{current-step}" />
+
+			<macro_download_source unless:set="generate_api.skip_download" url-file="${current_work_dir}/url-list.txt" dest-dir="${current_work_dir}/source">
+				<src-fileset>
+					<fileset dir="${current_work_dir}/descriptor-ready" includes="**/*.xml" />
+				</src-fileset>
+			</macro_download_source>
+
+			<macro_apply_tidy unless:set="generate_api.skip_tidy" dest-dir="${current_work_dir}/tidy">
+				<src-fileset>
+					<fileset dir="${current_work_dir}/source" includes="*.html" />
+				</src-fileset>
+			</macro_apply_tidy>
+
+			<macro_apply_xslt unless:set="generate_api.skip_xslt" dest-dir="${work.dir}/@{next-step}/descriptor-source" style-file="${build.config.dir}/source2descriptor.xsl" current-step="@{current-step}" next-step="@{next-step}">
+				<src-fileset>
+					<fileset dir="${current_work_dir}/tidy" includes="*.html" />
+				</src-fileset>
+			</macro_apply_xslt>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_proceed_step">
+		<attribute name="current-step" />
+		<attribute name="next-step" default="" />
+		<sequential>
+			<macro_print_header message="Processing step, current: @{current-step}, next: @{next-step}" />
+
+			<local name="current_work_dir" />
+			<property name="current_work_dir" location="${work.dir}/@{current-step}" />
+
+			<macro_print_header message="Split source descriptor XML, out: ${current_work_dir}" />
+
+			<fileset id="fs" dir="${current_work_dir}/descriptor-source" includes="*.xml" />
+
+			<dependset>
+				<srcfileset refid="fs" />
+				<targetfileset dir="${current_work_dir}/descriptor-ready" includes="**/*.xml" />
+				<targetfileset dir="${current_work_dir}/model" includes="**/*.xml" />
+			</dependset>
+
+			<apply executable="java" failonerror="true" skipemptyfilesets="true" parallel="true" maxparallel="100">
+				<arg value="-Xmx32m" />
+				<arg value="-classpath" />
+				<arg path="${tools.dir}/classes" />
+				<arg value="utils.SplitXml" />
+				<arg path="${current_work_dir}" />
+				<srcfile />
+				<fileset refid="fs" />
+			</apply>
+
+			<local name="is_last_step" />
+			<condition property="is_last_step">
+				<equals arg1="@{next-step}" arg2="" />
+			</condition>
+
+			<macro_transform_source unless:set="is_last_step" current-step="@{current-step}" next-step="@{next-step}" />
+		</sequential>
+	</macrodef>
+
+	<!--===================================================================-->
+
+	<target name="help">
+		<local name="help_content" />
+		<loadfile property="help_content" srcFile="generate_api.md" />
+		<echo message="${help_content}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${work.dir}" />
+	</target>
+
+	<target name="clean_all" depends="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="clean_generated">
+		<mkdir dir="${build.dir}/source-bkp" />
+
+		<move todir="${build.dir}/source-bkp">
+			<fileset dir="${work.dir}" includes="step?/source/**/*" />
+		</move>
+
+		<antcall target="clean" />
+		<antcall target="init" />
+
+		<move todir="${work.dir}">
+			<fileset dir="${build.dir}/source-bkp" includes="step?/source/**/*" />
+		</move>
+
+		<delete dir="${build.dir}/source-bkp" />
+	</target>
+
+	<target name="init">
+		<macro_init_step dest-dir="${work.dir}/step1" />
+		<macro_init_step dest-dir="${work.dir}/step2" />
+		<macro_init_step dest-dir="${work.dir}/step3" />
+		<macro_init_step dest-dir="${work.dir}/step4" />
+		<macro_init_step dest-dir="${work.dir}/step5" />
+	</target>
+
+	<target name="prepare_tools">
+		<mkdir dir="${lib.dir}" />
+		<macro_get_and_checksum src-file="${jtidy.download.url}" dest-file="${lib.dir}/jtidy.jar" />
+
+		<mkdir dir="${tools.dir}/classes" />
+		<javac srcdir="${src.dir}/tools/java" destdir="${tools.dir}/classes" includeAntRuntime="false" />
+	</target>
+
+	<target name="step1" depends="init,prepare_tools">
+		<copy file="${build.config.dir}/initial_descriptor.xml" todir="${work.dir}/step1/descriptor-ready" />
+		<macro_proceed_step current-step="step1" next-step="step2" />
+	</target>
+
+	<target name="step2" depends="init,prepare_tools,step1">
+		<macro_proceed_step current-step="step2" next-step="step3" />
+	</target>
+
+	<target name="step3" depends="init,prepare_tools,step2">
+		<macro_proceed_step current-step="step3" next-step="step4" />
+	</target>
+
+	<target name="step4" depends="init,prepare_tools,step3">
+		<macro_proceed_step current-step="step4" next-step="step5" />
+	</target>
+
+	<target name="step5" depends="init,prepare_tools,step4">
+		<macro_proceed_step current-step="step5" />
+	</target>
+
+	<target name="generate_api" depends="init,prepare_tools">
+		<macro_print_header message="Generating Webix UI API" />
+
+		<antcall target="step5" unless:set="generate_api.skip_steps" />
+
+		<macro_print_header message="Generating mdo file" />
+
+		<concat destfile="${work.dir}/model.xml">
+			<fileset dir="${work.dir}" includes="step?/model/**/*.xml" />
+			<header>&lt;model&gt;</header>
+			<footer>&lt;/model&gt;</footer>
+		</concat>
+
+		<xslt in="${work.dir}/model.xml" out="${work.dir}/webix-api.mdo" style="${build.config.dir}/model2mdo.xsl" />
+	</target>
+
+</project>
