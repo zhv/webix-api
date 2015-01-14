@@ -9,6 +9,7 @@ package com.webix.ui.model.form;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -50,12 +51,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 /**
  * A non-editable text control.The component is used to display
- * static text on a page. Check label documentation for more
- * detailed description.
+ * static text on a page. Check <a
+ * href="http://docs.webix.com/desktop__controls.html#label">label</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_CHANGE, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_KEY_PRESS, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Label
     implements java.io.Serializable
 {
@@ -67,156 +70,156 @@ public class Label
     /**
      * The alignment of the control within the parent container.
      */
-    private Byte align;
+    private String align;
 
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Click action handler.
      */
-    private Byte click;
+    private UnknownType click;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The id or node, whose content will be moved to the view.
      */
-    private Byte content;
+    private UnknownType content;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * Sets a hotkey that triggers button clicking.
      */
-    private Byte hotkey;
+    private String hotkey;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * The height of the input area, or a button's text value area.
      */
-    private Byte inputHeight;
+    private Integer inputHeight;
 
     /**
      * The width of the input area, or a button's text value area.
      */
-    private Byte inputWidth;
+    private Integer inputWidth;
 
     /**
      * The text label of the control.
      */
-    private Byte label;
+    private String label;
 
     /**
      * Positions label above the control.
      */
-    private Byte labelPosition;
+    private String labelPosition;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Name of the control.
      */
-    private Byte name;
+    private String name;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Allows to attach pop-up menu to the button.
      */
-    private Byte popup;
+    private UnknownType popup;
 
     /**
      * Defines whether the control will be included in the tab
      * navigation order.
      */
-    private Byte tabFocus;
+    private Boolean tabFocus;
 
     /**
      * The component template.
      */
-    private Byte template;
+    private UnknownType template;
 
     /**
      * Tooltip for the input.
      */
-    private Byte tooltip;
+    private String tooltip;
 
     /**
      * The type of the control.
      */
-    private Byte type;
+    private String type;
 
     /**
      * Sets the initial value for a control.
      */
-    private Byte value;
+    private String value;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -227,308 +230,308 @@ public class Label
      * Get the alignment of the control within the parent
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getAlign()
+    public String getAlign()
     {
         return this.align;
-    } //-- Byte getAlign()
+    } //-- String getAlign()
 
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get click action handler.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getClick()
+    public UnknownType getClick()
     {
         return this.click;
-    } //-- Byte getClick()
+    } //-- UnknownType getClick()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the id or node, whose content will be moved to the view.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContent()
+    public UnknownType getContent()
     {
         return this.content;
-    } //-- Byte getContent()
+    } //-- UnknownType getContent()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get sets a hotkey that triggers button clicking.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getHotkey()
+    public String getHotkey()
     {
         return this.hotkey;
-    } //-- Byte getHotkey()
+    } //-- String getHotkey()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get the height of the input area, or a button's text value
      * area.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getInputHeight()
+    public Integer getInputHeight()
     {
         return this.inputHeight;
-    } //-- Byte getInputHeight()
+    } //-- Integer getInputHeight()
 
     /**
      * Get the width of the input area, or a button's text value
      * area.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getInputWidth()
+    public Integer getInputWidth()
     {
         return this.inputWidth;
-    } //-- Byte getInputWidth()
+    } //-- Integer getInputWidth()
 
     /**
      * Get the text label of the control.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getLabel()
+    public String getLabel()
     {
         return this.label;
-    } //-- Byte getLabel()
+    } //-- String getLabel()
 
     /**
      * Get positions label above the control.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getLabelPosition()
+    public String getLabelPosition()
     {
         return this.labelPosition;
-    } //-- Byte getLabelPosition()
+    } //-- String getLabelPosition()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get name of the control.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getName()
+    public String getName()
     {
         return this.name;
-    } //-- Byte getName()
+    } //-- String getName()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get allows to attach pop-up menu to the button.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getPopup()
+    public UnknownType getPopup()
     {
         return this.popup;
-    } //-- Byte getPopup()
+    } //-- UnknownType getPopup()
+
+    /**
+     * Get the component template.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getTemplate()
+    {
+        return this.template;
+    } //-- UnknownType getTemplate()
+
+    /**
+     * Get tooltip for the input.
+     * 
+     * @return String
+     */
+    public String getTooltip()
+    {
+        return this.tooltip;
+    } //-- String getTooltip()
+
+    /**
+     * Get the type of the control.
+     * 
+     * @return String
+     */
+    public String getType()
+    {
+        return this.type;
+    } //-- String getType()
+
+    /**
+     * Get sets the initial value for a control.
+     * 
+     * @return String
+     */
+    public String getValue()
+    {
+        return this.value;
+    } //-- String getValue()
+
+    /**
+     * Get sets the width of the component.
+     * 
+     * @return Integer
+     */
+    public Integer getWidth()
+    {
+        return this.width;
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
 
     /**
      * Get defines whether the control will be included in the tab
      * navigation order.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getTabFocus()
+    public Boolean isTabFocus()
     {
         return this.tabFocus;
-    } //-- Byte getTabFocus()
-
-    /**
-     * Get the component template.
-     * 
-     * @return Byte
-     */
-    public Byte getTemplate()
-    {
-        return this.template;
-    } //-- Byte getTemplate()
-
-    /**
-     * Get tooltip for the input.
-     * 
-     * @return Byte
-     */
-    public Byte getTooltip()
-    {
-        return this.tooltip;
-    } //-- Byte getTooltip()
-
-    /**
-     * Get the type of the control.
-     * 
-     * @return Byte
-     */
-    public Byte getType()
-    {
-        return this.type;
-    } //-- Byte getType()
-
-    /**
-     * Get sets the initial value for a control.
-     * 
-     * @return Byte
-     */
-    public Byte getValue()
-    {
-        return this.value;
-    } //-- Byte getValue()
-
-    /**
-     * Get sets the width of the component.
-     * 
-     * @return Byte
-     */
-    public Byte getWidth()
-    {
-        return this.width;
-    } //-- Byte getWidth()
+    } //-- Boolean isTabFocus()
 
     /**
      * Set the alignment of the control within the parent
@@ -536,40 +539,40 @@ public class Label
      * 
      * @param align
      */
-    public void setAlign( Byte align )
+    public void setAlign( String align )
     {
         this.align = align;
-    } //-- void setAlign( Byte )
+    } //-- void setAlign( String )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set click action handler.
      * 
      * @param click
      */
-    public void setClick( Byte click )
+    public void setClick( UnknownType click )
     {
         this.click = click;
-    } //-- void setClick( Byte )
+    } //-- void setClick( UnknownType )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -577,20 +580,20 @@ public class Label
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the id or node, whose content will be moved to the view.
      * 
      * @param content
      */
-    public void setContent( Byte content )
+    public void setContent( UnknownType content )
     {
         this.content = content;
-    } //-- void setContent( Byte )
+    } //-- void setContent( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -598,70 +601,70 @@ public class Label
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set sets a hotkey that triggers button clicking.
      * 
      * @param hotkey
      */
-    public void setHotkey( Byte hotkey )
+    public void setHotkey( String hotkey )
     {
         this.hotkey = hotkey;
-    } //-- void setHotkey( Byte )
+    } //-- void setHotkey( String )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set the height of the input area, or a button's text value
@@ -669,10 +672,10 @@ public class Label
      * 
      * @param inputHeight
      */
-    public void setInputHeight( Byte inputHeight )
+    public void setInputHeight( Integer inputHeight )
     {
         this.inputHeight = inputHeight;
-    } //-- void setInputHeight( Byte )
+    } //-- void setInputHeight( Integer )
 
     /**
      * Set the width of the input area, or a button's text value
@@ -680,80 +683,80 @@ public class Label
      * 
      * @param inputWidth
      */
-    public void setInputWidth( Byte inputWidth )
+    public void setInputWidth( Integer inputWidth )
     {
         this.inputWidth = inputWidth;
-    } //-- void setInputWidth( Byte )
+    } //-- void setInputWidth( Integer )
 
     /**
      * Set the text label of the control.
      * 
      * @param label
      */
-    public void setLabel( Byte label )
+    public void setLabel( String label )
     {
         this.label = label;
-    } //-- void setLabel( Byte )
+    } //-- void setLabel( String )
 
     /**
      * Set positions label above the control.
      * 
      * @param labelPosition
      */
-    public void setLabelPosition( Byte labelPosition )
+    public void setLabelPosition( String labelPosition )
     {
         this.labelPosition = labelPosition;
-    } //-- void setLabelPosition( Byte )
+    } //-- void setLabelPosition( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set name of the control.
      * 
      * @param name
      */
-    public void setName( Byte name )
+    public void setName( String name )
     {
         this.name = name;
-    } //-- void setName( Byte )
+    } //-- void setName( String )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -761,20 +764,20 @@ public class Label
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set allows to attach pop-up menu to the button.
      * 
      * @param popup
      */
-    public void setPopup( Byte popup )
+    public void setPopup( UnknownType popup )
     {
         this.popup = popup;
-    } //-- void setPopup( Byte )
+    } //-- void setPopup( UnknownType )
 
     /**
      * Set defines whether the control will be included in the tab
@@ -782,60 +785,60 @@ public class Label
      * 
      * @param tabFocus
      */
-    public void setTabFocus( Byte tabFocus )
+    public void setTabFocus( Boolean tabFocus )
     {
         this.tabFocus = tabFocus;
-    } //-- void setTabFocus( Byte )
+    } //-- void setTabFocus( Boolean )
 
     /**
      * Set the component template.
      * 
      * @param template
      */
-    public void setTemplate( Byte template )
+    public void setTemplate( UnknownType template )
     {
         this.template = template;
-    } //-- void setTemplate( Byte )
+    } //-- void setTemplate( UnknownType )
 
     /**
      * Set tooltip for the input.
      * 
      * @param tooltip
      */
-    public void setTooltip( Byte tooltip )
+    public void setTooltip( String tooltip )
     {
         this.tooltip = tooltip;
-    } //-- void setTooltip( Byte )
+    } //-- void setTooltip( String )
 
     /**
      * Set the type of the control.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( String type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( String )
 
     /**
      * Set sets the initial value for a control.
      * 
      * @param value
      */
-    public void setValue( Byte value )
+    public void setValue( String value )
     {
         this.value = value;
-    } //-- void setValue( Byte )
+    } //-- void setValue( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

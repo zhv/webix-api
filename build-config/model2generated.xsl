@@ -90,6 +90,21 @@
 				<xsl:value-of select="concat(translate(substring($classname, 1, 1), $alpha_lower, $alpha_upper), substring($classname, 2))" />
 			</name>
 			<xsl:copy-of select="description" />
+			<annotations>
+				<annotation>
+					<xsl:text>@com.webix.ui.model.SupportsEvent({</xsl:text>
+					<xsl:for-each select="events/event">
+						<xsl:if test="position() &gt; 1">
+							<xsl:text>, </xsl:text>
+						</xsl:if>
+						<xsl:text>com.webix.ui.model.Event.</xsl:text>
+						<xsl:call-template name="constant_name">
+							<xsl:with-param name="name" select="name" />
+						</xsl:call-template>
+					</xsl:for-each>
+					<xsl:text>})</xsl:text>
+				</annotation>
+			</annotations>
 			<fields>
 				<xsl:for-each select="fields/field">
 					<xsl:call-template name="process_field" />
@@ -109,7 +124,7 @@
 		<xsl:variable name="component_ref" select="@ref" />
 		<xsl:variable name="component" select="(/model/components/component[@ref=$component_ref])[1]" />
 		<xsl:variable name="description" select="$component/description" />
-		<xsl:variable name="type_name" select="$component/type" />
+		<xsl:variable name="type_name" select="$component/return-type" />
 		<field>
 			<xsl:copy-of select="name" />
 			<description>
@@ -127,28 +142,34 @@
 		<xsl:variable name="resolved_type">
 			<xsl:choose>
 				<xsl:when test="$type_name='bool' or $type_name='boolean'">
-					Boolean
+					<xsl:text>Boolean</xsl:text>
 				</xsl:when>
 				<xsl:when test="$type_name='string'">
-					String
+					<xsl:text>String</xsl:text>
 				</xsl:when>
 				<xsl:when test="$type_name='number'">
-					Integer
+					<xsl:text>Integer</xsl:text>
 				</xsl:when>
 				<xsl:when test="$type_name='id'">
-					String
+					<xsl:text>String</xsl:text>
 				</xsl:when>
-				<!-- <xsl:when test="$type_name='array'">
-					Byte
-				</xsl:when> -->
-				<xsl:otherwise>
-					Byte
-				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<type>
-			<xsl:value-of select="normalize-space($resolved_type)" />
-		</type>
+		<xsl:choose>
+			<xsl:when test="string-length($resolved_type) &gt; 0">
+				<type>
+					<xsl:value-of select="$resolved_type" />
+				</type>
+			</xsl:when>
+			<xsl:otherwise>
+				<association>
+					<type>UnknownType</type>
+					<xsl:if test="$type_name='array'">
+						<multiplicity>*</multiplicity>
+					</xsl:if>
+				</association>
+			</xsl:otherwise>
+		</xsl:choose>
 		<!-- <xsl:value-of select="translate($field_type, '|', '_')" /> -->
 	</xsl:template>
 
@@ -235,17 +256,148 @@
 		</xsl:choose>
 	</xsl:template>
 
+	<xsl:template name="node_exists">
+		<xsl:param name="nodes" />
+		<xsl:param name="str" />
+		<xsl:param name="pos" />
+		<xsl:value-of select="$nodes[position() &lt; $pos and . = $str]" />
+	</xsl:template>
+
+	<xsl:template name="constant_name">
+		<xsl:param name="name" />
+		<xsl:param name="pos" select="1" />
+		<xsl:choose>
+			<xsl:when test="$pos &gt; string-length($name)">
+				<xsl:value-of select="translate($name, $alpha_lower, $alpha_upper)" />
+			</xsl:when>
+			<xsl:when
+				test="contains($alpha_upper, substring($name, $pos, 1)) and contains($alpha_lower, substring($name, $pos - 1, 1))">
+				<xsl:call-template name="constant_name">
+					<xsl:with-param name="name" select="concat(substring($name, 1, $pos - 1), '_', substring($name, $pos))" />
+					<xsl:with-param name="pos" select="$pos + 1" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="constant_name">
+					<xsl:with-param name="name" select="$name" />
+					<xsl:with-param name="pos" select="$pos + 1" />
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 
 	<xsl:template match="/">
-		<model>
-			<id><xsl:value-of select="$global_package_prefix" /></id>
-			<name>Webix UI data model</name>
-			<classes>
-				<xsl:for-each select="model/types/type">
-					<xsl:call-template name="process_class" />
-				</xsl:for-each>
-			</classes>
-		</model>
+		<descriptor>
+			<file location="webix-api.mdo"><!-- Using Modello plugin generator for Java classes -->
+				<model>
+					<id><xsl:value-of select="$global_package_prefix" /></id>
+					<name>Webix UI data model</name>
+					<classes>
+						<class>
+							<packageName>
+								<xsl:value-of select="$global_package_prefix" />
+							</packageName>
+							<name>UnknownType</name>
+							<description>Temporary used for unparsed types</description>
+						</class>
+						<xsl:for-each select="model/types/type">
+							<xsl:call-template name="process_class" />
+						</xsl:for-each>
+					</classes>
+				</model>
+			</file>
+			<file location="{concat(translate($global_package_prefix, '.', '/'), '/Event.xml')}">
+				<xml2java>
+					<enum>
+						<name>Event</name>
+						<package>
+							<xsl:value-of select="$global_package_prefix" />
+						</package>
+						<constants>
+							<xsl:variable name="n" select="(model/types/type/events/event/name)" />
+							<xsl:for-each select="model/types/type/events/event">
+								<xsl:variable name="prev_node_name">
+									<xsl:call-template name="node_exists">
+										<xsl:with-param name="nodes" select="$n" />
+										<xsl:with-param name="str" select="name" />
+										<xsl:with-param name="pos" select="position()" />
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:if test="$prev_node_name != name">
+									<constant>
+										<name>
+											<xsl:call-template name="constant_name">
+												<xsl:with-param name="name" select="name" />
+											</xsl:call-template>
+										</name>
+										<description>
+											<xsl:value-of
+												select="concat(translate(substring(description, 1, 1), $alpha_lower, $alpha_upper), substring(description, 2))" />
+										</description>
+									</constant>
+								</xsl:if>
+							</xsl:for-each>
+						</constants>
+						<methods>
+							<method>
+								<name>toWebixName</name>
+								<return-type>String</return-type>
+								<body><![CDATA[StringBuffer sb = new StringBuffer();
+    	String n = this.name();
+    	String nLower = n.toLowerCase();
+    	for (int i = 0, c = n.length() - 1; i < c; i++) {
+    		if (n.charAt(i + 1) == '_') {
+    			sb.append(n.charAt(i));
+    			i++;
+    		} else {
+    			sb.append(nLower.charAt(i));
+    		}
+    	}
+        return sb.toString();]]></body>
+							</method>
+							<method>
+								<name>fromWebixName</name>
+								<return-type>Event</return-type>
+								<arguments>
+									<argument>
+										<type>String</type>
+										<name>webixName</name>
+									</argument>
+								</arguments>
+								<body><![CDATA[StringBuffer sb = new StringBuffer();
+    	if (webixName.length() > 0) {
+    		sb.append(Character.toUpperCase(webixName.charAt(0)));
+    	}
+    	for (int i = 1, c = webixName.length(); i < c; i++) {
+    		char ch = webixName.charAt(i);
+    		if (Character.isLowerCase(webixName.charAt(i - 1)) && Character.isUpperCase(ch)) {
+    			sb.append('_');
+    		}
+    		sb.append(Character.toUpperCase(ch));
+    	}
+        return valueOf(Event.class, sb.toString());]]></body>
+							</method>
+						</methods>
+					</enum>
+				</xml2java>
+			</file>
+			<file location="{concat(translate($global_package_prefix, '.', '/'), '/SupportsEvent.xml')}">
+				<xml2java>
+					<annotation>
+						<name>SupportsEvent</name>
+						<package>
+							<xsl:value-of select="$global_package_prefix" />
+						</package>
+						<methods>
+							<method>
+								<name>value</name>
+								<return-type>Event[]</return-type>
+							</method>
+						</methods>
+					</annotation>
+				</xml2java>
+			</file>
+		</descriptor>
 	</xsl:template>
 
 </xsl:transform>

@@ -9,6 +9,7 @@ package com.webix.ui.model.layouts;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -65,12 +66,14 @@ import com.webix.ui.model.html.Template;
  * view at a time.The component allows you to divide the page
  * content into multiple groups and display a specific view based
  * on some criteria. Often used in combination with a clickable
- * control to implement tabbar. Check multiview documentation for
- * more detailed description.
+ * control to implement tabbar. Check <a
+ * href="http://docs.webix.com/desktop__multiview.html">multiview</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_BEFORE_BACK, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_VIEW_CHANGE})
 public class Multiview
     implements java.io.Serializable
 {
@@ -82,110 +85,110 @@ public class Multiview
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * The array with views objects.
      */
-    private Byte cells;
+    private UnknownType cells;
 
     /**
-     * Array of views objects arranged horizontally.
+     * Field cols.
      */
-    private Byte cols;
+    private java.util.List<UnknownType> cols;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sizing mode of multiview.
      */
-    private Byte fitBiggest;
+    private Boolean fitBiggest;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Enables responsive mode for horizontal layout.
      */
-    private Byte responsive;
+    private String responsive;
 
     /**
-     * Array of views objects arranged vertically.
+     * Field rows.
      */
-    private Byte rows;
+    private java.util.List<UnknownType> rows;
 
     /**
      * Sets the batch that will be shown initially.
      */
-    private Byte visibleBatch;
+    private String visibleBatch;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -193,257 +196,307 @@ public class Multiview
     //-----------/
 
     /**
-     * Get defines or disables view change animation.
+     * Method addCol.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getAnimate()
+    public void addCol( UnknownType unknownType )
     {
-        return this.animate;
-    } //-- Byte getAnimate()
+        getCols().add( unknownType );
+    } //-- void addCol( UnknownType )
 
     /**
-     * Get used to hide the component borders.
+     * Method addRow.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getBorderless()
+    public void addRow( UnknownType unknownType )
     {
-        return this.borderless;
-    } //-- Byte getBorderless()
+        getRows().add( unknownType );
+    } //-- void addRow( UnknownType )
+
+    /**
+     * Get defines or disables view change animation.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getAnimate()
+    {
+        return this.animate;
+    } //-- UnknownType getAnimate()
 
     /**
      * Get the array with views objects.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getCells()
+    public UnknownType getCells()
     {
         return this.cells;
-    } //-- Byte getCells()
+    } //-- UnknownType getCells()
 
     /**
-     * Get array of views objects arranged horizontally.
+     * Method getCols.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getCols()
+    public java.util.List<UnknownType> getCols()
     {
+        if ( this.cols == null )
+        {
+            this.cols = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.cols;
-    } //-- Byte getCols()
+    } //-- java.util.List<UnknownType> getCols()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
-
-    /**
-     * Get sizing mode of multiview.
-     * 
-     * @return Byte
-     */
-    public Byte getFitBiggest()
-    {
-        return this.fitBiggest;
-    } //-- Byte getFitBiggest()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get enables responsive mode for horizontal layout.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getResponsive()
+    public String getResponsive()
     {
         return this.responsive;
-    } //-- Byte getResponsive()
+    } //-- String getResponsive()
 
     /**
-     * Get array of views objects arranged vertically.
+     * Method getRows.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getRows()
+    public java.util.List<UnknownType> getRows()
     {
+        if ( this.rows == null )
+        {
+            this.rows = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.rows;
-    } //-- Byte getRows()
+    } //-- java.util.List<UnknownType> getRows()
 
     /**
      * Get sets the batch that will be shown initially.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getVisibleBatch()
+    public String getVisibleBatch()
     {
         return this.visibleBatch;
-    } //-- Byte getVisibleBatch()
+    } //-- String getVisibleBatch()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get sizing mode of multiview.
+     * 
+     * @return Boolean
+     */
+    public Boolean isFitBiggest()
+    {
+        return this.fitBiggest;
+    } //-- Boolean isFitBiggest()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Method removeCol.
+     * 
+     * @param unknownType
+     */
+    public void removeCol( UnknownType unknownType )
+    {
+        getCols().remove( unknownType );
+    } //-- void removeCol( UnknownType )
+
+    /**
+     * Method removeRow.
+     * 
+     * @param unknownType
+     */
+    public void removeRow( UnknownType unknownType )
+    {
+        getRows().remove( unknownType );
+    } //-- void removeRow( UnknownType )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set the array with views objects.
      * 
      * @param cells
      */
-    public void setCells( Byte cells )
+    public void setCells( UnknownType cells )
     {
         this.cells = cells;
-    } //-- void setCells( Byte )
+    } //-- void setCells( UnknownType )
 
     /**
      * Set array of views objects arranged horizontally.
      * 
      * @param cols
      */
-    public void setCols( Byte cols )
+    public void setCols( java.util.List<UnknownType> cols )
     {
         this.cols = cols;
-    } //-- void setCols( Byte )
+    } //-- void setCols( java.util.List )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -451,10 +504,10 @@ public class Multiview
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -462,110 +515,110 @@ public class Multiview
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sizing mode of multiview.
      * 
      * @param fitBiggest
      */
-    public void setFitBiggest( Byte fitBiggest )
+    public void setFitBiggest( Boolean fitBiggest )
     {
         this.fitBiggest = fitBiggest;
-    } //-- void setFitBiggest( Byte )
+    } //-- void setFitBiggest( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -573,50 +626,50 @@ public class Multiview
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set enables responsive mode for horizontal layout.
      * 
      * @param responsive
      */
-    public void setResponsive( Byte responsive )
+    public void setResponsive( String responsive )
     {
         this.responsive = responsive;
-    } //-- void setResponsive( Byte )
+    } //-- void setResponsive( String )
 
     /**
      * Set array of views objects arranged vertically.
      * 
      * @param rows
      */
-    public void setRows( Byte rows )
+    public void setRows( java.util.List<UnknownType> rows )
     {
         this.rows = rows;
-    } //-- void setRows( Byte )
+    } //-- void setRows( java.util.List )
 
     /**
      * Set sets the batch that will be shown initially.
      * 
      * @param visibleBatch
      */
-    public void setVisibleBatch( Byte visibleBatch )
+    public void setVisibleBatch( String visibleBatch )
     {
         this.visibleBatch = visibleBatch;
-    } //-- void setVisibleBatch( Byte )
+    } //-- void setVisibleBatch( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Add new view to layout-like component

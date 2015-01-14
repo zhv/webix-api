@@ -9,6 +9,7 @@ package com.webix.ui.model.auxiliary;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.context.Context;
 import com.webix.ui.model.context.Contextmenu;
 import com.webix.ui.model.context.Datasuggest;
@@ -64,13 +65,16 @@ import com.webix.ui.model.layouts.Toolbar;
 
 /**
  * A color palette.The component presents a div that contains a set
- * of color swatches. Used as a part of the ui.colorpicker
- * component. Check colorboard documentation for more detailed
- * description.
+ * of color swatches. Used as a part of the <a
+ * href="http://docs.webix.com/api__refs__ui.colorpicker.html">ui.colorpicker</a>
+ * component. Check <a
+ * href="http://docs.webix.com/desktop__colorboard.html">colorboard</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Colorboard
     implements java.io.Serializable
 {
@@ -82,117 +86,117 @@ public class Colorboard
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Sets the number of columns in the palette.
      */
-    private Byte cols;
+    private Integer cols;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the end value of lightness for the default color palette
      */
-    private Byte maxLightness;
+    private Integer maxLightness;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the start value of lightness for the default color
      * palette.
      */
-    private Byte minLightness;
+    private Integer minLightness;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
-     * Sets palette colors.
+     * Field palette.
      */
-    private Byte palette;
+    private java.util.List<UnknownType> palette;
 
     /**
      * Sets the number of rows in the palette.
      */
-    private Byte rows;
+    private Integer rows;
 
     /**
      * Defines a custom template that will be applied to the
      * component.
      */
-    private Byte template;
+    private UnknownType template;
 
     /**
      * Currently selected color.
      */
-    private Byte value;
+    private String value;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -200,260 +204,285 @@ public class Colorboard
     //-----------/
 
     /**
-     * Get defines or disables view change animation.
+     * Method addPalette.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getAnimate()
+    public void addPalette( UnknownType unknownType )
     {
-        return this.animate;
-    } //-- Byte getAnimate()
+        getPalette().add( unknownType );
+    } //-- void addPalette( UnknownType )
 
     /**
-     * Get used to hide the component borders.
+     * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getBorderless()
+    public UnknownType getAnimate()
     {
-        return this.borderless;
-    } //-- Byte getBorderless()
+        return this.animate;
+    } //-- UnknownType getAnimate()
 
     /**
      * Get sets the number of columns in the palette.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getCols()
+    public Integer getCols()
     {
         return this.cols;
-    } //-- Byte getCols()
+    } //-- Integer getCols()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the end value of lightness for the default color
      * palette.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxLightness()
+    public Integer getMaxLightness()
     {
         return this.maxLightness;
-    } //-- Byte getMaxLightness()
+    } //-- Integer getMaxLightness()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the start value of lightness for the default color
      * palette.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinLightness()
+    public Integer getMinLightness()
     {
         return this.minLightness;
-    } //-- Byte getMinLightness()
+    } //-- Integer getMinLightness()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
-     * Get sets palette colors.
+     * Method getPalette.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getPalette()
+    public java.util.List<UnknownType> getPalette()
     {
+        if ( this.palette == null )
+        {
+            this.palette = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.palette;
-    } //-- Byte getPalette()
+    } //-- java.util.List<UnknownType> getPalette()
 
     /**
      * Get sets the number of rows in the palette.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getRows()
+    public Integer getRows()
     {
         return this.rows;
-    } //-- Byte getRows()
+    } //-- Integer getRows()
 
     /**
      * Get defines a custom template that will be applied to the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTemplate()
+    public UnknownType getTemplate()
     {
         return this.template;
-    } //-- Byte getTemplate()
+    } //-- UnknownType getTemplate()
 
     /**
      * Get currently selected color.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getValue()
+    public String getValue()
     {
         return this.value;
-    } //-- Byte getValue()
+    } //-- String getValue()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Method removePalette.
+     * 
+     * @param unknownType
+     */
+    public void removePalette( UnknownType unknownType )
+    {
+        getPalette().remove( unknownType );
+    } //-- void removePalette( UnknownType )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set sets the number of columns in the palette.
      * 
      * @param cols
      */
-    public void setCols( Byte cols )
+    public void setCols( Integer cols )
     {
         this.cols = cols;
-    } //-- void setCols( Byte )
+    } //-- void setCols( Integer )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -461,10 +490,10 @@ public class Colorboard
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -472,70 +501,70 @@ public class Colorboard
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the end value of lightness for the default color
@@ -543,30 +572,30 @@ public class Colorboard
      * 
      * @param maxLightness
      */
-    public void setMaxLightness( Byte maxLightness )
+    public void setMaxLightness( Integer maxLightness )
     {
         this.maxLightness = maxLightness;
-    } //-- void setMaxLightness( Byte )
+    } //-- void setMaxLightness( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the start value of lightness for the default color
@@ -574,20 +603,20 @@ public class Colorboard
      * 
      * @param minLightness
      */
-    public void setMinLightness( Byte minLightness )
+    public void setMinLightness( Integer minLightness )
     {
         this.minLightness = minLightness;
-    } //-- void setMinLightness( Byte )
+    } //-- void setMinLightness( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -595,30 +624,30 @@ public class Colorboard
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set sets palette colors.
      * 
      * @param palette
      */
-    public void setPalette( Byte palette )
+    public void setPalette( java.util.List<UnknownType> palette )
     {
         this.palette = palette;
-    } //-- void setPalette( Byte )
+    } //-- void setPalette( java.util.List )
 
     /**
      * Set sets the number of rows in the palette.
      * 
      * @param rows
      */
-    public void setRows( Byte rows )
+    public void setRows( Integer rows )
     {
         this.rows = rows;
-    } //-- void setRows( Byte )
+    } //-- void setRows( Integer )
 
     /**
      * Set defines a custom template that will be applied to the
@@ -626,30 +655,30 @@ public class Colorboard
      * 
      * @param template
      */
-    public void setTemplate( Byte template )
+    public void setTemplate( UnknownType template )
     {
         this.template = template;
-    } //-- void setTemplate( Byte )
+    } //-- void setTemplate( UnknownType )
 
     /**
      * Set currently selected color.
      * 
      * @param value
      */
-    public void setValue( Byte value )
+    public void setValue( String value )
     {
         this.value = value;
-    } //-- void setValue( Byte )
+    } //-- void setValue( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

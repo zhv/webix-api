@@ -9,6 +9,7 @@ package com.webix.ui.model.auxiliary;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.context.Context;
 import com.webix.ui.model.context.Contextmenu;
 import com.webix.ui.model.context.Datasuggest;
@@ -68,12 +69,14 @@ import com.webix.ui.model.layouts.Toolbar;
  * and time formats. Besides the days of the month, it can display
  * day headings for the week days, the week number, a title with
  * the month name and year, hour and minite selectors. Customizable
- * and mostly used as a flat calendar. Check calendar documentation
- * for more detailed description.
+ * and mostly used as a flat calendar. Check <a
+ * href="http://docs.webix.com/desktop__calendar.html">calendar</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_DATE_SELECT, com.webix.ui.model.Event.ON_AFTER_MONTH_CHANGE, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_AFTER_ZOOM, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BEFORE_DATE_SELECT, com.webix.ui.model.Event.ON_BEFORE_MONTH_CHANGE, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BEFORE_ZOOM, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_CHANGE, com.webix.ui.model.Event.ON_DATE_SELECT, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Calendar
     implements java.io.Serializable
 {
@@ -85,215 +88,215 @@ public class Calendar
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Defines the selectable range.
      */
-    private Byte blockDates;
+    private UnknownType blockDates;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * The format for the title with the month name and year.
      */
-    private Byte calendarHeader;
+    private String calendarHeader;
 
     /**
      * Defines calendar time format (with timepicker enabled).
      */
-    private Byte calendarTime;
+    private String calendarTime;
 
     /**
      * Specifies the label for the column with weeks numbers.
      */
-    private Byte calendarWeekHeader;
+    private String calendarWeekHeader;
 
     /**
      * The height of the cell with day (36).
      */
-    private Byte cellHeight;
+    private Integer cellHeight;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Sets the initial date of the calendar (particularly month
      * and year).
      */
-    private Byte date;
+    private UnknownType date;
 
     /**
      * Defines a template for a calendar day cell.
      */
-    private Byte dayTemplate;
+    private UnknownType dayTemplate;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets an additional css class that will be applied to days.
      */
-    private Byte events;
+    private UnknownType events;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Total height of the area not taken by calendar body.
      */
-    private Byte headerHeight;
+    private Integer headerHeight;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Set man limit for selected date.
      */
-    private Byte maxDate;
+    private UnknownType maxDate;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Set min limit for selected date.
      */
-    private Byte minDate;
+    private UnknownType minDate;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Step of time selector.
      */
-    private Byte minuteStep;
+    private UnknownType minuteStep;
 
     /**
      * Enables the ability to select month by clicking the "month"
      * panel.
      */
-    private Byte monthSelect;
+    private Boolean monthSelect;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Enables/disables month navigation in header - the
      * possibility to change months (true).
      */
-    private Byte navigation;
+    private Boolean navigation;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Enables date selection within the calendar.
      */
-    private Byte select;
+    private Boolean select;
 
     /**
      * Enables/disables displaying empty weeks (true).
      */
-    private Byte skipEmptyWeeks;
+    private Boolean skipEmptyWeeks;
 
     /**
      * Enables clock for time selection.
      */
-    private Byte timepicker;
+    private Boolean timepicker;
 
     /**
      * Sets height of timepicker area.
      */
-    private Byte timepickerHeight;
+    private Integer timepickerHeight;
 
     /**
      * Enables/disables additional header with week days (false).
      */
-    private Byte weekHeader;
+    private Boolean weekHeader;
 
     /**
      * Enables/disables additional left column with weeks' numbers
      * (false).
      */
-    private Byte weekNumber;
+    private Boolean weekNumber;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -303,486 +306,486 @@ public class Calendar
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get defines the selectable range.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getBlockDates()
+    public UnknownType getBlockDates()
     {
         return this.blockDates;
-    } //-- Byte getBlockDates()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getBlockDates()
 
     /**
      * Get the format for the title with the month name and year.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCalendarHeader()
+    public String getCalendarHeader()
     {
         return this.calendarHeader;
-    } //-- Byte getCalendarHeader()
+    } //-- String getCalendarHeader()
 
     /**
      * Get defines calendar time format (with timepicker enabled).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCalendarTime()
+    public String getCalendarTime()
     {
         return this.calendarTime;
-    } //-- Byte getCalendarTime()
+    } //-- String getCalendarTime()
 
     /**
      * Get specifies the label for the column with weeks numbers.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCalendarWeekHeader()
+    public String getCalendarWeekHeader()
     {
         return this.calendarWeekHeader;
-    } //-- Byte getCalendarWeekHeader()
+    } //-- String getCalendarWeekHeader()
 
     /**
      * Get the height of the cell with day (36).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getCellHeight()
+    public Integer getCellHeight()
     {
         return this.cellHeight;
-    } //-- Byte getCellHeight()
+    } //-- Integer getCellHeight()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get sets the initial date of the calendar (particularly
      * month and year).
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDate()
+    public UnknownType getDate()
     {
         return this.date;
-    } //-- Byte getDate()
+    } //-- UnknownType getDate()
 
     /**
      * Get defines a template for a calendar day cell.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDayTemplate()
+    public UnknownType getDayTemplate()
     {
         return this.dayTemplate;
-    } //-- Byte getDayTemplate()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- UnknownType getDayTemplate()
 
     /**
      * Get sets an additional css class that will be applied to
      * days.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getEvents()
+    public UnknownType getEvents()
     {
         return this.events;
-    } //-- Byte getEvents()
+    } //-- UnknownType getEvents()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get total height of the area not taken by calendar body.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeaderHeight()
+    public Integer getHeaderHeight()
     {
         return this.headerHeight;
-    } //-- Byte getHeaderHeight()
+    } //-- Integer getHeaderHeight()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get set man limit for selected date.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getMaxDate()
+    public UnknownType getMaxDate()
     {
         return this.maxDate;
-    } //-- Byte getMaxDate()
+    } //-- UnknownType getMaxDate()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get set min limit for selected date.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getMinDate()
+    public UnknownType getMinDate()
     {
         return this.minDate;
-    } //-- Byte getMinDate()
+    } //-- UnknownType getMinDate()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get step of time selector.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getMinuteStep()
+    public UnknownType getMinuteStep()
     {
         return this.minuteStep;
-    } //-- Byte getMinuteStep()
-
-    /**
-     * Get enables the ability to select month by clicking the
-     * "month" panel.
-     * 
-     * @return Byte
-     */
-    public Byte getMonthSelect()
-    {
-        return this.monthSelect;
-    } //-- Byte getMonthSelect()
+    } //-- UnknownType getMinuteStep()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
-
-    /**
-     * Get enables/disables month navigation in header - the
-     * possibility to change months (true).
-     * 
-     * @return Byte
-     */
-    public Byte getNavigation()
-    {
-        return this.navigation;
-    } //-- Byte getNavigation()
+    } //-- Integer getMouseEventDelay()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get a property used to define custom context-click (right
      * click) handlers for elements in the DataTable cells.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnContext()
+    public UnknownType getOnContext()
     {
         return this.onContext;
-    } //-- Byte getOnContext()
+    } //-- UnknownType getOnContext()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnDblClick()
+    public UnknownType getOnDblClick()
     {
         return this.onDblClick;
-    } //-- Byte getOnDblClick()
+    } //-- UnknownType getOnDblClick()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnMouseMove()
+    public UnknownType getOnMouseMove()
     {
         return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
-
-    /**
-     * Get enables date selection within the calendar.
-     * 
-     * @return Byte
-     */
-    public Byte getSelect()
-    {
-        return this.select;
-    } //-- Byte getSelect()
-
-    /**
-     * Get enables/disables displaying empty weeks (true).
-     * 
-     * @return Byte
-     */
-    public Byte getSkipEmptyWeeks()
-    {
-        return this.skipEmptyWeeks;
-    } //-- Byte getSkipEmptyWeeks()
-
-    /**
-     * Get enables clock for time selection.
-     * 
-     * @return Byte
-     */
-    public Byte getTimepicker()
-    {
-        return this.timepicker;
-    } //-- Byte getTimepicker()
+    } //-- UnknownType getOnMouseMove()
 
     /**
      * Get sets height of timepicker area.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getTimepickerHeight()
+    public Integer getTimepickerHeight()
     {
         return this.timepickerHeight;
-    } //-- Byte getTimepickerHeight()
+    } //-- Integer getTimepickerHeight()
+
+    /**
+     * Get sets the width of the component.
+     * 
+     * @return Integer
+     */
+    public Integer getWidth()
+    {
+        return this.width;
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Get enables the ability to select month by clicking the
+     * "month" panel.
+     * 
+     * @return Boolean
+     */
+    public Boolean isMonthSelect()
+    {
+        return this.monthSelect;
+    } //-- Boolean isMonthSelect()
+
+    /**
+     * Get enables/disables month navigation in header - the
+     * possibility to change months (true).
+     * 
+     * @return Boolean
+     */
+    public Boolean isNavigation()
+    {
+        return this.navigation;
+    } //-- Boolean isNavigation()
+
+    /**
+     * Get enables date selection within the calendar.
+     * 
+     * @return Boolean
+     */
+    public Boolean isSelect()
+    {
+        return this.select;
+    } //-- Boolean isSelect()
+
+    /**
+     * Get enables/disables displaying empty weeks (true).
+     * 
+     * @return Boolean
+     */
+    public Boolean isSkipEmptyWeeks()
+    {
+        return this.skipEmptyWeeks;
+    } //-- Boolean isSkipEmptyWeeks()
+
+    /**
+     * Get enables clock for time selection.
+     * 
+     * @return Boolean
+     */
+    public Boolean isTimepicker()
+    {
+        return this.timepicker;
+    } //-- Boolean isTimepicker()
 
     /**
      * Get enables/disables additional header with week days
      * (false).
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getWeekHeader()
+    public Boolean isWeekHeader()
     {
         return this.weekHeader;
-    } //-- Byte getWeekHeader()
+    } //-- Boolean isWeekHeader()
 
     /**
      * Get enables/disables additional left column with weeks'
      * numbers (false).
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getWeekNumber()
+    public Boolean isWeekNumber()
     {
         return this.weekNumber;
-    } //-- Byte getWeekNumber()
-
-    /**
-     * Get sets the width of the component.
-     * 
-     * @return Byte
-     */
-    public Byte getWidth()
-    {
-        return this.width;
-    } //-- Byte getWidth()
+    } //-- Boolean isWeekNumber()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set defines the selectable range.
      * 
      * @param blockDates
      */
-    public void setBlockDates( Byte blockDates )
+    public void setBlockDates( UnknownType blockDates )
     {
         this.blockDates = blockDates;
-    } //-- void setBlockDates( Byte )
+    } //-- void setBlockDates( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set the format for the title with the month name and year.
      * 
      * @param calendarHeader
      */
-    public void setCalendarHeader( Byte calendarHeader )
+    public void setCalendarHeader( String calendarHeader )
     {
         this.calendarHeader = calendarHeader;
-    } //-- void setCalendarHeader( Byte )
+    } //-- void setCalendarHeader( String )
 
     /**
      * Set defines calendar time format (with timepicker enabled).
      * 
      * @param calendarTime
      */
-    public void setCalendarTime( Byte calendarTime )
+    public void setCalendarTime( String calendarTime )
     {
         this.calendarTime = calendarTime;
-    } //-- void setCalendarTime( Byte )
+    } //-- void setCalendarTime( String )
 
     /**
      * Set specifies the label for the column with weeks numbers.
      * 
      * @param calendarWeekHeader
      */
-    public void setCalendarWeekHeader( Byte calendarWeekHeader )
+    public void setCalendarWeekHeader( String calendarWeekHeader )
     {
         this.calendarWeekHeader = calendarWeekHeader;
-    } //-- void setCalendarWeekHeader( Byte )
+    } //-- void setCalendarWeekHeader( String )
 
     /**
      * Set the height of the cell with day (36).
      * 
      * @param cellHeight
      */
-    public void setCellHeight( Byte cellHeight )
+    public void setCellHeight( Integer cellHeight )
     {
         this.cellHeight = cellHeight;
-    } //-- void setCellHeight( Byte )
+    } //-- void setCellHeight( Integer )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -790,10 +793,10 @@ public class Calendar
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -801,10 +804,10 @@ public class Calendar
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set sets the initial date of the calendar (particularly
@@ -812,30 +815,30 @@ public class Calendar
      * 
      * @param date
      */
-    public void setDate( Byte date )
+    public void setDate( UnknownType date )
     {
         this.date = date;
-    } //-- void setDate( Byte )
+    } //-- void setDate( UnknownType )
 
     /**
      * Set defines a template for a calendar day cell.
      * 
      * @param dayTemplate
      */
-    public void setDayTemplate( Byte dayTemplate )
+    public void setDayTemplate( UnknownType dayTemplate )
     {
         this.dayTemplate = dayTemplate;
-    } //-- void setDayTemplate( Byte )
+    } //-- void setDayTemplate( UnknownType )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets an additional css class that will be applied to
@@ -843,130 +846,130 @@ public class Calendar
      * 
      * @param events
      */
-    public void setEvents( Byte events )
+    public void setEvents( UnknownType events )
     {
         this.events = events;
-    } //-- void setEvents( Byte )
+    } //-- void setEvents( UnknownType )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set total height of the area not taken by calendar body.
      * 
      * @param headerHeight
      */
-    public void setHeaderHeight( Byte headerHeight )
+    public void setHeaderHeight( Integer headerHeight )
     {
         this.headerHeight = headerHeight;
-    } //-- void setHeaderHeight( Byte )
+    } //-- void setHeaderHeight( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set set man limit for selected date.
      * 
      * @param maxDate
      */
-    public void setMaxDate( Byte maxDate )
+    public void setMaxDate( UnknownType maxDate )
     {
         this.maxDate = maxDate;
-    } //-- void setMaxDate( Byte )
+    } //-- void setMaxDate( UnknownType )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set set min limit for selected date.
      * 
      * @param minDate
      */
-    public void setMinDate( Byte minDate )
+    public void setMinDate( UnknownType minDate )
     {
         this.minDate = minDate;
-    } //-- void setMinDate( Byte )
+    } //-- void setMinDate( UnknownType )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set step of time selector.
      * 
      * @param minuteStep
      */
-    public void setMinuteStep( Byte minuteStep )
+    public void setMinuteStep( UnknownType minuteStep )
     {
         this.minuteStep = minuteStep;
-    } //-- void setMinuteStep( Byte )
+    } //-- void setMinuteStep( UnknownType )
 
     /**
      * Set enables the ability to select month by clicking the
@@ -974,10 +977,10 @@ public class Calendar
      * 
      * @param monthSelect
      */
-    public void setMonthSelect( Byte monthSelect )
+    public void setMonthSelect( Boolean monthSelect )
     {
         this.monthSelect = monthSelect;
-    } //-- void setMonthSelect( Byte )
+    } //-- void setMonthSelect( Boolean )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -985,10 +988,10 @@ public class Calendar
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set enables/disables month navigation in header - the
@@ -996,10 +999,10 @@ public class Calendar
      * 
      * @param navigation
      */
-    public void setNavigation( Byte navigation )
+    public void setNavigation( Boolean navigation )
     {
         this.navigation = navigation;
-    } //-- void setNavigation( Byte )
+    } //-- void setNavigation( Boolean )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -1007,10 +1010,10 @@ public class Calendar
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -1018,10 +1021,10 @@ public class Calendar
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -1029,10 +1032,10 @@ public class Calendar
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1040,10 +1043,10 @@ public class Calendar
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1051,50 +1054,50 @@ public class Calendar
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set enables date selection within the calendar.
      * 
      * @param select
      */
-    public void setSelect( Byte select )
+    public void setSelect( Boolean select )
     {
         this.select = select;
-    } //-- void setSelect( Byte )
+    } //-- void setSelect( Boolean )
 
     /**
      * Set enables/disables displaying empty weeks (true).
      * 
      * @param skipEmptyWeeks
      */
-    public void setSkipEmptyWeeks( Byte skipEmptyWeeks )
+    public void setSkipEmptyWeeks( Boolean skipEmptyWeeks )
     {
         this.skipEmptyWeeks = skipEmptyWeeks;
-    } //-- void setSkipEmptyWeeks( Byte )
+    } //-- void setSkipEmptyWeeks( Boolean )
 
     /**
      * Set enables clock for time selection.
      * 
      * @param timepicker
      */
-    public void setTimepicker( Byte timepicker )
+    public void setTimepicker( Boolean timepicker )
     {
         this.timepicker = timepicker;
-    } //-- void setTimepicker( Byte )
+    } //-- void setTimepicker( Boolean )
 
     /**
      * Set sets height of timepicker area.
      * 
      * @param timepickerHeight
      */
-    public void setTimepickerHeight( Byte timepickerHeight )
+    public void setTimepickerHeight( Integer timepickerHeight )
     {
         this.timepickerHeight = timepickerHeight;
-    } //-- void setTimepickerHeight( Byte )
+    } //-- void setTimepickerHeight( Integer )
 
     /**
      * Set enables/disables additional header with week days
@@ -1102,10 +1105,10 @@ public class Calendar
      * 
      * @param weekHeader
      */
-    public void setWeekHeader( Byte weekHeader )
+    public void setWeekHeader( Boolean weekHeader )
     {
         this.weekHeader = weekHeader;
-    } //-- void setWeekHeader( Byte )
+    } //-- void setWeekHeader( Boolean )
 
     /**
      * Set enables/disables additional left column with weeks'
@@ -1113,20 +1116,20 @@ public class Calendar
      * 
      * @param weekNumber
      */
-    public void setWeekNumber( Byte weekNumber )
+    public void setWeekNumber( Boolean weekNumber )
     {
         this.weekNumber = weekNumber;
-    } //-- void setWeekNumber( Byte )
+    } //-- void setWeekNumber( Boolean )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

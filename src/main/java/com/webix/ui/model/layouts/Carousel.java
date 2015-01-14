@@ -9,6 +9,7 @@ package com.webix.ui.model.layouts;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -66,12 +67,14 @@ import com.webix.ui.model.html.Template;
  * is visible at a time.The control supports any content inside of
  * it. The content blocks can be arranged vertically or
  * horizontally, supplemented or not with the navigation control
- * panel. Check carousel documentation for more detailed
- * description.
+ * panel. Check <a
+ * href="http://docs.webix.com/desktop__carousel.html">carousel</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SHOW, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Carousel
     implements java.io.Serializable
 {
@@ -83,105 +86,105 @@ public class Carousel
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
-     * Array of views objects arranged horizontally.
+     * Field cols.
      */
-    private Byte cols;
+    private java.util.List<UnknownType> cols;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Defines navigation parameters.
      */
-    private Byte navigation;
+    private UnknownType navigation;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
-     * Array of views arranged vertically.
+     * Field rows.
      */
-    private Byte rows;
+    private java.util.List<UnknownType> rows;
 
     /**
      * Speed of scrolling ('300ms' by default).
      */
-    private Byte scrollSpeed;
+    private String scrollSpeed;
 
     /**
      * Defines the layout borders.
      */
-    private Byte type;
+    private String type;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -189,237 +192,287 @@ public class Carousel
     //-----------/
 
     /**
+     * Method addCol.
+     * 
+     * @param unknownType
+     */
+    public void addCol( UnknownType unknownType )
+    {
+        getCols().add( unknownType );
+    } //-- void addCol( UnknownType )
+
+    /**
+     * Method addRow.
+     * 
+     * @param unknownType
+     */
+    public void addRow( UnknownType unknownType )
+    {
+        getRows().add( unknownType );
+    } //-- void addRow( UnknownType )
+
+    /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
-     * Get used to hide the component borders.
+     * Method getCols.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getBorderless()
+    public java.util.List<UnknownType> getCols()
     {
-        return this.borderless;
-    } //-- Byte getBorderless()
+        if ( this.cols == null )
+        {
+            this.cols = new java.util.ArrayList<UnknownType>();
+        }
 
-    /**
-     * Get array of views objects arranged horizontally.
-     * 
-     * @return Byte
-     */
-    public Byte getCols()
-    {
         return this.cols;
-    } //-- Byte getCols()
+    } //-- java.util.List<UnknownType> getCols()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get defines navigation parameters.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getNavigation()
+    public UnknownType getNavigation()
     {
         return this.navigation;
-    } //-- Byte getNavigation()
+    } //-- UnknownType getNavigation()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
-     * Get array of views arranged vertically.
+     * Method getRows.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getRows()
+    public java.util.List<UnknownType> getRows()
     {
+        if ( this.rows == null )
+        {
+            this.rows = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.rows;
-    } //-- Byte getRows()
+    } //-- java.util.List<UnknownType> getRows()
 
     /**
      * Get speed of scrolling ('300ms' by default).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getScrollSpeed()
+    public String getScrollSpeed()
     {
         return this.scrollSpeed;
-    } //-- Byte getScrollSpeed()
+    } //-- String getScrollSpeed()
 
     /**
      * Get defines the layout borders.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getType()
+    public String getType()
     {
         return this.type;
-    } //-- Byte getType()
+    } //-- String getType()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Method removeCol.
+     * 
+     * @param unknownType
+     */
+    public void removeCol( UnknownType unknownType )
+    {
+        getCols().remove( unknownType );
+    } //-- void removeCol( UnknownType )
+
+    /**
+     * Method removeRow.
+     * 
+     * @param unknownType
+     */
+    public void removeRow( UnknownType unknownType )
+    {
+        getRows().remove( unknownType );
+    } //-- void removeRow( UnknownType )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set array of views objects arranged horizontally.
      * 
      * @param cols
      */
-    public void setCols( Byte cols )
+    public void setCols( java.util.List<UnknownType> cols )
     {
         this.cols = cols;
-    } //-- void setCols( Byte )
+    } //-- void setCols( java.util.List )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -427,10 +480,10 @@ public class Carousel
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -438,110 +491,110 @@ public class Carousel
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set defines navigation parameters.
      * 
      * @param navigation
      */
-    public void setNavigation( Byte navigation )
+    public void setNavigation( UnknownType navigation )
     {
         this.navigation = navigation;
-    } //-- void setNavigation( Byte )
+    } //-- void setNavigation( UnknownType )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -549,50 +602,50 @@ public class Carousel
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set array of views arranged vertically.
      * 
      * @param rows
      */
-    public void setRows( Byte rows )
+    public void setRows( java.util.List<UnknownType> rows )
     {
         this.rows = rows;
-    } //-- void setRows( Byte )
+    } //-- void setRows( java.util.List )
 
     /**
      * Set speed of scrolling ('300ms' by default).
      * 
      * @param scrollSpeed
      */
-    public void setScrollSpeed( Byte scrollSpeed )
+    public void setScrollSpeed( String scrollSpeed )
     {
         this.scrollSpeed = scrollSpeed;
-    } //-- void setScrollSpeed( Byte )
+    } //-- void setScrollSpeed( String )
 
     /**
      * Set defines the layout borders.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( String type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

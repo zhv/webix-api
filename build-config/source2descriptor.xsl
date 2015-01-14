@@ -70,11 +70,7 @@
 						</name>
 						<types>
 							<xsl:for-each select="following-sibling::h:table[@class='webixtoc' and position()=1]//h:tr/h:td/h:a">
-								<xsl:element name="type">
-									<xsl:attribute name="ref">
-										<xsl:value-of select="concat($global_url_base, @href)" />
-									</xsl:attribute>
-								</xsl:element>
+								<type ref="{@href}" />
 							</xsl:for-each>
 						</types>
 					</package>
@@ -114,25 +110,16 @@
 			</xsl:attribute>
 			<types>
 				<xsl:for-each select="//h:div[@id='doc_content']">
-					<type>
-						<xsl:attribute name="ref">
-							<xsl:value-of select="concat($global_url_base, $sourcefile)" />
-						</xsl:attribute>
+					<type ref="{$sourcefile}">
 						<name>
 							<xsl:value-of select="h:h1[1]" />
 						</name>
 						<description>
-							<xsl:apply-templates select="h:p[position()&lt;3]" />
+							<xsl:apply-templates select="h:p[position()&lt;3]" mode="description_text" />
 						</description>
 						<references>
 							<xsl:for-each select="h:div[@class='webixdoc_parents']/h:a">
-								<reference>
-									<xsl:attribute name="ref">
-										<xsl:call-template name="substr_before_last"> 
-											<xsl:with-param name="str" select="@href" />
-											<xsl:with-param name="needle" select="'.'" />
-										</xsl:call-template>
-									</xsl:attribute>
+								<reference ref="{@href}">
 									<name>
 										<xsl:value-of select="." />
 									</name>
@@ -186,10 +173,7 @@
 			</xsl:attribute>
 			<components>
 				<xsl:for-each select="//h:div[@id='doc_content']">
-					<component>
-						<xsl:attribute name="ref">
-							<xsl:value-of select="concat($global_url_base, $sourcefile)" />
-						</xsl:attribute>
+					<component ref="{$sourcefile}">
 						<name>
 							<xsl:value-of select="h:div[@class='signature']/h:b[1]" />
 						</name>
@@ -225,13 +209,7 @@
 						</description>
 						<references>
 							<xsl:for-each select="h:h4[text()='See also']/following-sibling::h:div[@class='apitable']/h:ul/h:li/h:div/h:ul/h:li/h:a">
-								<reference>
-									<xsl:attribute name="ref">
-											<xsl:call-template name="substr_before_last"> 
-												<xsl:with-param name="str" select="@href" />
-												<xsl:with-param name="needle" select="'.'" />
-											</xsl:call-template>
-										</xsl:attribute>
+								<reference ref="{@href}">
 									<name>
 										<xsl:value-of select="." />
 									</name>
@@ -277,11 +255,14 @@
 		</file>
 	</xsl:template>
 
+
+
 	<xsl:template name="process_type_component">
 		<xsl:param name="component_type" />
 		<xsl:element name="{$component_type}">
 			<xsl:attribute name="ref">
-				<xsl:value-of select="concat($global_url_base, h:td[1]/h:a/@href)" />
+				<!-- <xsl:value-of select="concat($global_url_base, h:td[1]/h:a/@href)" /> -->
+				<xsl:value-of select="h:td[1]/h:a/@href" />
 			</xsl:attribute>
 			<name>
 				<xsl:value-of select="h:td[1]/h:a" />
@@ -292,13 +273,31 @@
 		</xsl:element>
 	</xsl:template>
 
+	<xsl:template match="h:*" mode="description_text" priority="100">
+		<xsl:choose>
+			<xsl:when test="self::text()">
+				<xsl:value-of select="." />
+			</xsl:when>
+			<xsl:when test="local-name() = 'a'">
+				<xsl:value-of select="concat('&lt;a href=&quot;', $global_url_base, @href, '&quot;&gt;', ., '&lt;/a&gt;')" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates mode="description_text" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 
 
-	<xsl:template match="/">
+
+	<xsl:template match="/" priority="1">
 		<descriptor>
 			<xsl:choose>
-				<xsl:when test="$sourcefile='api__toc__ui.html'">
+				<xsl:when test="$sourcefile = 'api__toc__ui.html'">
 					<xsl:call-template name="process_toc_page" />
+				</xsl:when>
+				<xsl:when test="$sourcefile = 'api__toc__ui_mixins.html'"></xsl:when>
+				<xsl:when test="$sourcefile = 'desktop__whats_new.html'">
+					<xsl:call-template name="process_version_page" />
 				</xsl:when>
 				<xsl:when test="starts-with($sourcefile, 'api__refs__ui.')">
 					<xsl:call-template name="process_type_page" />
@@ -306,9 +305,6 @@
 				<xsl:when
 					test="starts-with($sourcefile, 'api__link__ui.') or starts-with($sourcefile, 'api__ui.') or $sourcefile='datatable__frozen_columns.html'">
 					<xsl:call-template name="process_component_page" />
-				</xsl:when>
-				<xsl:when test="contains($sourcefile, 'whats_new')">
-					<xsl:call-template name="process_version_page" />
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:message terminate="yes">
@@ -318,30 +314,5 @@
 			</xsl:choose>
 		</descriptor>
 	</xsl:template>
-
-
-
-<!-- 
-	<xsl:template match="h:a" mode="type_annotation">
-		<xsl:text>&lt;a href=&quot;</xsl:text>
-		<xsl:call-template name="substr_before_last">
-			<xsl:with-param name="str" select="$infile.url" />
-			<xsl:with-param name="needle" select="'/'" />
-		</xsl:call-template>
-		<xsl:value-of select="concat('/', @href, '&quot;&gt;', ., '&lt;/a&gt;')" />
-	</xsl:template>
-
-	<xsl:template match="h:p">
-		<xsl:apply-templates mode="type_annotation" />
-	</xsl:template>
- -->
-	<!-- <xsl:for-each select="">
-		<xsl:variable name="filename" select="translate(., '.', '_')" />
-		<xsl:variable name="tmp" select="substring-after(., 'ui.')" />
-		<xsl:variable name="classname_local"
-			select="concat(translate(substring($tmp, 1, 1), $alpha_lower, $alpha_upper), substring($tmp, 2))" />
-	</xsl:for-each> -->
-
-	<!-- <xsl:variable name="subpackage" select="(../preceding-sibling::h:div[@class='h2'])[position()=last()]" /> -->
 
 </xsl:transform>

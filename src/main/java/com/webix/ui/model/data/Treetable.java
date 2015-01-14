@@ -9,6 +9,7 @@ package com.webix.ui.model.data;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -64,12 +65,14 @@ import com.webix.ui.model.layouts.Toolbar;
  * A control for presenting tree in a grid cell.The component is
  * used to integrate a tree into an editable grid. There is a
  * support for in-line node editing, drag-and-drop, filtering,
- * checkboxes etc. Check treetable documentation for more detailed
- * description.
+ * checkboxes etc. Check <a
+ * href="http://docs.webix.com/desktop__treetable.html">treetable</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_ADD, com.webix.ui.model.Event.ON_AFTER_CLOSE, com.webix.ui.model.Event.ON_AFTER_COLUMN_DROP, com.webix.ui.model.Event.ON_AFTER_COLUMN_DROP_ORDER, com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_DELETE, com.webix.ui.model.Event.ON_AFTER_DROP, com.webix.ui.model.Event.ON_AFTER_EDIT_START, com.webix.ui.model.Event.ON_AFTER_EDIT_STOP, com.webix.ui.model.Event.ON_AFTER_FILTER, com.webix.ui.model.Event.ON_AFTER_LOAD, com.webix.ui.model.Event.ON_AFTER_OPEN, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_AFTER_SELECT, com.webix.ui.model.Event.ON_AFTER_SORT, com.webix.ui.model.Event.ON_AFTER_UNSELECT, com.webix.ui.model.Event.ON_BEFORE_ADD, com.webix.ui.model.Event.ON_BEFORE_CLOSE, com.webix.ui.model.Event.ON_BEFORE_COLUMN_DRAG, com.webix.ui.model.Event.ON_BEFORE_COLUMN_DROP, com.webix.ui.model.Event.ON_BEFORE_COLUMN_DROP_ORDER, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BEFORE_DELETE, com.webix.ui.model.Event.ON_BEFORE_DRAG, com.webix.ui.model.Event.ON_BEFORE_DRAG_IN, com.webix.ui.model.Event.ON_BEFORE_DROP, com.webix.ui.model.Event.ON_BEFORE_DROP_OUT, com.webix.ui.model.Event.ON_BEFORE_EDIT_START, com.webix.ui.model.Event.ON_BEFORE_EDIT_STOP, com.webix.ui.model.Event.ON_BEFORE_FILTER, com.webix.ui.model.Event.ON_BEFORE_LOAD, com.webix.ui.model.Event.ON_BEFORE_OPEN, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BEFORE_SELECT, com.webix.ui.model.Event.ON_BEFORE_SORT, com.webix.ui.model.Event.ON_BEFORE_UN_SELECT, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_CHECK, com.webix.ui.model.Event.ON_COLUMN_RESIZE, com.webix.ui.model.Event.ON_DATA_REQUEST, com.webix.ui.model.Event.ON_DATA_UPDATE, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_DRAG_OUT, com.webix.ui.model.Event.ON_HEADER_CLICK, com.webix.ui.model.Event.ON_ITEM_CHECK, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_LIVE_EDIT, com.webix.ui.model.Event.ON_LOAD_ERROR, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_RESIZE, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_ROW_RESIZE, com.webix.ui.model.Event.ON_SCROLL_X, com.webix.ui.model.Event.ON_SCROLL_Y, com.webix.ui.model.Event.ON_SELECT_CHANGE, com.webix.ui.model.Event.ON_STRUCTURE_LOAD, com.webix.ui.model.Event.ON_STRUCTURE_UPDATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VALIDATION_ERROR, com.webix.ui.model.Event.ON_VALIDATION_SUCCESS, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Treetable
     implements java.io.Serializable
 {
@@ -81,427 +84,427 @@ public class Treetable
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Datatable adjust configuration to the data.
      */
-    private Byte autoConfig;
+    private Boolean autoConfig;
 
     /**
      * Adjusts DataTable to the parent container size vertically.
      */
-    private Byte autoheight;
+    private Boolean autoheight;
 
     /**
      * Adjusts DataTable to the parent container size horizontally.
      */
-    private Byte autowidth;
+    private Boolean autowidth;
 
     /**
      * Enables/disables block selection.
      */
-    private Byte blockselect;
+    private Boolean blockselect;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Controls behavior of checkbox editors in grid.
      */
-    private Byte checkboxRefresh;
+    private Boolean checkboxRefresh;
 
     /**
      * Enables/disables clipboard support.
      */
-    private Byte clipboard;
+    private UnknownType clipboard;
 
     /**
      * Defines the default width for columns (in pixels).
      */
-    private Byte columnWidth;
+    private Integer columnWidth;
 
     /**
-     * Configures columns of the table.
+     * Field columns.
      */
-    private Byte columns;
+    private java.util.List<UnknownType> columns;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * An inline dataset that data to the component will be load
      * from.
      */
-    private Byte data;
+    private UnknownType data;
 
     /**
      * The url to the data source that the component will use to
      * reload data from.
      */
-    private Byte dataFeed;
+    private UnknownType dataFeed;
 
     /**
      * Defines the start position DataTable will load data from.
      */
-    private Byte datafetch;
+    private Integer datafetch;
 
     /**
      * Sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      */
-    private Byte datathrottle;
+    private Integer datathrottle;
 
     /**
      * The type of loaded data.
      */
-    private Byte datatype;
+    private String datatype;
 
     /**
      * Sets CSV delimiters for clipboard operations.
      */
-    private Byte delimiter;
+    private UnknownType delimiter;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Enables or disables drag-and-drop.
      */
-    private Byte drag;
+    private UnknownType drag;
 
     /**
      * Enables drag-and-drop support for columns.
      */
-    private Byte dragColumn;
+    private UnknownType dragColumn;
 
     /**
      * Enables autoscroll of component during drag-n-drop.
      */
-    private Byte dragscroll;
+    private UnknownType dragscroll;
 
     /**
      * Enables formular editing.
      */
-    private Byte editMath;
+    private Boolean editMath;
 
     /**
      * Defines which data item is editable (in case of several data
      * item in the cell/line).
      */
-    private Byte editValue;
+    private String editValue;
 
     /**
      * Allows/denies editing in the view.
      */
-    private Byte editable;
+    private Boolean editable;
 
     /**
      * Defines the action on which editors will be opened.
      */
-    private Byte editaction;
+    private String editaction;
 
     /**
      * Allows defining custom 'move' logic for the component.
      */
-    private Byte externalData;
+    private UnknownType externalData;
 
     /**
      * Defines filtering rules in tree-like components.
      */
-    private Byte filterMode;
+    private UnknownType filterMode;
 
     /**
      * Defines whether the height should be fixed for all rows or
      * can vary.
      */
-    private Byte fixedRowHeight;
+    private Boolean fixedRowHeight;
 
     /**
      * Enables/disables the footer in DataTable (disabled, by
      * default).
      */
-    private Byte footer;
+    private Boolean footer;
 
     /**
      * Linked form.
      */
-    private Byte form;
+    private String form;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Enables/disables the header in DataTable (enabled, by
      * default).
      */
-    private Byte header;
+    private Boolean header;
 
     /**
      * Sets the heigth of the header row.
      */
-    private Byte headerRowHeight;
+    private Integer headerRowHeight;
 
     /**
      * Adds a headermenu to control column visibility.
      */
-    private Byte headermenu;
+    private UnknownType headermenu;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * The number of the fixed columns from the left side of the
      * table (actual for the split mode ).
      */
-    private Byte leftSplit;
+    private Integer leftSplit;
 
     /**
      * Validation during cell editing.
      */
-    private Byte liveValidation;
+    private Boolean liveValidation;
 
     /**
      * Sets the number of items that will be loaded on each scroll
      * movement relative to the last item in the scrolling direction
      */
-    private Byte loadahead;
+    private Integer loadahead;
 
     /**
      * Enables math formulas in DataTable.
      */
-    private Byte math;
+    private Boolean math;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimum height for a row.
      */
-    private Byte minColumnHeight;
+    private Integer minColumnHeight;
 
     /**
      * Sets the minimum width for a column.
      */
-    private Byte minColumnWidth;
+    private Integer minColumnWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Enables the multi selection mode.
      */
-    private Byte multiselect;
+    private Boolean multiselect;
 
     /**
      * Activates the selection keyboard navigation.
      */
-    private Byte navigation;
+    private Boolean navigation;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Defines paging configuration ( creates a 'ui.pager' object).
      */
-    private Byte pager;
+    private UnknownType pager;
 
     /**
      * Invokes the full rendering of DataTable data.
      */
-    private Byte prerender;
+    private Boolean prerender;
 
     /**
      * A handler that is called just after the page has been
      * completely parsed.
      */
-    private Byte ready;
+    private UnknownType ready;
 
     /**
      * Defines how to treat items in case of reloading.
      */
-    private Byte removeMissed;
+    private Boolean removeMissed;
 
     /**
      * Enables/disables horizontal resizing of columns.
      */
-    private Byte resizeColumn;
+    private Boolean resizeColumn;
 
     /**
      * Enables/disables vertical resizing of rows.
      */
-    private Byte resizeRow;
+    private Boolean resizeRow;
 
     /**
      * Sets the number of the fixed columns from the right side of
      * the table (actual for the split mode ).
      */
-    private Byte rightSplit;
+    private Integer rightSplit;
 
     /**
      * Sets the default height for rows.
      */
-    private Byte rowHeight;
+    private Integer rowHeight;
 
     /**
      * Default line height for grid's row.
      */
-    private Byte rowLineHeight;
+    private UnknownType rowLineHeight;
 
     /**
      * Set of validation rules for the component.
      */
-    private Byte rules;
+    private UnknownType rules;
 
     /**
      * Defines urls for datasaving.
      */
-    private Byte save;
+    private String save;
 
     /**
      * Defines schemes for data processing.
      */
-    private Byte scheme;
+    private UnknownType scheme;
 
     /**
      * Enables or disables scroll for the datatable.
      */
-    private Byte scroll;
+    private Boolean scroll;
 
     /**
      * Enables/disables scrolling the table just by whole rows
      * (i.e. you won't be allowed to scroll along the full length
      * of rows).
      */
-    private Byte scrollAlignY;
+    private Boolean scrollAlignY;
 
     /**
      * Enables/disables horizontal scrolling.
      */
-    private Byte scrollX;
+    private Boolean scrollX;
 
     /**
      * Enables/disables vertical scrolling.
      */
-    private Byte scrollY;
+    private Boolean scrollY;
 
     /**
      * Sets the selection mode in DataTable.
      */
-    private Byte select;
+    private UnknownType select;
 
     /**
-     * Array of span configurations for the datatable.
+     * Field spans.
      */
-    private Byte spans;
+    private java.util.List<UnknownType> spans;
 
     /**
      * Defines three-state checkboxes for the tree. Flase by default
      */
-    private Byte threeState;
+    private Boolean threeState;
 
     /**
      * Sets a popup message appearing on pointing a mouse cursor
      * over the dedicated item.
      */
-    private Byte tooltip;
+    private UnknownType tooltip;
 
     /**
      * Used for configuring presentation of items.
      */
-    private Byte type;
+    private UnknownType type;
 
     /**
      * The url of a data feed which will be loaded after component
      * initialization.
      */
-    private Byte url;
+    private String url;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
     /**
      * Defines height of datatable in rows.
      */
-    private Byte yCount;
+    private UnknownType yCount;
 
 
       //-----------/
@@ -509,854 +512,904 @@ public class Treetable
     //-----------/
 
     /**
+     * Method addColumn.
+     * 
+     * @param unknownType
+     */
+    public void addColumn( UnknownType unknownType )
+    {
+        getColumns().add( unknownType );
+    } //-- void addColumn( UnknownType )
+
+    /**
+     * Method addSpan.
+     * 
+     * @param unknownType
+     */
+    public void addSpan( UnknownType unknownType )
+    {
+        getSpans().add( unknownType );
+    } //-- void addSpan( UnknownType )
+
+    /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
-
-    /**
-     * Get datatable adjust configuration to the data.
-     * 
-     * @return Byte
-     */
-    public Byte getAutoConfig()
-    {
-        return this.autoConfig;
-    } //-- Byte getAutoConfig()
-
-    /**
-     * Get adjusts DataTable to the parent container size
-     * vertically.
-     * 
-     * @return Byte
-     */
-    public Byte getAutoheight()
-    {
-        return this.autoheight;
-    } //-- Byte getAutoheight()
-
-    /**
-     * Get adjusts DataTable to the parent container size
-     * horizontally.
-     * 
-     * @return Byte
-     */
-    public Byte getAutowidth()
-    {
-        return this.autowidth;
-    } //-- Byte getAutowidth()
-
-    /**
-     * Get enables/disables block selection.
-     * 
-     * @return Byte
-     */
-    public Byte getBlockselect()
-    {
-        return this.blockselect;
-    } //-- Byte getBlockselect()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
-
-    /**
-     * Get controls behavior of checkbox editors in grid.
-     * 
-     * @return Byte
-     */
-    public Byte getCheckboxRefresh()
-    {
-        return this.checkboxRefresh;
-    } //-- Byte getCheckboxRefresh()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get enables/disables clipboard support.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getClipboard()
+    public UnknownType getClipboard()
     {
         return this.clipboard;
-    } //-- Byte getClipboard()
+    } //-- UnknownType getClipboard()
 
     /**
      * Get defines the default width for columns (in pixels).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getColumnWidth()
+    public Integer getColumnWidth()
     {
         return this.columnWidth;
-    } //-- Byte getColumnWidth()
+    } //-- Integer getColumnWidth()
 
     /**
-     * Get configures columns of the table.
+     * Method getColumns.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getColumns()
+    public java.util.List<UnknownType> getColumns()
     {
+        if ( this.columns == null )
+        {
+            this.columns = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.columns;
-    } //-- Byte getColumns()
+    } //-- java.util.List<UnknownType> getColumns()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get an inline dataset that data to the component will be
      * load from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getData()
+    public UnknownType getData()
     {
         return this.data;
-    } //-- Byte getData()
+    } //-- UnknownType getData()
 
     /**
      * Get the url to the data source that the component will use
      * to reload data from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDataFeed()
+    public UnknownType getDataFeed()
     {
         return this.dataFeed;
-    } //-- Byte getDataFeed()
+    } //-- UnknownType getDataFeed()
 
     /**
      * Get defines the start position DataTable will load data
      * from.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getDatafetch()
+    public Integer getDatafetch()
     {
         return this.datafetch;
-    } //-- Byte getDatafetch()
+    } //-- Integer getDatafetch()
 
     /**
      * Get sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getDatathrottle()
+    public Integer getDatathrottle()
     {
         return this.datathrottle;
-    } //-- Byte getDatathrottle()
+    } //-- Integer getDatathrottle()
 
     /**
      * Get the type of loaded data.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getDatatype()
+    public String getDatatype()
     {
         return this.datatype;
-    } //-- Byte getDatatype()
+    } //-- String getDatatype()
 
     /**
      * Get sets CSV delimiters for clipboard operations.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDelimiter()
+    public UnknownType getDelimiter()
     {
         return this.delimiter;
-    } //-- Byte getDelimiter()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- UnknownType getDelimiter()
 
     /**
      * Get enables or disables drag-and-drop.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDrag()
+    public UnknownType getDrag()
     {
         return this.drag;
-    } //-- Byte getDrag()
+    } //-- UnknownType getDrag()
 
     /**
      * Get enables drag-and-drop support for columns.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDragColumn()
+    public UnknownType getDragColumn()
     {
         return this.dragColumn;
-    } //-- Byte getDragColumn()
+    } //-- UnknownType getDragColumn()
 
     /**
      * Get enables autoscroll of component during drag-n-drop.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDragscroll()
+    public UnknownType getDragscroll()
     {
         return this.dragscroll;
-    } //-- Byte getDragscroll()
-
-    /**
-     * Get enables formular editing.
-     * 
-     * @return Byte
-     */
-    public Byte getEditMath()
-    {
-        return this.editMath;
-    } //-- Byte getEditMath()
+    } //-- UnknownType getDragscroll()
 
     /**
      * Get defines which data item is editable (in case of several
      * data item in the cell/line).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getEditValue()
+    public String getEditValue()
     {
         return this.editValue;
-    } //-- Byte getEditValue()
-
-    /**
-     * Get allows/denies editing in the view.
-     * 
-     * @return Byte
-     */
-    public Byte getEditable()
-    {
-        return this.editable;
-    } //-- Byte getEditable()
+    } //-- String getEditValue()
 
     /**
      * Get defines the action on which editors will be opened.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getEditaction()
+    public String getEditaction()
     {
         return this.editaction;
-    } //-- Byte getEditaction()
+    } //-- String getEditaction()
 
     /**
      * Get allows defining custom 'move' logic for the component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getExternalData()
+    public UnknownType getExternalData()
     {
         return this.externalData;
-    } //-- Byte getExternalData()
+    } //-- UnknownType getExternalData()
 
     /**
      * Get defines filtering rules in tree-like components.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getFilterMode()
+    public UnknownType getFilterMode()
     {
         return this.filterMode;
-    } //-- Byte getFilterMode()
-
-    /**
-     * Get defines whether the height should be fixed for all rows
-     * or can vary.
-     * 
-     * @return Byte
-     */
-    public Byte getFixedRowHeight()
-    {
-        return this.fixedRowHeight;
-    } //-- Byte getFixedRowHeight()
-
-    /**
-     * Get enables/disables the footer in DataTable (disabled, by
-     * default).
-     * 
-     * @return Byte
-     */
-    public Byte getFooter()
-    {
-        return this.footer;
-    } //-- Byte getFooter()
+    } //-- UnknownType getFilterMode()
 
     /**
      * Get linked form.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getForm()
+    public String getForm()
     {
         return this.form;
-    } //-- Byte getForm()
+    } //-- String getForm()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
-
-    /**
-     * Get enables/disables the header in DataTable (enabled, by
-     * default).
-     * 
-     * @return Byte
-     */
-    public Byte getHeader()
-    {
-        return this.header;
-    } //-- Byte getHeader()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the heigth of the header row.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeaderRowHeight()
+    public Integer getHeaderRowHeight()
     {
         return this.headerRowHeight;
-    } //-- Byte getHeaderRowHeight()
+    } //-- Integer getHeaderRowHeight()
 
     /**
      * Get adds a headermenu to control column visibility.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getHeadermenu()
+    public UnknownType getHeadermenu()
     {
         return this.headermenu;
-    } //-- Byte getHeadermenu()
+    } //-- UnknownType getHeadermenu()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get the number of the fixed columns from the left side of
      * the table (actual for the split mode ).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLeftSplit()
+    public Integer getLeftSplit()
     {
         return this.leftSplit;
-    } //-- Byte getLeftSplit()
-
-    /**
-     * Get validation during cell editing.
-     * 
-     * @return Byte
-     */
-    public Byte getLiveValidation()
-    {
-        return this.liveValidation;
-    } //-- Byte getLiveValidation()
+    } //-- Integer getLeftSplit()
 
     /**
      * Get sets the number of items that will be loaded on each
      * scroll movement relative to the last item in the scrolling
      * direction.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLoadahead()
+    public Integer getLoadahead()
     {
         return this.loadahead;
-    } //-- Byte getLoadahead()
-
-    /**
-     * Get enables math formulas in DataTable.
-     * 
-     * @return Byte
-     */
-    public Byte getMath()
-    {
-        return this.math;
-    } //-- Byte getMath()
+    } //-- Integer getLoadahead()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimum height for a row.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinColumnHeight()
+    public Integer getMinColumnHeight()
     {
         return this.minColumnHeight;
-    } //-- Byte getMinColumnHeight()
+    } //-- Integer getMinColumnHeight()
 
     /**
      * Get sets the minimum width for a column.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinColumnWidth()
+    public Integer getMinColumnWidth()
     {
         return this.minColumnWidth;
-    } //-- Byte getMinColumnWidth()
+    } //-- Integer getMinColumnWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
-
-    /**
-     * Get enables the multi selection mode.
-     * 
-     * @return Byte
-     */
-    public Byte getMultiselect()
-    {
-        return this.multiselect;
-    } //-- Byte getMultiselect()
-
-    /**
-     * Get activates the selection keyboard navigation.
-     * 
-     * @return Byte
-     */
-    public Byte getNavigation()
-    {
-        return this.navigation;
-    } //-- Byte getNavigation()
+    } //-- Integer getMouseEventDelay()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get a property used to define custom context-click (right
      * click) handlers for elements in the DataTable cells.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnContext()
+    public UnknownType getOnContext()
     {
         return this.onContext;
-    } //-- Byte getOnContext()
+    } //-- UnknownType getOnContext()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnDblClick()
+    public UnknownType getOnDblClick()
     {
         return this.onDblClick;
-    } //-- Byte getOnDblClick()
+    } //-- UnknownType getOnDblClick()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnMouseMove()
+    public UnknownType getOnMouseMove()
     {
         return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
+    } //-- UnknownType getOnMouseMove()
 
     /**
      * Get defines paging configuration ( creates a 'ui.pager'
      * object).
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getPager()
+    public UnknownType getPager()
     {
         return this.pager;
-    } //-- Byte getPager()
-
-    /**
-     * Get invokes the full rendering of DataTable data.
-     * 
-     * @return Byte
-     */
-    public Byte getPrerender()
-    {
-        return this.prerender;
-    } //-- Byte getPrerender()
+    } //-- UnknownType getPager()
 
     /**
      * Get a handler that is called just after the page has been
      * completely parsed.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getReady()
+    public UnknownType getReady()
     {
         return this.ready;
-    } //-- Byte getReady()
-
-    /**
-     * Get defines how to treat items in case of reloading.
-     * 
-     * @return Byte
-     */
-    public Byte getRemoveMissed()
-    {
-        return this.removeMissed;
-    } //-- Byte getRemoveMissed()
-
-    /**
-     * Get enables/disables horizontal resizing of columns.
-     * 
-     * @return Byte
-     */
-    public Byte getResizeColumn()
-    {
-        return this.resizeColumn;
-    } //-- Byte getResizeColumn()
-
-    /**
-     * Get enables/disables vertical resizing of rows.
-     * 
-     * @return Byte
-     */
-    public Byte getResizeRow()
-    {
-        return this.resizeRow;
-    } //-- Byte getResizeRow()
+    } //-- UnknownType getReady()
 
     /**
      * Get sets the number of the fixed columns from the right side
      * of the table (actual for the split mode ).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getRightSplit()
+    public Integer getRightSplit()
     {
         return this.rightSplit;
-    } //-- Byte getRightSplit()
+    } //-- Integer getRightSplit()
 
     /**
      * Get sets the default height for rows.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getRowHeight()
+    public Integer getRowHeight()
     {
         return this.rowHeight;
-    } //-- Byte getRowHeight()
+    } //-- Integer getRowHeight()
 
     /**
      * Get default line height for grid's row.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getRowLineHeight()
+    public UnknownType getRowLineHeight()
     {
         return this.rowLineHeight;
-    } //-- Byte getRowLineHeight()
+    } //-- UnknownType getRowLineHeight()
 
     /**
      * Get set of validation rules for the component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getRules()
+    public UnknownType getRules()
     {
         return this.rules;
-    } //-- Byte getRules()
+    } //-- UnknownType getRules()
 
     /**
      * Get defines urls for datasaving.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getSave()
+    public String getSave()
     {
         return this.save;
-    } //-- Byte getSave()
+    } //-- String getSave()
 
     /**
      * Get defines schemes for data processing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getScheme()
+    public UnknownType getScheme()
     {
         return this.scheme;
-    } //-- Byte getScheme()
+    } //-- UnknownType getScheme()
+
+    /**
+     * Get sets the selection mode in DataTable.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getSelect()
+    {
+        return this.select;
+    } //-- UnknownType getSelect()
+
+    /**
+     * Method getSpans.
+     * 
+     * @return List
+     */
+    public java.util.List<UnknownType> getSpans()
+    {
+        if ( this.spans == null )
+        {
+            this.spans = new java.util.ArrayList<UnknownType>();
+        }
+
+        return this.spans;
+    } //-- java.util.List<UnknownType> getSpans()
+
+    /**
+     * Get sets a popup message appearing on pointing a mouse
+     * cursor over the dedicated item.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getTooltip()
+    {
+        return this.tooltip;
+    } //-- UnknownType getTooltip()
+
+    /**
+     * Get used for configuring presentation of items.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getType()
+    {
+        return this.type;
+    } //-- UnknownType getType()
+
+    /**
+     * Get the url of a data feed which will be loaded after
+     * component initialization.
+     * 
+     * @return String
+     */
+    public String getUrl()
+    {
+        return this.url;
+    } //-- String getUrl()
+
+    /**
+     * Get sets the width of the component.
+     * 
+     * @return Integer
+     */
+    public Integer getWidth()
+    {
+        return this.width;
+    } //-- Integer getWidth()
+
+    /**
+     * Get defines height of datatable in rows.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getYCount()
+    {
+        return this.yCount;
+    } //-- UnknownType getYCount()
+
+    /**
+     * Get datatable adjust configuration to the data.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutoConfig()
+    {
+        return this.autoConfig;
+    } //-- Boolean isAutoConfig()
+
+    /**
+     * Get adjusts DataTable to the parent container size
+     * vertically.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutoheight()
+    {
+        return this.autoheight;
+    } //-- Boolean isAutoheight()
+
+    /**
+     * Get adjusts DataTable to the parent container size
+     * horizontally.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutowidth()
+    {
+        return this.autowidth;
+    } //-- Boolean isAutowidth()
+
+    /**
+     * Get enables/disables block selection.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBlockselect()
+    {
+        return this.blockselect;
+    } //-- Boolean isBlockselect()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get controls behavior of checkbox editors in grid.
+     * 
+     * @return Boolean
+     */
+    public Boolean isCheckboxRefresh()
+    {
+        return this.checkboxRefresh;
+    } //-- Boolean isCheckboxRefresh()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get enables formular editing.
+     * 
+     * @return Boolean
+     */
+    public Boolean isEditMath()
+    {
+        return this.editMath;
+    } //-- Boolean isEditMath()
+
+    /**
+     * Get allows/denies editing in the view.
+     * 
+     * @return Boolean
+     */
+    public Boolean isEditable()
+    {
+        return this.editable;
+    } //-- Boolean isEditable()
+
+    /**
+     * Get defines whether the height should be fixed for all rows
+     * or can vary.
+     * 
+     * @return Boolean
+     */
+    public Boolean isFixedRowHeight()
+    {
+        return this.fixedRowHeight;
+    } //-- Boolean isFixedRowHeight()
+
+    /**
+     * Get enables/disables the footer in DataTable (disabled, by
+     * default).
+     * 
+     * @return Boolean
+     */
+    public Boolean isFooter()
+    {
+        return this.footer;
+    } //-- Boolean isFooter()
+
+    /**
+     * Get enables/disables the header in DataTable (enabled, by
+     * default).
+     * 
+     * @return Boolean
+     */
+    public Boolean isHeader()
+    {
+        return this.header;
+    } //-- Boolean isHeader()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Get validation during cell editing.
+     * 
+     * @return Boolean
+     */
+    public Boolean isLiveValidation()
+    {
+        return this.liveValidation;
+    } //-- Boolean isLiveValidation()
+
+    /**
+     * Get enables math formulas in DataTable.
+     * 
+     * @return Boolean
+     */
+    public Boolean isMath()
+    {
+        return this.math;
+    } //-- Boolean isMath()
+
+    /**
+     * Get enables the multi selection mode.
+     * 
+     * @return Boolean
+     */
+    public Boolean isMultiselect()
+    {
+        return this.multiselect;
+    } //-- Boolean isMultiselect()
+
+    /**
+     * Get activates the selection keyboard navigation.
+     * 
+     * @return Boolean
+     */
+    public Boolean isNavigation()
+    {
+        return this.navigation;
+    } //-- Boolean isNavigation()
+
+    /**
+     * Get invokes the full rendering of DataTable data.
+     * 
+     * @return Boolean
+     */
+    public Boolean isPrerender()
+    {
+        return this.prerender;
+    } //-- Boolean isPrerender()
+
+    /**
+     * Get defines how to treat items in case of reloading.
+     * 
+     * @return Boolean
+     */
+    public Boolean isRemoveMissed()
+    {
+        return this.removeMissed;
+    } //-- Boolean isRemoveMissed()
+
+    /**
+     * Get enables/disables horizontal resizing of columns.
+     * 
+     * @return Boolean
+     */
+    public Boolean isResizeColumn()
+    {
+        return this.resizeColumn;
+    } //-- Boolean isResizeColumn()
+
+    /**
+     * Get enables/disables vertical resizing of rows.
+     * 
+     * @return Boolean
+     */
+    public Boolean isResizeRow()
+    {
+        return this.resizeRow;
+    } //-- Boolean isResizeRow()
 
     /**
      * Get enables or disables scroll for the datatable.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getScroll()
+    public Boolean isScroll()
     {
         return this.scroll;
-    } //-- Byte getScroll()
+    } //-- Boolean isScroll()
 
     /**
      * Get enables/disables scrolling the table just by whole rows
      * (i.e. you won't be allowed to scroll along the full length
      * of rows).
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getScrollAlignY()
+    public Boolean isScrollAlignY()
     {
         return this.scrollAlignY;
-    } //-- Byte getScrollAlignY()
+    } //-- Boolean isScrollAlignY()
 
     /**
      * Get enables/disables horizontal scrolling.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getScrollX()
+    public Boolean isScrollX()
     {
         return this.scrollX;
-    } //-- Byte getScrollX()
+    } //-- Boolean isScrollX()
 
     /**
      * Get enables/disables vertical scrolling.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getScrollY()
+    public Boolean isScrollY()
     {
         return this.scrollY;
-    } //-- Byte getScrollY()
-
-    /**
-     * Get sets the selection mode in DataTable.
-     * 
-     * @return Byte
-     */
-    public Byte getSelect()
-    {
-        return this.select;
-    } //-- Byte getSelect()
-
-    /**
-     * Get array of span configurations for the datatable.
-     * 
-     * @return Byte
-     */
-    public Byte getSpans()
-    {
-        return this.spans;
-    } //-- Byte getSpans()
+    } //-- Boolean isScrollY()
 
     /**
      * Get defines three-state checkboxes for the tree. Flase by
      * default.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getThreeState()
+    public Boolean isThreeState()
     {
         return this.threeState;
-    } //-- Byte getThreeState()
+    } //-- Boolean isThreeState()
 
     /**
-     * Get sets a popup message appearing on pointing a mouse
-     * cursor over the dedicated item.
+     * Method removeColumn.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getTooltip()
+    public void removeColumn( UnknownType unknownType )
     {
-        return this.tooltip;
-    } //-- Byte getTooltip()
+        getColumns().remove( unknownType );
+    } //-- void removeColumn( UnknownType )
 
     /**
-     * Get used for configuring presentation of items.
+     * Method removeSpan.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getType()
+    public void removeSpan( UnknownType unknownType )
     {
-        return this.type;
-    } //-- Byte getType()
-
-    /**
-     * Get the url of a data feed which will be loaded after
-     * component initialization.
-     * 
-     * @return Byte
-     */
-    public Byte getUrl()
-    {
-        return this.url;
-    } //-- Byte getUrl()
-
-    /**
-     * Get sets the width of the component.
-     * 
-     * @return Byte
-     */
-    public Byte getWidth()
-    {
-        return this.width;
-    } //-- Byte getWidth()
-
-    /**
-     * Get defines height of datatable in rows.
-     * 
-     * @return Byte
-     */
-    public Byte getYCount()
-    {
-        return this.yCount;
-    } //-- Byte getYCount()
+        getSpans().remove( unknownType );
+    } //-- void removeSpan( UnknownType )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set datatable adjust configuration to the data.
      * 
      * @param autoConfig
      */
-    public void setAutoConfig( Byte autoConfig )
+    public void setAutoConfig( Boolean autoConfig )
     {
         this.autoConfig = autoConfig;
-    } //-- void setAutoConfig( Byte )
+    } //-- void setAutoConfig( Boolean )
 
     /**
      * Set adjusts DataTable to the parent container size
@@ -1364,10 +1417,10 @@ public class Treetable
      * 
      * @param autoheight
      */
-    public void setAutoheight( Byte autoheight )
+    public void setAutoheight( Boolean autoheight )
     {
         this.autoheight = autoheight;
-    } //-- void setAutoheight( Byte )
+    } //-- void setAutoheight( Boolean )
 
     /**
      * Set adjusts DataTable to the parent container size
@@ -1375,70 +1428,70 @@ public class Treetable
      * 
      * @param autowidth
      */
-    public void setAutowidth( Byte autowidth )
+    public void setAutowidth( Boolean autowidth )
     {
         this.autowidth = autowidth;
-    } //-- void setAutowidth( Byte )
+    } //-- void setAutowidth( Boolean )
 
     /**
      * Set enables/disables block selection.
      * 
      * @param blockselect
      */
-    public void setBlockselect( Byte blockselect )
+    public void setBlockselect( Boolean blockselect )
     {
         this.blockselect = blockselect;
-    } //-- void setBlockselect( Byte )
+    } //-- void setBlockselect( Boolean )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set controls behavior of checkbox editors in grid.
      * 
      * @param checkboxRefresh
      */
-    public void setCheckboxRefresh( Byte checkboxRefresh )
+    public void setCheckboxRefresh( Boolean checkboxRefresh )
     {
         this.checkboxRefresh = checkboxRefresh;
-    } //-- void setCheckboxRefresh( Byte )
+    } //-- void setCheckboxRefresh( Boolean )
 
     /**
      * Set enables/disables clipboard support.
      * 
      * @param clipboard
      */
-    public void setClipboard( Byte clipboard )
+    public void setClipboard( UnknownType clipboard )
     {
         this.clipboard = clipboard;
-    } //-- void setClipboard( Byte )
+    } //-- void setClipboard( UnknownType )
 
     /**
      * Set defines the default width for columns (in pixels).
      * 
      * @param columnWidth
      */
-    public void setColumnWidth( Byte columnWidth )
+    public void setColumnWidth( Integer columnWidth )
     {
         this.columnWidth = columnWidth;
-    } //-- void setColumnWidth( Byte )
+    } //-- void setColumnWidth( Integer )
 
     /**
      * Set configures columns of the table.
      * 
      * @param columns
      */
-    public void setColumns( Byte columns )
+    public void setColumns( java.util.List<UnknownType> columns )
     {
         this.columns = columns;
-    } //-- void setColumns( Byte )
+    } //-- void setColumns( java.util.List )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -1446,10 +1499,10 @@ public class Treetable
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -1457,10 +1510,10 @@ public class Treetable
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set an inline dataset that data to the component will be
@@ -1468,10 +1521,10 @@ public class Treetable
      * 
      * @param data
      */
-    public void setData( Byte data )
+    public void setData( UnknownType data )
     {
         this.data = data;
-    } //-- void setData( Byte )
+    } //-- void setData( UnknownType )
 
     /**
      * Set the url to the data source that the component will use
@@ -1479,10 +1532,10 @@ public class Treetable
      * 
      * @param dataFeed
      */
-    public void setDataFeed( Byte dataFeed )
+    public void setDataFeed( UnknownType dataFeed )
     {
         this.dataFeed = dataFeed;
-    } //-- void setDataFeed( Byte )
+    } //-- void setDataFeed( UnknownType )
 
     /**
      * Set defines the start position DataTable will load data
@@ -1490,10 +1543,10 @@ public class Treetable
      * 
      * @param datafetch
      */
-    public void setDatafetch( Byte datafetch )
+    public void setDatafetch( Integer datafetch )
     {
         this.datafetch = datafetch;
-    } //-- void setDatafetch( Byte )
+    } //-- void setDatafetch( Integer )
 
     /**
      * Set sets the polling interval (the time period between the
@@ -1502,80 +1555,80 @@ public class Treetable
      * 
      * @param datathrottle
      */
-    public void setDatathrottle( Byte datathrottle )
+    public void setDatathrottle( Integer datathrottle )
     {
         this.datathrottle = datathrottle;
-    } //-- void setDatathrottle( Byte )
+    } //-- void setDatathrottle( Integer )
 
     /**
      * Set the type of loaded data.
      * 
      * @param datatype
      */
-    public void setDatatype( Byte datatype )
+    public void setDatatype( String datatype )
     {
         this.datatype = datatype;
-    } //-- void setDatatype( Byte )
+    } //-- void setDatatype( String )
 
     /**
      * Set sets CSV delimiters for clipboard operations.
      * 
      * @param delimiter
      */
-    public void setDelimiter( Byte delimiter )
+    public void setDelimiter( UnknownType delimiter )
     {
         this.delimiter = delimiter;
-    } //-- void setDelimiter( Byte )
+    } //-- void setDelimiter( UnknownType )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set enables or disables drag-and-drop.
      * 
      * @param drag
      */
-    public void setDrag( Byte drag )
+    public void setDrag( UnknownType drag )
     {
         this.drag = drag;
-    } //-- void setDrag( Byte )
+    } //-- void setDrag( UnknownType )
 
     /**
      * Set enables drag-and-drop support for columns.
      * 
      * @param dragColumn
      */
-    public void setDragColumn( Byte dragColumn )
+    public void setDragColumn( UnknownType dragColumn )
     {
         this.dragColumn = dragColumn;
-    } //-- void setDragColumn( Byte )
+    } //-- void setDragColumn( UnknownType )
 
     /**
      * Set enables autoscroll of component during drag-n-drop.
      * 
      * @param dragscroll
      */
-    public void setDragscroll( Byte dragscroll )
+    public void setDragscroll( UnknownType dragscroll )
     {
         this.dragscroll = dragscroll;
-    } //-- void setDragscroll( Byte )
+    } //-- void setDragscroll( UnknownType )
 
     /**
      * Set enables formular editing.
      * 
      * @param editMath
      */
-    public void setEditMath( Byte editMath )
+    public void setEditMath( Boolean editMath )
     {
         this.editMath = editMath;
-    } //-- void setEditMath( Byte )
+    } //-- void setEditMath( Boolean )
 
     /**
      * Set defines which data item is editable (in case of several
@@ -1583,50 +1636,50 @@ public class Treetable
      * 
      * @param editValue
      */
-    public void setEditValue( Byte editValue )
+    public void setEditValue( String editValue )
     {
         this.editValue = editValue;
-    } //-- void setEditValue( Byte )
+    } //-- void setEditValue( String )
 
     /**
      * Set allows/denies editing in the view.
      * 
      * @param editable
      */
-    public void setEditable( Byte editable )
+    public void setEditable( Boolean editable )
     {
         this.editable = editable;
-    } //-- void setEditable( Byte )
+    } //-- void setEditable( Boolean )
 
     /**
      * Set defines the action on which editors will be opened.
      * 
      * @param editaction
      */
-    public void setEditaction( Byte editaction )
+    public void setEditaction( String editaction )
     {
         this.editaction = editaction;
-    } //-- void setEditaction( Byte )
+    } //-- void setEditaction( String )
 
     /**
      * Set allows defining custom 'move' logic for the component.
      * 
      * @param externalData
      */
-    public void setExternalData( Byte externalData )
+    public void setExternalData( UnknownType externalData )
     {
         this.externalData = externalData;
-    } //-- void setExternalData( Byte )
+    } //-- void setExternalData( UnknownType )
 
     /**
      * Set defines filtering rules in tree-like components.
      * 
      * @param filterMode
      */
-    public void setFilterMode( Byte filterMode )
+    public void setFilterMode( UnknownType filterMode )
     {
         this.filterMode = filterMode;
-    } //-- void setFilterMode( Byte )
+    } //-- void setFilterMode( UnknownType )
 
     /**
      * Set defines whether the height should be fixed for all rows
@@ -1634,10 +1687,10 @@ public class Treetable
      * 
      * @param fixedRowHeight
      */
-    public void setFixedRowHeight( Byte fixedRowHeight )
+    public void setFixedRowHeight( Boolean fixedRowHeight )
     {
         this.fixedRowHeight = fixedRowHeight;
-    } //-- void setFixedRowHeight( Byte )
+    } //-- void setFixedRowHeight( Boolean )
 
     /**
      * Set enables/disables the footer in DataTable (disabled, by
@@ -1645,30 +1698,30 @@ public class Treetable
      * 
      * @param footer
      */
-    public void setFooter( Byte footer )
+    public void setFooter( Boolean footer )
     {
         this.footer = footer;
-    } //-- void setFooter( Byte )
+    } //-- void setFooter( Boolean )
 
     /**
      * Set linked form.
      * 
      * @param form
      */
-    public void setForm( Byte form )
+    public void setForm( String form )
     {
         this.form = form;
-    } //-- void setForm( Byte )
+    } //-- void setForm( String )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set enables/disables the header in DataTable (enabled, by
@@ -1676,60 +1729,60 @@ public class Treetable
      * 
      * @param header
      */
-    public void setHeader( Byte header )
+    public void setHeader( Boolean header )
     {
         this.header = header;
-    } //-- void setHeader( Byte )
+    } //-- void setHeader( Boolean )
 
     /**
      * Set sets the heigth of the header row.
      * 
      * @param headerRowHeight
      */
-    public void setHeaderRowHeight( Byte headerRowHeight )
+    public void setHeaderRowHeight( Integer headerRowHeight )
     {
         this.headerRowHeight = headerRowHeight;
-    } //-- void setHeaderRowHeight( Byte )
+    } //-- void setHeaderRowHeight( Integer )
 
     /**
      * Set adds a headermenu to control column visibility.
      * 
      * @param headermenu
      */
-    public void setHeadermenu( Byte headermenu )
+    public void setHeadermenu( UnknownType headermenu )
     {
         this.headermenu = headermenu;
-    } //-- void setHeadermenu( Byte )
+    } //-- void setHeadermenu( UnknownType )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set the number of the fixed columns from the left side of
@@ -1737,20 +1790,20 @@ public class Treetable
      * 
      * @param leftSplit
      */
-    public void setLeftSplit( Byte leftSplit )
+    public void setLeftSplit( Integer leftSplit )
     {
         this.leftSplit = leftSplit;
-    } //-- void setLeftSplit( Byte )
+    } //-- void setLeftSplit( Integer )
 
     /**
      * Set validation during cell editing.
      * 
      * @param liveValidation
      */
-    public void setLiveValidation( Byte liveValidation )
+    public void setLiveValidation( Boolean liveValidation )
     {
         this.liveValidation = liveValidation;
-    } //-- void setLiveValidation( Byte )
+    } //-- void setLiveValidation( Boolean )
 
     /**
      * Set sets the number of items that will be loaded on each
@@ -1759,80 +1812,80 @@ public class Treetable
      * 
      * @param loadahead
      */
-    public void setLoadahead( Byte loadahead )
+    public void setLoadahead( Integer loadahead )
     {
         this.loadahead = loadahead;
-    } //-- void setLoadahead( Byte )
+    } //-- void setLoadahead( Integer )
 
     /**
      * Set enables math formulas in DataTable.
      * 
      * @param math
      */
-    public void setMath( Byte math )
+    public void setMath( Boolean math )
     {
         this.math = math;
-    } //-- void setMath( Byte )
+    } //-- void setMath( Boolean )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimum height for a row.
      * 
      * @param minColumnHeight
      */
-    public void setMinColumnHeight( Byte minColumnHeight )
+    public void setMinColumnHeight( Integer minColumnHeight )
     {
         this.minColumnHeight = minColumnHeight;
-    } //-- void setMinColumnHeight( Byte )
+    } //-- void setMinColumnHeight( Integer )
 
     /**
      * Set sets the minimum width for a column.
      * 
      * @param minColumnWidth
      */
-    public void setMinColumnWidth( Byte minColumnWidth )
+    public void setMinColumnWidth( Integer minColumnWidth )
     {
         this.minColumnWidth = minColumnWidth;
-    } //-- void setMinColumnWidth( Byte )
+    } //-- void setMinColumnWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -1840,30 +1893,30 @@ public class Treetable
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set enables the multi selection mode.
      * 
      * @param multiselect
      */
-    public void setMultiselect( Byte multiselect )
+    public void setMultiselect( Boolean multiselect )
     {
         this.multiselect = multiselect;
-    } //-- void setMultiselect( Byte )
+    } //-- void setMultiselect( Boolean )
 
     /**
      * Set activates the selection keyboard navigation.
      * 
      * @param navigation
      */
-    public void setNavigation( Byte navigation )
+    public void setNavigation( Boolean navigation )
     {
         this.navigation = navigation;
-    } //-- void setNavigation( Byte )
+    } //-- void setNavigation( Boolean )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -1871,10 +1924,10 @@ public class Treetable
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -1882,10 +1935,10 @@ public class Treetable
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -1893,10 +1946,10 @@ public class Treetable
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1904,10 +1957,10 @@ public class Treetable
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1915,10 +1968,10 @@ public class Treetable
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set defines paging configuration ( creates a 'ui.pager'
@@ -1926,20 +1979,20 @@ public class Treetable
      * 
      * @param pager
      */
-    public void setPager( Byte pager )
+    public void setPager( UnknownType pager )
     {
         this.pager = pager;
-    } //-- void setPager( Byte )
+    } //-- void setPager( UnknownType )
 
     /**
      * Set invokes the full rendering of DataTable data.
      * 
      * @param prerender
      */
-    public void setPrerender( Byte prerender )
+    public void setPrerender( Boolean prerender )
     {
         this.prerender = prerender;
-    } //-- void setPrerender( Byte )
+    } //-- void setPrerender( Boolean )
 
     /**
      * Set a handler that is called just after the page has been
@@ -1947,40 +2000,40 @@ public class Treetable
      * 
      * @param ready
      */
-    public void setReady( Byte ready )
+    public void setReady( UnknownType ready )
     {
         this.ready = ready;
-    } //-- void setReady( Byte )
+    } //-- void setReady( UnknownType )
 
     /**
      * Set defines how to treat items in case of reloading.
      * 
      * @param removeMissed
      */
-    public void setRemoveMissed( Byte removeMissed )
+    public void setRemoveMissed( Boolean removeMissed )
     {
         this.removeMissed = removeMissed;
-    } //-- void setRemoveMissed( Byte )
+    } //-- void setRemoveMissed( Boolean )
 
     /**
      * Set enables/disables horizontal resizing of columns.
      * 
      * @param resizeColumn
      */
-    public void setResizeColumn( Byte resizeColumn )
+    public void setResizeColumn( Boolean resizeColumn )
     {
         this.resizeColumn = resizeColumn;
-    } //-- void setResizeColumn( Byte )
+    } //-- void setResizeColumn( Boolean )
 
     /**
      * Set enables/disables vertical resizing of rows.
      * 
      * @param resizeRow
      */
-    public void setResizeRow( Byte resizeRow )
+    public void setResizeRow( Boolean resizeRow )
     {
         this.resizeRow = resizeRow;
-    } //-- void setResizeRow( Byte )
+    } //-- void setResizeRow( Boolean )
 
     /**
      * Set sets the number of the fixed columns from the right side
@@ -1988,70 +2041,70 @@ public class Treetable
      * 
      * @param rightSplit
      */
-    public void setRightSplit( Byte rightSplit )
+    public void setRightSplit( Integer rightSplit )
     {
         this.rightSplit = rightSplit;
-    } //-- void setRightSplit( Byte )
+    } //-- void setRightSplit( Integer )
 
     /**
      * Set sets the default height for rows.
      * 
      * @param rowHeight
      */
-    public void setRowHeight( Byte rowHeight )
+    public void setRowHeight( Integer rowHeight )
     {
         this.rowHeight = rowHeight;
-    } //-- void setRowHeight( Byte )
+    } //-- void setRowHeight( Integer )
 
     /**
      * Set default line height for grid's row.
      * 
      * @param rowLineHeight
      */
-    public void setRowLineHeight( Byte rowLineHeight )
+    public void setRowLineHeight( UnknownType rowLineHeight )
     {
         this.rowLineHeight = rowLineHeight;
-    } //-- void setRowLineHeight( Byte )
+    } //-- void setRowLineHeight( UnknownType )
 
     /**
      * Set set of validation rules for the component.
      * 
      * @param rules
      */
-    public void setRules( Byte rules )
+    public void setRules( UnknownType rules )
     {
         this.rules = rules;
-    } //-- void setRules( Byte )
+    } //-- void setRules( UnknownType )
 
     /**
      * Set defines urls for datasaving.
      * 
      * @param save
      */
-    public void setSave( Byte save )
+    public void setSave( String save )
     {
         this.save = save;
-    } //-- void setSave( Byte )
+    } //-- void setSave( String )
 
     /**
      * Set defines schemes for data processing.
      * 
      * @param scheme
      */
-    public void setScheme( Byte scheme )
+    public void setScheme( UnknownType scheme )
     {
         this.scheme = scheme;
-    } //-- void setScheme( Byte )
+    } //-- void setScheme( UnknownType )
 
     /**
      * Set enables or disables scroll for the datatable.
      * 
      * @param scroll
      */
-    public void setScroll( Byte scroll )
+    public void setScroll( Boolean scroll )
     {
         this.scroll = scroll;
-    } //-- void setScroll( Byte )
+    } //-- void setScroll( Boolean )
 
     /**
      * Set enables/disables scrolling the table just by whole rows
@@ -2060,50 +2113,50 @@ public class Treetable
      * 
      * @param scrollAlignY
      */
-    public void setScrollAlignY( Byte scrollAlignY )
+    public void setScrollAlignY( Boolean scrollAlignY )
     {
         this.scrollAlignY = scrollAlignY;
-    } //-- void setScrollAlignY( Byte )
+    } //-- void setScrollAlignY( Boolean )
 
     /**
      * Set enables/disables horizontal scrolling.
      * 
      * @param scrollX
      */
-    public void setScrollX( Byte scrollX )
+    public void setScrollX( Boolean scrollX )
     {
         this.scrollX = scrollX;
-    } //-- void setScrollX( Byte )
+    } //-- void setScrollX( Boolean )
 
     /**
      * Set enables/disables vertical scrolling.
      * 
      * @param scrollY
      */
-    public void setScrollY( Byte scrollY )
+    public void setScrollY( Boolean scrollY )
     {
         this.scrollY = scrollY;
-    } //-- void setScrollY( Byte )
+    } //-- void setScrollY( Boolean )
 
     /**
      * Set sets the selection mode in DataTable.
      * 
      * @param select
      */
-    public void setSelect( Byte select )
+    public void setSelect( UnknownType select )
     {
         this.select = select;
-    } //-- void setSelect( Byte )
+    } //-- void setSelect( UnknownType )
 
     /**
      * Set array of span configurations for the datatable.
      * 
      * @param spans
      */
-    public void setSpans( Byte spans )
+    public void setSpans( java.util.List<UnknownType> spans )
     {
         this.spans = spans;
-    } //-- void setSpans( Byte )
+    } //-- void setSpans( java.util.List )
 
     /**
      * Set defines three-state checkboxes for the tree. Flase by
@@ -2111,10 +2164,10 @@ public class Treetable
      * 
      * @param threeState
      */
-    public void setThreeState( Byte threeState )
+    public void setThreeState( Boolean threeState )
     {
         this.threeState = threeState;
-    } //-- void setThreeState( Byte )
+    } //-- void setThreeState( Boolean )
 
     /**
      * Set sets a popup message appearing on pointing a mouse
@@ -2122,20 +2175,20 @@ public class Treetable
      * 
      * @param tooltip
      */
-    public void setTooltip( Byte tooltip )
+    public void setTooltip( UnknownType tooltip )
     {
         this.tooltip = tooltip;
-    } //-- void setTooltip( Byte )
+    } //-- void setTooltip( UnknownType )
 
     /**
      * Set used for configuring presentation of items.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( UnknownType type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( UnknownType )
 
     /**
      * Set the url of a data feed which will be loaded after
@@ -2143,30 +2196,30 @@ public class Treetable
      * 
      * @param url
      */
-    public void setUrl( Byte url )
+    public void setUrl( String url )
     {
         this.url = url;
-    } //-- void setUrl( Byte )
+    } //-- void setUrl( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Set defines height of datatable in rows.
      * 
      * @param yCount
      */
-    public void setYCount( Byte yCount )
+    public void setYCount( UnknownType yCount )
     {
         this.yCount = yCount;
-    } //-- void setYCount( Byte )
+    } //-- void setYCount( UnknownType )
 
     /**
      * Adds an item to the store

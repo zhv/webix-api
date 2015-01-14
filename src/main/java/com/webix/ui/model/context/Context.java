@@ -9,6 +9,7 @@ package com.webix.ui.model.context;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -63,12 +64,14 @@ import com.webix.ui.model.layouts.Toolbar;
 /**
  * A pop-up window displayed on firing the 'contextMenu' event
  * (mouse right-clicks).The component presents a plain window that
- * can contain any content. Check context documentation for more
- * detailed description.
+ * can contain any content. Check <a
+ * href="http://docs.webix.com/desktop__context.html">context</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_SHOW, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_HIDE, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SHOW, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_MOVE, com.webix.ui.model.Event.ON_VIEW_MOVE_END, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Context
     implements java.io.Serializable
 {
@@ -80,152 +83,152 @@ public class Context
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Adjusts window size to the size of an html node it is
      * initiated in.
      */
-    private Byte autofit;
+    private Boolean autofit;
 
     /**
      * Sets focus on the window the moment it appears on the page.
      */
-    private Byte autofocus;
+    private Boolean autofocus;
 
     /**
      * The content of window body: template or view.
      */
-    private Byte body;
+    private UnknownType body;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the view header.
      */
-    private Byte head;
+    private UnknownType head;
 
     /**
      * Defines the header height (43 by default).
      */
-    private Byte headHeight;
+    private Integer headHeight;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * The left offset of the window.
      */
-    private Byte left;
+    private Integer left;
 
     /**
      * The area for which context object in inited.
      */
-    private Byte master;
+    private String master;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Switches window modality.
      */
-    private Byte modal;
+    private Boolean modal;
 
     /**
      * Makes view movable.
      */
-    private Byte move;
+    private Boolean move;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Sets paddings of the chart content.
      */
-    private Byte padding;
+    private UnknownType padding;
 
     /**
      * Sets position of the window relative to the the screen.
      */
-    private Byte position;
+    private String position;
 
     /**
      * Positions a popup window relative to the component it's
      * connected with.
      */
-    private Byte relative;
+    private String relative;
 
     /**
      * The top offset of a window.
      */
-    private Byte top;
+    private Integer top;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
     /**
      * Stack order of the component.
      */
-    private Byte zIndex;
+    private Integer zIndex;
 
 
       //-----------/
@@ -235,308 +238,308 @@ public class Context
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
-
-    /**
-     * Get adjusts window size to the size of an html node it is
-     * initiated in.
-     * 
-     * @return Byte
-     */
-    public Byte getAutofit()
-    {
-        return this.autofit;
-    } //-- Byte getAutofit()
-
-    /**
-     * Get sets focus on the window the moment it appears on the
-     * page.
-     * 
-     * @return Byte
-     */
-    public Byte getAutofocus()
-    {
-        return this.autofocus;
-    } //-- Byte getAutofocus()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get the content of window body: template or view.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getBody()
+    public UnknownType getBody()
     {
         return this.body;
-    } //-- Byte getBody()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getBody()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the view header.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getHead()
+    public UnknownType getHead()
     {
         return this.head;
-    } //-- Byte getHead()
+    } //-- UnknownType getHead()
 
     /**
      * Get defines the header height (43 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeadHeight()
+    public Integer getHeadHeight()
     {
         return this.headHeight;
-    } //-- Byte getHeadHeight()
+    } //-- Integer getHeadHeight()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get the left offset of the window.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLeft()
+    public Integer getLeft()
     {
         return this.left;
-    } //-- Byte getLeft()
+    } //-- Integer getLeft()
 
     /**
      * Get the area for which context object in inited.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getMaster()
+    public String getMaster()
     {
         return this.master;
-    } //-- Byte getMaster()
+    } //-- String getMaster()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
-
-    /**
-     * Get switches window modality.
-     * 
-     * @return Byte
-     */
-    public Byte getModal()
-    {
-        return this.modal;
-    } //-- Byte getModal()
-
-    /**
-     * Get makes view movable.
-     * 
-     * @return Byte
-     */
-    public Byte getMove()
-    {
-        return this.move;
-    } //-- Byte getMove()
+    } //-- Integer getMinWidth()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get sets paddings of the chart content.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getPadding()
+    public UnknownType getPadding()
     {
         return this.padding;
-    } //-- Byte getPadding()
+    } //-- UnknownType getPadding()
 
     /**
      * Get sets position of the window relative to the the screen.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getPosition()
+    public String getPosition()
     {
         return this.position;
-    } //-- Byte getPosition()
+    } //-- String getPosition()
 
     /**
      * Get positions a popup window relative to the component it's
      * connected with.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getRelative()
+    public String getRelative()
     {
         return this.relative;
-    } //-- Byte getRelative()
+    } //-- String getRelative()
 
     /**
      * Get the top offset of a window.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getTop()
+    public Integer getTop()
     {
         return this.top;
-    } //-- Byte getTop()
+    } //-- Integer getTop()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
 
     /**
      * Get stack order of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getZIndex()
+    public Integer getZIndex()
     {
         return this.zIndex;
-    } //-- Byte getZIndex()
+    } //-- Integer getZIndex()
+
+    /**
+     * Get adjusts window size to the size of an html node it is
+     * initiated in.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutofit()
+    {
+        return this.autofit;
+    } //-- Boolean isAutofit()
+
+    /**
+     * Get sets focus on the window the moment it appears on the
+     * page.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutofocus()
+    {
+        return this.autofocus;
+    } //-- Boolean isAutofocus()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Get switches window modality.
+     * 
+     * @return Boolean
+     */
+    public Boolean isModal()
+    {
+        return this.modal;
+    } //-- Boolean isModal()
+
+    /**
+     * Get makes view movable.
+     * 
+     * @return Boolean
+     */
+    public Boolean isMove()
+    {
+        return this.move;
+    } //-- Boolean isMove()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set adjusts window size to the size of an html node it is
@@ -544,10 +547,10 @@ public class Context
      * 
      * @param autofit
      */
-    public void setAutofit( Byte autofit )
+    public void setAutofit( Boolean autofit )
     {
         this.autofit = autofit;
-    } //-- void setAutofit( Byte )
+    } //-- void setAutofit( Boolean )
 
     /**
      * Set sets focus on the window the moment it appears on the
@@ -555,30 +558,30 @@ public class Context
      * 
      * @param autofocus
      */
-    public void setAutofocus( Byte autofocus )
+    public void setAutofocus( Boolean autofocus )
     {
         this.autofocus = autofocus;
-    } //-- void setAutofocus( Byte )
+    } //-- void setAutofocus( Boolean )
 
     /**
      * Set the content of window body: template or view.
      * 
      * @param body
      */
-    public void setBody( Byte body )
+    public void setBody( UnknownType body )
     {
         this.body = body;
-    } //-- void setBody( Byte )
+    } //-- void setBody( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -586,10 +589,10 @@ public class Context
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -597,160 +600,160 @@ public class Context
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the view header.
      * 
      * @param head
      */
-    public void setHead( Byte head )
+    public void setHead( UnknownType head )
     {
         this.head = head;
-    } //-- void setHead( Byte )
+    } //-- void setHead( UnknownType )
 
     /**
      * Set defines the header height (43 by default).
      * 
      * @param headHeight
      */
-    public void setHeadHeight( Byte headHeight )
+    public void setHeadHeight( Integer headHeight )
     {
         this.headHeight = headHeight;
-    } //-- void setHeadHeight( Byte )
+    } //-- void setHeadHeight( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set the left offset of the window.
      * 
      * @param left
      */
-    public void setLeft( Byte left )
+    public void setLeft( Integer left )
     {
         this.left = left;
-    } //-- void setLeft( Byte )
+    } //-- void setLeft( Integer )
 
     /**
      * Set the area for which context object in inited.
      * 
      * @param master
      */
-    public void setMaster( Byte master )
+    public void setMaster( String master )
     {
         this.master = master;
-    } //-- void setMaster( Byte )
+    } //-- void setMaster( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set switches window modality.
      * 
      * @param modal
      */
-    public void setModal( Byte modal )
+    public void setModal( Boolean modal )
     {
         this.modal = modal;
-    } //-- void setModal( Byte )
+    } //-- void setModal( Boolean )
 
     /**
      * Set makes view movable.
      * 
      * @param move
      */
-    public void setMove( Byte move )
+    public void setMove( Boolean move )
     {
         this.move = move;
-    } //-- void setMove( Byte )
+    } //-- void setMove( Boolean )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -758,30 +761,30 @@ public class Context
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set sets paddings of the chart content.
      * 
      * @param padding
      */
-    public void setPadding( Byte padding )
+    public void setPadding( UnknownType padding )
     {
         this.padding = padding;
-    } //-- void setPadding( Byte )
+    } //-- void setPadding( UnknownType )
 
     /**
      * Set sets position of the window relative to the the screen.
      * 
      * @param position
      */
-    public void setPosition( Byte position )
+    public void setPosition( String position )
     {
         this.position = position;
-    } //-- void setPosition( Byte )
+    } //-- void setPosition( String )
 
     /**
      * Set positions a popup window relative to the component it's
@@ -789,40 +792,40 @@ public class Context
      * 
      * @param relative
      */
-    public void setRelative( Byte relative )
+    public void setRelative( String relative )
     {
         this.relative = relative;
-    } //-- void setRelative( Byte )
+    } //-- void setRelative( String )
 
     /**
      * Set the top offset of a window.
      * 
      * @param top
      */
-    public void setTop( Byte top )
+    public void setTop( Integer top )
     {
         this.top = top;
-    } //-- void setTop( Byte )
+    } //-- void setTop( Integer )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Set stack order of the component.
      * 
      * @param zIndex
      */
-    public void setZIndex( Byte zIndex )
+    public void setZIndex( Integer zIndex )
     {
         this.zIndex = zIndex;
-    } //-- void setZIndex( Byte )
+    } //-- void setZIndex( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

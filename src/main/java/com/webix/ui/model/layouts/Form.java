@@ -9,6 +9,7 @@ package com.webix.ui.model.layouts;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -63,12 +64,14 @@ import com.webix.ui.model.html.Template;
 /**
  * A form that supports an extended set of elements.The component
  * provides validation and the ability to save user input to the
- * backend database. Check form documentation for more detailed
- * description.
+ * backend database. Check <a
+ * href="http://docs.webix.com/desktop__form.html">form</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_LOAD, com.webix.ui.model.Event.ON_AFTER_VALIDATION, com.webix.ui.model.Event.ON_BEFORE_LOAD, com.webix.ui.model.Event.ON_BEFORE_VALIDATE, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_CHANGE, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_LOAD_ERROR, com.webix.ui.model.Event.ON_SUBMIT, com.webix.ui.model.Event.ON_VALIDATION_ERROR, com.webix.ui.model.Event.ON_VALIDATION_SUCCESS})
 public class Form
     implements java.io.Serializable
 {
@@ -80,189 +83,189 @@ public class Form
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Sets component height according to its contents.
      */
-    private Byte autoheight;
+    private Boolean autoheight;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
-     * Array of views objects arranged horizontally.
+     * Field cols.
      */
-    private Byte cols;
+    private java.util.List<UnknownType> cols;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * An inline dataset that data to the component will be load
      * from.
      */
-    private Byte data;
+    private UnknownType data;
 
     /**
      * The url to the data source that the component will use to
      * reload data from.
      */
-    private Byte dataFeed;
+    private UnknownType dataFeed;
 
     /**
      * The type of loaded data.
      */
-    private Byte datatype;
+    private String datatype;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
-     * Collection of subviews.
+     * Field elements.
      */
-    private Byte elements;
+    private java.util.List<UnknownType> elements;
 
     /**
      * Settings, which will be applied to all nested inputs.
      */
-    private Byte elementsConfig;
+    private UnknownType elementsConfig;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Masks IDs of all inner element.
      */
-    private Byte isolate;
+    private Boolean isolate;
 
     /**
      * Defines the space around elements (applies the specified
      * value to all elements).
      */
-    private Byte margin;
+    private Integer margin;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Defines the space between the element borders and content
      * (applies the specified value to all sides).
      */
-    private Byte padding;
+    private Integer padding;
 
     /**
      * Sets the right and left padding (applies the specified value
      * to both sides).
      */
-    private Byte paddingX;
+    private Integer paddingX;
 
     /**
      * Sets the top and bottom padding (applies the specified value
      * to both sides).
      */
-    private Byte paddingY;
+    private Integer paddingY;
 
     /**
      * Enables responsive mode for horizontal layout.
      */
-    private Byte responsive;
+    private String responsive;
 
     /**
-     * Array of views objects arranged vertically.
+     * Field rows.
      */
-    private Byte rows;
+    private java.util.List<UnknownType> rows;
 
     /**
      * Defines a set of rules for input field(s) of the
      * form(htmlform).
      */
-    private Byte rules;
+    private UnknownType rules;
 
     /**
      * Enables/disables the scroll bar.
      */
-    private Byte scroll;
+    private UnknownType scroll;
 
     /**
      * The time during which the component is scrolled to the
      * specified position (in milliseconds).
      */
-    private Byte scrollSpeed;
+    private String scrollSpeed;
 
     /**
      * Defines the layout borders.
      */
-    private Byte type;
+    private String type;
 
     /**
      * The url of a data feed which will be loaded after component
      * initialization.
      */
-    private Byte url;
+    private String url;
 
     /**
      * Sets the batch that will be shown initially.
      */
-    private Byte visibleBatch;
+    private String visibleBatch;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -270,406 +273,481 @@ public class Form
     //-----------/
 
     /**
+     * Method addCol.
+     * 
+     * @param unknownType
+     */
+    public void addCol( UnknownType unknownType )
+    {
+        getCols().add( unknownType );
+    } //-- void addCol( UnknownType )
+
+    /**
+     * Method addElement.
+     * 
+     * @param unknownType
+     */
+    public void addElement( UnknownType unknownType )
+    {
+        getElements().add( unknownType );
+    } //-- void addElement( UnknownType )
+
+    /**
+     * Method addRow.
+     * 
+     * @param unknownType
+     */
+    public void addRow( UnknownType unknownType )
+    {
+        getRows().add( unknownType );
+    } //-- void addRow( UnknownType )
+
+    /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
-     * Get sets component height according to its contents.
+     * Method getCols.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getAutoheight()
+    public java.util.List<UnknownType> getCols()
     {
-        return this.autoheight;
-    } //-- Byte getAutoheight()
+        if ( this.cols == null )
+        {
+            this.cols = new java.util.ArrayList<UnknownType>();
+        }
 
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
-
-    /**
-     * Get array of views objects arranged horizontally.
-     * 
-     * @return Byte
-     */
-    public Byte getCols()
-    {
         return this.cols;
-    } //-- Byte getCols()
+    } //-- java.util.List<UnknownType> getCols()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get an inline dataset that data to the component will be
      * load from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getData()
+    public UnknownType getData()
     {
         return this.data;
-    } //-- Byte getData()
+    } //-- UnknownType getData()
 
     /**
      * Get the url to the data source that the component will use
      * to reload data from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDataFeed()
+    public UnknownType getDataFeed()
     {
         return this.dataFeed;
-    } //-- Byte getDataFeed()
+    } //-- UnknownType getDataFeed()
 
     /**
      * Get the type of loaded data.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getDatatype()
+    public String getDatatype()
     {
         return this.datatype;
-    } //-- Byte getDatatype()
+    } //-- String getDatatype()
 
     /**
-     * Get disables item.
+     * Method getElements.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getDisabled()
+    public java.util.List<UnknownType> getElements()
     {
-        return this.disabled;
-    } //-- Byte getDisabled()
+        if ( this.elements == null )
+        {
+            this.elements = new java.util.ArrayList<UnknownType>();
+        }
 
-    /**
-     * Get collection of subviews.
-     * 
-     * @return Byte
-     */
-    public Byte getElements()
-    {
         return this.elements;
-    } //-- Byte getElements()
+    } //-- java.util.List<UnknownType> getElements()
 
     /**
      * Get settings, which will be applied to all nested inputs.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getElementsConfig()
+    public UnknownType getElementsConfig()
     {
         return this.elementsConfig;
-    } //-- Byte getElementsConfig()
+    } //-- UnknownType getElementsConfig()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
-
-    /**
-     * Get masks IDs of all inner element.
-     * 
-     * @return Byte
-     */
-    public Byte getIsolate()
-    {
-        return this.isolate;
-    } //-- Byte getIsolate()
+    } //-- String getId()
 
     /**
      * Get defines the space around elements (applies the specified
      * value to all elements).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMargin()
+    public Integer getMargin()
     {
         return this.margin;
-    } //-- Byte getMargin()
+    } //-- Integer getMargin()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get defines the space between the element borders and
      * content (applies the specified value to all sides).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getPadding()
+    public Integer getPadding()
     {
         return this.padding;
-    } //-- Byte getPadding()
+    } //-- Integer getPadding()
 
     /**
      * Get sets the right and left padding (applies the specified
      * value to both sides).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getPaddingX()
+    public Integer getPaddingX()
     {
         return this.paddingX;
-    } //-- Byte getPaddingX()
+    } //-- Integer getPaddingX()
 
     /**
      * Get sets the top and bottom padding (applies the specified
      * value to both sides).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getPaddingY()
+    public Integer getPaddingY()
     {
         return this.paddingY;
-    } //-- Byte getPaddingY()
+    } //-- Integer getPaddingY()
 
     /**
      * Get enables responsive mode for horizontal layout.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getResponsive()
+    public String getResponsive()
     {
         return this.responsive;
-    } //-- Byte getResponsive()
+    } //-- String getResponsive()
 
     /**
-     * Get array of views objects arranged vertically.
+     * Method getRows.
      * 
-     * @return Byte
+     * @return List
      */
-    public Byte getRows()
+    public java.util.List<UnknownType> getRows()
     {
+        if ( this.rows == null )
+        {
+            this.rows = new java.util.ArrayList<UnknownType>();
+        }
+
         return this.rows;
-    } //-- Byte getRows()
+    } //-- java.util.List<UnknownType> getRows()
 
     /**
      * Get defines a set of rules for input field(s) of the
      * form(htmlform).
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getRules()
+    public UnknownType getRules()
     {
         return this.rules;
-    } //-- Byte getRules()
+    } //-- UnknownType getRules()
 
     /**
      * Get enables/disables the scroll bar.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getScroll()
+    public UnknownType getScroll()
     {
         return this.scroll;
-    } //-- Byte getScroll()
+    } //-- UnknownType getScroll()
 
     /**
      * Get the time during which the component is scrolled to the
      * specified position (in milliseconds).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getScrollSpeed()
+    public String getScrollSpeed()
     {
         return this.scrollSpeed;
-    } //-- Byte getScrollSpeed()
+    } //-- String getScrollSpeed()
 
     /**
      * Get defines the layout borders.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getType()
+    public String getType()
     {
         return this.type;
-    } //-- Byte getType()
+    } //-- String getType()
 
     /**
      * Get the url of a data feed which will be loaded after
      * component initialization.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getUrl()
+    public String getUrl()
     {
         return this.url;
-    } //-- Byte getUrl()
+    } //-- String getUrl()
 
     /**
      * Get sets the batch that will be shown initially.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getVisibleBatch()
+    public String getVisibleBatch()
     {
         return this.visibleBatch;
-    } //-- Byte getVisibleBatch()
+    } //-- String getVisibleBatch()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get sets component height according to its contents.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutoheight()
+    {
+        return this.autoheight;
+    } //-- Boolean isAutoheight()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Get masks IDs of all inner element.
+     * 
+     * @return Boolean
+     */
+    public Boolean isIsolate()
+    {
+        return this.isolate;
+    } //-- Boolean isIsolate()
+
+    /**
+     * Method removeCol.
+     * 
+     * @param unknownType
+     */
+    public void removeCol( UnknownType unknownType )
+    {
+        getCols().remove( unknownType );
+    } //-- void removeCol( UnknownType )
+
+    /**
+     * Method removeElement.
+     * 
+     * @param unknownType
+     */
+    public void removeElement( UnknownType unknownType )
+    {
+        getElements().remove( unknownType );
+    } //-- void removeElement( UnknownType )
+
+    /**
+     * Method removeRow.
+     * 
+     * @param unknownType
+     */
+    public void removeRow( UnknownType unknownType )
+    {
+        getRows().remove( unknownType );
+    } //-- void removeRow( UnknownType )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set sets component height according to its contents.
      * 
      * @param autoheight
      */
-    public void setAutoheight( Byte autoheight )
+    public void setAutoheight( Boolean autoheight )
     {
         this.autoheight = autoheight;
-    } //-- void setAutoheight( Byte )
+    } //-- void setAutoheight( Boolean )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set array of views objects arranged horizontally.
      * 
      * @param cols
      */
-    public void setCols( Byte cols )
+    public void setCols( java.util.List<UnknownType> cols )
     {
         this.cols = cols;
-    } //-- void setCols( Byte )
+    } //-- void setCols( java.util.List )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -677,10 +755,10 @@ public class Form
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -688,10 +766,10 @@ public class Form
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set an inline dataset that data to the component will be
@@ -699,10 +777,10 @@ public class Form
      * 
      * @param data
      */
-    public void setData( Byte data )
+    public void setData( UnknownType data )
     {
         this.data = data;
-    } //-- void setData( Byte )
+    } //-- void setData( UnknownType )
 
     /**
      * Set the url to the data source that the component will use
@@ -710,100 +788,100 @@ public class Form
      * 
      * @param dataFeed
      */
-    public void setDataFeed( Byte dataFeed )
+    public void setDataFeed( UnknownType dataFeed )
     {
         this.dataFeed = dataFeed;
-    } //-- void setDataFeed( Byte )
+    } //-- void setDataFeed( UnknownType )
 
     /**
      * Set the type of loaded data.
      * 
      * @param datatype
      */
-    public void setDatatype( Byte datatype )
+    public void setDatatype( String datatype )
     {
         this.datatype = datatype;
-    } //-- void setDatatype( Byte )
+    } //-- void setDatatype( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set collection of subviews.
      * 
      * @param elements
      */
-    public void setElements( Byte elements )
+    public void setElements( java.util.List<UnknownType> elements )
     {
         this.elements = elements;
-    } //-- void setElements( Byte )
+    } //-- void setElements( java.util.List )
 
     /**
      * Set settings, which will be applied to all nested inputs.
      * 
      * @param elementsConfig
      */
-    public void setElementsConfig( Byte elementsConfig )
+    public void setElementsConfig( UnknownType elementsConfig )
     {
         this.elementsConfig = elementsConfig;
-    } //-- void setElementsConfig( Byte )
+    } //-- void setElementsConfig( UnknownType )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set masks IDs of all inner element.
      * 
      * @param isolate
      */
-    public void setIsolate( Byte isolate )
+    public void setIsolate( Boolean isolate )
     {
         this.isolate = isolate;
-    } //-- void setIsolate( Byte )
+    } //-- void setIsolate( Boolean )
 
     /**
      * Set defines the space around elements (applies the specified
@@ -811,50 +889,50 @@ public class Form
      * 
      * @param margin
      */
-    public void setMargin( Byte margin )
+    public void setMargin( Integer margin )
     {
         this.margin = margin;
-    } //-- void setMargin( Byte )
+    } //-- void setMargin( Integer )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -862,10 +940,10 @@ public class Form
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set defines the space between the element borders and
@@ -873,10 +951,10 @@ public class Form
      * 
      * @param padding
      */
-    public void setPadding( Byte padding )
+    public void setPadding( Integer padding )
     {
         this.padding = padding;
-    } //-- void setPadding( Byte )
+    } //-- void setPadding( Integer )
 
     /**
      * Set sets the right and left padding (applies the specified
@@ -884,10 +962,10 @@ public class Form
      * 
      * @param paddingX
      */
-    public void setPaddingX( Byte paddingX )
+    public void setPaddingX( Integer paddingX )
     {
         this.paddingX = paddingX;
-    } //-- void setPaddingX( Byte )
+    } //-- void setPaddingX( Integer )
 
     /**
      * Set sets the top and bottom padding (applies the specified
@@ -895,30 +973,30 @@ public class Form
      * 
      * @param paddingY
      */
-    public void setPaddingY( Byte paddingY )
+    public void setPaddingY( Integer paddingY )
     {
         this.paddingY = paddingY;
-    } //-- void setPaddingY( Byte )
+    } //-- void setPaddingY( Integer )
 
     /**
      * Set enables responsive mode for horizontal layout.
      * 
      * @param responsive
      */
-    public void setResponsive( Byte responsive )
+    public void setResponsive( String responsive )
     {
         this.responsive = responsive;
-    } //-- void setResponsive( Byte )
+    } //-- void setResponsive( String )
 
     /**
      * Set array of views objects arranged vertically.
      * 
      * @param rows
      */
-    public void setRows( Byte rows )
+    public void setRows( java.util.List<UnknownType> rows )
     {
         this.rows = rows;
-    } //-- void setRows( Byte )
+    } //-- void setRows( java.util.List )
 
     /**
      * Set defines a set of rules for input field(s) of the
@@ -926,20 +1004,20 @@ public class Form
      * 
      * @param rules
      */
-    public void setRules( Byte rules )
+    public void setRules( UnknownType rules )
     {
         this.rules = rules;
-    } //-- void setRules( Byte )
+    } //-- void setRules( UnknownType )
 
     /**
      * Set enables/disables the scroll bar.
      * 
      * @param scroll
      */
-    public void setScroll( Byte scroll )
+    public void setScroll( UnknownType scroll )
     {
         this.scroll = scroll;
-    } //-- void setScroll( Byte )
+    } //-- void setScroll( UnknownType )
 
     /**
      * Set the time during which the component is scrolled to the
@@ -947,20 +1025,20 @@ public class Form
      * 
      * @param scrollSpeed
      */
-    public void setScrollSpeed( Byte scrollSpeed )
+    public void setScrollSpeed( String scrollSpeed )
     {
         this.scrollSpeed = scrollSpeed;
-    } //-- void setScrollSpeed( Byte )
+    } //-- void setScrollSpeed( String )
 
     /**
      * Set defines the layout borders.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( String type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( String )
 
     /**
      * Set the url of a data feed which will be loaded after
@@ -968,30 +1046,30 @@ public class Form
      * 
      * @param url
      */
-    public void setUrl( Byte url )
+    public void setUrl( String url )
     {
         this.url = url;
-    } //-- void setUrl( Byte )
+    } //-- void setUrl( String )
 
     /**
      * Set sets the batch that will be shown initially.
      * 
      * @param visibleBatch
      */
-    public void setVisibleBatch( Byte visibleBatch )
+    public void setVisibleBatch( String visibleBatch )
     {
         this.visibleBatch = visibleBatch;
-    } //-- void setVisibleBatch( Byte )
+    } //-- void setVisibleBatch( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Add new view to layout-like component

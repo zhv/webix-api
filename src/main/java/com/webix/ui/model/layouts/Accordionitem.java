@@ -9,6 +9,7 @@ package com.webix.ui.model.layouts;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -64,11 +65,14 @@ import com.webix.ui.model.html.Template;
  * A singular pane of the accordion component.Each accordion pane
  * consists of the header and body. The body of a pane can be
  * collapsed/expanded by clicking on the appropriate header. Check
- * accordionitem documentation for more detailed description.
+ * <a
+ * href="http://docs.webix.com/desktop__accordionitem.html">accordionitem</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Accordionitem
     implements java.io.Serializable
 {
@@ -80,141 +84,141 @@ public class Accordionitem
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Defines the cell content (a view or some HTML).
      */
-    private Byte body;
+    private UnknownType body;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Displays the cell collapsed initially.
      */
-    private Byte collapsed;
+    private Boolean collapsed;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the label of the header in the expanded state.
      */
-    private Byte header;
+    private UnknownType header;
 
     /**
      * Sets the label of the header in the collapsed state.
      */
-    private Byte headerAlt;
+    private UnknownType headerAlt;
 
     /**
      * The height of the header in the collapsed state.
      */
-    private Byte headerAltHeight;
+    private Integer headerAltHeight;
 
     /**
      * The header height.
      */
-    private Byte headerHeight;
+    private Integer headerHeight;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -224,310 +228,310 @@ public class Accordionitem
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get defines the cell content (a view or some HTML).
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getBody()
+    public UnknownType getBody()
     {
         return this.body;
-    } //-- Byte getBody()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
-
-    /**
-     * Get displays the cell collapsed initially.
-     * 
-     * @return Byte
-     */
-    public Byte getCollapsed()
-    {
-        return this.collapsed;
-    } //-- Byte getCollapsed()
+    } //-- UnknownType getBody()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the label of the header in the expanded state.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getHeader()
+    public UnknownType getHeader()
     {
         return this.header;
-    } //-- Byte getHeader()
+    } //-- UnknownType getHeader()
 
     /**
      * Get sets the label of the header in the collapsed state.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getHeaderAlt()
+    public UnknownType getHeaderAlt()
     {
         return this.headerAlt;
-    } //-- Byte getHeaderAlt()
+    } //-- UnknownType getHeaderAlt()
 
     /**
      * Get the height of the header in the collapsed state.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeaderAltHeight()
+    public Integer getHeaderAltHeight()
     {
         return this.headerAltHeight;
-    } //-- Byte getHeaderAltHeight()
+    } //-- Integer getHeaderAltHeight()
 
     /**
      * Get the header height.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeaderHeight()
+    public Integer getHeaderHeight()
     {
         return this.headerHeight;
-    } //-- Byte getHeaderHeight()
+    } //-- Integer getHeaderHeight()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
+    } //-- Integer getMouseEventDelay()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get a property used to define custom context-click (right
      * click) handlers for elements in the DataTable cells.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnContext()
+    public UnknownType getOnContext()
     {
         return this.onContext;
-    } //-- Byte getOnContext()
+    } //-- UnknownType getOnContext()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnDblClick()
+    public UnknownType getOnDblClick()
     {
         return this.onDblClick;
-    } //-- Byte getOnDblClick()
+    } //-- UnknownType getOnDblClick()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnMouseMove()
+    public UnknownType getOnMouseMove()
     {
         return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
+    } //-- UnknownType getOnMouseMove()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get displays the cell collapsed initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isCollapsed()
+    {
+        return this.collapsed;
+    } //-- Boolean isCollapsed()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set defines the cell content (a view or some HTML).
      * 
      * @param body
      */
-    public void setBody( Byte body )
+    public void setBody( UnknownType body )
     {
         this.body = body;
-    } //-- void setBody( Byte )
+    } //-- void setBody( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set displays the cell collapsed initially.
      * 
      * @param collapsed
      */
-    public void setCollapsed( Byte collapsed )
+    public void setCollapsed( Boolean collapsed )
     {
         this.collapsed = collapsed;
-    } //-- void setCollapsed( Byte )
+    } //-- void setCollapsed( Boolean )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -535,10 +539,10 @@ public class Accordionitem
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -546,140 +550,140 @@ public class Accordionitem
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the label of the header in the expanded state.
      * 
      * @param header
      */
-    public void setHeader( Byte header )
+    public void setHeader( UnknownType header )
     {
         this.header = header;
-    } //-- void setHeader( Byte )
+    } //-- void setHeader( UnknownType )
 
     /**
      * Set sets the label of the header in the collapsed state.
      * 
      * @param headerAlt
      */
-    public void setHeaderAlt( Byte headerAlt )
+    public void setHeaderAlt( UnknownType headerAlt )
     {
         this.headerAlt = headerAlt;
-    } //-- void setHeaderAlt( Byte )
+    } //-- void setHeaderAlt( UnknownType )
 
     /**
      * Set the height of the header in the collapsed state.
      * 
      * @param headerAltHeight
      */
-    public void setHeaderAltHeight( Byte headerAltHeight )
+    public void setHeaderAltHeight( Integer headerAltHeight )
     {
         this.headerAltHeight = headerAltHeight;
-    } //-- void setHeaderAltHeight( Byte )
+    } //-- void setHeaderAltHeight( Integer )
 
     /**
      * Set the header height.
      * 
      * @param headerHeight
      */
-    public void setHeaderHeight( Byte headerHeight )
+    public void setHeaderHeight( Integer headerHeight )
     {
         this.headerHeight = headerHeight;
-    } //-- void setHeaderHeight( Byte )
+    } //-- void setHeaderHeight( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -687,10 +691,10 @@ public class Accordionitem
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -698,10 +702,10 @@ public class Accordionitem
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -709,10 +713,10 @@ public class Accordionitem
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -720,10 +724,10 @@ public class Accordionitem
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -731,10 +735,10 @@ public class Accordionitem
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -742,20 +746,20 @@ public class Accordionitem
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

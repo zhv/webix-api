@@ -9,6 +9,7 @@ package com.webix.ui.model.auxiliary;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.context.Context;
 import com.webix.ui.model.context.Contextmenu;
 import com.webix.ui.model.context.Datasuggest;
@@ -66,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
  * Page navigation controls.The component has a little sense on its
  * own, but can be used with other data-based components such as
  * DataTable, DataView, List. Not purposed for direct
- * initialization. Check pager documentation for more detailed
- * description.
+ * initialization. Check <a
+ * href="http://docs.webix.com/desktop__paging.html">pager</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Pager
     implements java.io.Serializable
 {
@@ -83,152 +86,152 @@ public class Pager
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Makes the pager invisible to enable paging with custom
      * buttons.
      */
-    private Byte apiOnly;
+    private UnknownType apiOnly;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The id or node, whose content will be moved to the view.
      */
-    private Byte content;
+    private UnknownType content;
 
     /**
      * The total number of records that the pager will process.
      */
-    private Byte count;
+    private Integer count;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * The number of visible pages in the pager.
      */
-    private Byte group;
+    private Integer group;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * The total number of pages in the pager.
      */
-    private Byte limit;
+    private Integer limit;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Sets the currently active page (zero-based numbering).
      */
-    private Byte page;
+    private Integer page;
 
     /**
      * Sets the number of records per page.
      */
-    private Byte size;
+    private Integer size;
 
     /**
      * The component template.
      */
-    private Byte template;
+    private UnknownType template;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -238,301 +241,301 @@ public class Pager
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get makes the pager invisible to enable paging with custom
      * buttons.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getApiOnly()
+    public UnknownType getApiOnly()
     {
         return this.apiOnly;
-    } //-- Byte getApiOnly()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getApiOnly()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the id or node, whose content will be moved to the view.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContent()
+    public UnknownType getContent()
     {
         return this.content;
-    } //-- Byte getContent()
+    } //-- UnknownType getContent()
 
     /**
      * Get the total number of records that the pager will process.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getCount()
+    public Integer getCount()
     {
         return this.count;
-    } //-- Byte getCount()
+    } //-- Integer getCount()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getCss()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get the number of visible pages in the pager.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGroup()
+    public Integer getGroup()
     {
         return this.group;
-    } //-- Byte getGroup()
+    } //-- Integer getGroup()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get the total number of pages in the pager.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLimit()
+    public Integer getLimit()
     {
         return this.limit;
-    } //-- Byte getLimit()
+    } //-- Integer getLimit()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
+    } //-- Integer getMouseEventDelay()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get a property used to define custom context-click (right
      * click) handlers for elements in the DataTable cells.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnContext()
+    public UnknownType getOnContext()
     {
         return this.onContext;
-    } //-- Byte getOnContext()
+    } //-- UnknownType getOnContext()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnDblClick()
+    public UnknownType getOnDblClick()
     {
         return this.onDblClick;
-    } //-- Byte getOnDblClick()
+    } //-- UnknownType getOnDblClick()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnMouseMove()
+    public UnknownType getOnMouseMove()
     {
         return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
+    } //-- UnknownType getOnMouseMove()
 
     /**
      * Get sets the currently active page (zero-based numbering).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getPage()
+    public Integer getPage()
     {
         return this.page;
-    } //-- Byte getPage()
+    } //-- Integer getPage()
 
     /**
      * Get sets the number of records per page.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getSize()
+    public Integer getSize()
     {
         return this.size;
-    } //-- Byte getSize()
+    } //-- Integer getSize()
 
     /**
      * Get the component template.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTemplate()
+    public UnknownType getTemplate()
     {
         return this.template;
-    } //-- Byte getTemplate()
+    } //-- UnknownType getTemplate()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set makes the pager invisible to enable paging with custom
@@ -540,20 +543,20 @@ public class Pager
      * 
      * @param apiOnly
      */
-    public void setApiOnly( Byte apiOnly )
+    public void setApiOnly( UnknownType apiOnly )
     {
         this.apiOnly = apiOnly;
-    } //-- void setApiOnly( Byte )
+    } //-- void setApiOnly( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -561,30 +564,30 @@ public class Pager
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the id or node, whose content will be moved to the view.
      * 
      * @param content
      */
-    public void setContent( Byte content )
+    public void setContent( UnknownType content )
     {
         this.content = content;
-    } //-- void setContent( Byte )
+    } //-- void setContent( UnknownType )
 
     /**
      * Set the total number of records that the pager will process.
      * 
      * @param count
      */
-    public void setCount( Byte count )
+    public void setCount( Integer count )
     {
         this.count = count;
-    } //-- void setCount( Byte )
+    } //-- void setCount( Integer )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -592,120 +595,120 @@ public class Pager
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set the number of visible pages in the pager.
      * 
      * @param group
      */
-    public void setGroup( Byte group )
+    public void setGroup( Integer group )
     {
         this.group = group;
-    } //-- void setGroup( Byte )
+    } //-- void setGroup( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set the total number of pages in the pager.
      * 
      * @param limit
      */
-    public void setLimit( Byte limit )
+    public void setLimit( Integer limit )
     {
         this.limit = limit;
-    } //-- void setLimit( Byte )
+    } //-- void setLimit( Integer )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -713,10 +716,10 @@ public class Pager
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -724,10 +727,10 @@ public class Pager
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -735,10 +738,10 @@ public class Pager
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -746,10 +749,10 @@ public class Pager
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -757,10 +760,10 @@ public class Pager
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -768,50 +771,50 @@ public class Pager
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set sets the currently active page (zero-based numbering).
      * 
      * @param page
      */
-    public void setPage( Byte page )
+    public void setPage( Integer page )
     {
         this.page = page;
-    } //-- void setPage( Byte )
+    } //-- void setPage( Integer )
 
     /**
      * Set sets the number of records per page.
      * 
      * @param size
      */
-    public void setSize( Byte size )
+    public void setSize( Integer size )
     {
         this.size = size;
-    } //-- void setSize( Byte )
+    } //-- void setSize( Integer )
 
     /**
      * Set the component template.
      * 
      * @param template
      */
-    public void setTemplate( Byte template )
+    public void setTemplate( UnknownType template )
     {
         this.template = template;
-    } //-- void setTemplate( Byte )
+    } //-- void setTemplate( UnknownType )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

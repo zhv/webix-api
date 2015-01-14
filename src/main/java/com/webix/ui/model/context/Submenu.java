@@ -9,6 +9,7 @@ package com.webix.ui.model.context;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -62,12 +63,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 /**
  * A sub-menu.The component is a compliment to the menu component
- * and not intended for direct initialization. Check menu
+ * and not intended for direct initialization. Check <a
+ * href="http://docs.webix.com/desktop__menu.html">menu</a>
  * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_ADD, com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_DELETE, com.webix.ui.model.Event.ON_AFTER_DROP, com.webix.ui.model.Event.ON_AFTER_LOAD, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_AFTER_SELECT, com.webix.ui.model.Event.ON_AFTER_SORT, com.webix.ui.model.Event.ON_BEFORE_ADD, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BEFORE_DELETE, com.webix.ui.model.Event.ON_BEFORE_DRAG, com.webix.ui.model.Event.ON_BEFORE_DRAG_IN, com.webix.ui.model.Event.ON_BEFORE_DROP, com.webix.ui.model.Event.ON_BEFORE_DROP_OUT, com.webix.ui.model.Event.ON_BEFORE_LOAD, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BEFORE_SELECT, com.webix.ui.model.Event.ON_BEFORE_SORT, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DATA_REQUEST, com.webix.ui.model.Event.ON_DATA_UPDATE, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_DRAG_OUT, com.webix.ui.model.Event.ON_HIDE, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_ITEM_RENDER, com.webix.ui.model.Event.ON_LOAD_ERROR, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MENU_ITEM_CLICK, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_PASTE, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SELECT_CHANGE, com.webix.ui.model.Event.ON_SHOW, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VALIDATION_ERROR, com.webix.ui.model.Event.ON_VALIDATION_SUCCESS, com.webix.ui.model.Event.ON_VIEW_MOVE, com.webix.ui.model.Event.ON_VIEW_MOVE_END, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Submenu
     implements java.io.Serializable
 {
@@ -79,343 +82,343 @@ public class Submenu
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Adjusts window size to the size of an html node it is
      * initiated in.
      */
-    private Byte autofit;
+    private Boolean autofit;
 
     /**
      * Sets focus on the window the moment it appears on the page.
      */
-    private Byte autofocus;
+    private Boolean autofocus;
 
     /**
      * Height of view will be adjusted to show all items.
      */
-    private Byte autoheight;
+    private Boolean autoheight;
 
     /**
      * Width of view will be adjusted to show all items.
      */
-    private Byte autowidth;
+    private Boolean autowidth;
 
     /**
      * The content of window body: template or view.
      */
-    private Byte body;
+    private UnknownType body;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Sets an action happening on a button click.
      */
-    private Byte click;
+    private UnknownType click;
 
     /**
      * Enables/disables clipboard support.
      */
-    private Byte clipboard;
+    private UnknownType clipboard;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * An inline dataset that data to the component will be load
      * from.
      */
-    private Byte data;
+    private UnknownType data;
 
     /**
      * The url to the data source that the component will use to
      * reload data from.
      */
-    private Byte dataFeed;
+    private UnknownType dataFeed;
 
     /**
      * Sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      */
-    private Byte datathrottle;
+    private Integer datathrottle;
 
     /**
      * The type of loaded data.
      */
-    private Byte datatype;
+    private String datatype;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Enables or disables drag-and-drop.
      */
-    private Byte drag;
+    private UnknownType drag;
 
     /**
      * Enables autoscroll of component during drag-n-drop.
      */
-    private Byte dragscroll;
+    private UnknownType dragscroll;
 
     /**
      * Allows defining custom 'move' logic for the component.
      */
-    private Byte externalData;
+    private UnknownType externalData;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the view header.
      */
-    private Byte head;
+    private UnknownType head;
 
     /**
      * Defines the header height (43 by default).
      */
-    private Byte headHeight;
+    private Integer headHeight;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Defines x or y orientation of layout.
      */
-    private Byte layout;
+    private String layout;
 
     /**
      * The left offset of the window.
      */
-    private Byte left;
+    private Integer left;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Switches window modality.
      */
-    private Byte modal;
+    private Boolean modal;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Makes view movable.
      */
-    private Byte move;
+    private Boolean move;
 
     /**
      * Activates the selection keyboard navigation.
      */
-    private Byte navigation;
+    private Boolean navigation;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Sets paddings of the chart content.
      */
-    private Byte padding;
+    private UnknownType padding;
 
     /**
      * Defines paging configuration ( creates a 'ui.pager' object).
      */
-    private Byte pager;
+    private UnknownType pager;
 
     /**
      * Sets position of the window relative to the the screen.
      */
-    private Byte position;
+    private String position;
 
     /**
      * A handler that is called just after the page has been
      * completely parsed.
      */
-    private Byte ready;
+    private UnknownType ready;
 
     /**
      * Positions a popup window relative to the component it's
      * connected with.
      */
-    private Byte relative;
+    private String relative;
 
     /**
      * Defines how to treat items in case of reloading.
      */
-    private Byte removeMissed;
+    private Boolean removeMissed;
 
     /**
      * Set of validation rules for the component.
      */
-    private Byte rules;
+    private UnknownType rules;
 
     /**
      * Defines urls for datasaving.
      */
-    private Byte save;
+    private String save;
 
     /**
      * Defines schemes for data processing.
      */
-    private Byte scheme;
+    private UnknownType scheme;
 
     /**
      * Enables/disables the scroll bar.
      */
-    private Byte scroll;
+    private UnknownType scroll;
 
     /**
      * The time during which the component is scrolled to the
      * specified position (in milliseconds).
      */
-    private Byte scrollSpeed;
+    private String scrollSpeed;
 
     /**
      * Enables/disables item selection or multiselection in
      * grouplist.
      */
-    private Byte select;
+    private UnknownType select;
 
     /**
      * Aligns submenu towards main menu.
      */
-    private Byte subMenuPos;
+    private String subMenuPos;
 
     /**
      * Defines submenu configuration.
      */
-    private Byte submenu;
+    private UnknownType submenu;
 
     /**
      * The component template.
      */
-    private Byte template;
+    private UnknownType template;
 
     /**
      * Sets the template according to which data will be copied to
      * the clipboard.
      */
-    private Byte templateCopy;
+    private UnknownType templateCopy;
 
     /**
      * Sets a popup message appearing on pointing a mouse cursor
      * over the dedicated item.
      */
-    private Byte tooltip;
+    private UnknownType tooltip;
 
     /**
      * The top offset of a window.
      */
-    private Byte top;
+    private Integer top;
 
     /**
      * Object that specifies items presentation.
      */
-    private Byte type;
+    private UnknownType type;
 
     /**
      * The url of a data feed which will be loaded after component
      * initialization.
      */
-    private Byte url;
+    private String url;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
     /**
      * Defines width of view in items.
      */
-    private Byte xCount;
+    private UnknownType xCount;
 
     /**
      * Defines height of view in items.
      */
-    private Byte yCount;
+    private Integer yCount;
 
     /**
      * Stack order of the component.
      */
-    private Byte zIndex;
+    private Integer zIndex;
 
 
       //-----------/
@@ -425,674 +428,674 @@ public class Submenu
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
-
-    /**
-     * Get adjusts window size to the size of an html node it is
-     * initiated in.
-     * 
-     * @return Byte
-     */
-    public Byte getAutofit()
-    {
-        return this.autofit;
-    } //-- Byte getAutofit()
-
-    /**
-     * Get sets focus on the window the moment it appears on the
-     * page.
-     * 
-     * @return Byte
-     */
-    public Byte getAutofocus()
-    {
-        return this.autofocus;
-    } //-- Byte getAutofocus()
-
-    /**
-     * Get height of view will be adjusted to show all items.
-     * 
-     * @return Byte
-     */
-    public Byte getAutoheight()
-    {
-        return this.autoheight;
-    } //-- Byte getAutoheight()
-
-    /**
-     * Get width of view will be adjusted to show all items.
-     * 
-     * @return Byte
-     */
-    public Byte getAutowidth()
-    {
-        return this.autowidth;
-    } //-- Byte getAutowidth()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get the content of window body: template or view.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getBody()
+    public UnknownType getBody()
     {
         return this.body;
-    } //-- Byte getBody()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getBody()
 
     /**
      * Get sets an action happening on a button click.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getClick()
+    public UnknownType getClick()
     {
         return this.click;
-    } //-- Byte getClick()
+    } //-- UnknownType getClick()
 
     /**
      * Get enables/disables clipboard support.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getClipboard()
+    public UnknownType getClipboard()
     {
         return this.clipboard;
-    } //-- Byte getClipboard()
+    } //-- UnknownType getClipboard()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get an inline dataset that data to the component will be
      * load from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getData()
+    public UnknownType getData()
     {
         return this.data;
-    } //-- Byte getData()
+    } //-- UnknownType getData()
 
     /**
      * Get the url to the data source that the component will use
      * to reload data from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDataFeed()
+    public UnknownType getDataFeed()
     {
         return this.dataFeed;
-    } //-- Byte getDataFeed()
+    } //-- UnknownType getDataFeed()
 
     /**
      * Get sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getDatathrottle()
+    public Integer getDatathrottle()
     {
         return this.datathrottle;
-    } //-- Byte getDatathrottle()
+    } //-- Integer getDatathrottle()
 
     /**
      * Get the type of loaded data.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getDatatype()
+    public String getDatatype()
     {
         return this.datatype;
-    } //-- Byte getDatatype()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getDatatype()
 
     /**
      * Get enables or disables drag-and-drop.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDrag()
+    public UnknownType getDrag()
     {
         return this.drag;
-    } //-- Byte getDrag()
+    } //-- UnknownType getDrag()
 
     /**
      * Get enables autoscroll of component during drag-n-drop.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDragscroll()
+    public UnknownType getDragscroll()
     {
         return this.dragscroll;
-    } //-- Byte getDragscroll()
+    } //-- UnknownType getDragscroll()
 
     /**
      * Get allows defining custom 'move' logic for the component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getExternalData()
+    public UnknownType getExternalData()
     {
         return this.externalData;
-    } //-- Byte getExternalData()
+    } //-- UnknownType getExternalData()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the view header.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getHead()
+    public UnknownType getHead()
     {
         return this.head;
-    } //-- Byte getHead()
+    } //-- UnknownType getHead()
 
     /**
      * Get defines the header height (43 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeadHeight()
+    public Integer getHeadHeight()
     {
         return this.headHeight;
-    } //-- Byte getHeadHeight()
+    } //-- Integer getHeadHeight()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get defines x or y orientation of layout.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getLayout()
+    public String getLayout()
     {
         return this.layout;
-    } //-- Byte getLayout()
+    } //-- String getLayout()
 
     /**
      * Get the left offset of the window.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLeft()
+    public Integer getLeft()
     {
         return this.left;
-    } //-- Byte getLeft()
+    } //-- Integer getLeft()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
-
-    /**
-     * Get switches window modality.
-     * 
-     * @return Byte
-     */
-    public Byte getModal()
-    {
-        return this.modal;
-    } //-- Byte getModal()
+    } //-- Integer getMinWidth()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
-
-    /**
-     * Get makes view movable.
-     * 
-     * @return Byte
-     */
-    public Byte getMove()
-    {
-        return this.move;
-    } //-- Byte getMove()
-
-    /**
-     * Get activates the selection keyboard navigation.
-     * 
-     * @return Byte
-     */
-    public Byte getNavigation()
-    {
-        return this.navigation;
-    } //-- Byte getNavigation()
+    } //-- Integer getMouseEventDelay()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get a property used to define custom context-click (right
      * click) handlers for elements in the DataTable cells.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnContext()
+    public UnknownType getOnContext()
     {
         return this.onContext;
-    } //-- Byte getOnContext()
+    } //-- UnknownType getOnContext()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnDblClick()
+    public UnknownType getOnDblClick()
     {
         return this.onDblClick;
-    } //-- Byte getOnDblClick()
+    } //-- UnknownType getOnDblClick()
 
     /**
      * Get attaches a dblclick behavior for component items with
      * the specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnMouseMove()
+    public UnknownType getOnMouseMove()
     {
         return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
+    } //-- UnknownType getOnMouseMove()
 
     /**
      * Get sets paddings of the chart content.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getPadding()
+    public UnknownType getPadding()
     {
         return this.padding;
-    } //-- Byte getPadding()
+    } //-- UnknownType getPadding()
 
     /**
      * Get defines paging configuration ( creates a 'ui.pager'
      * object).
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getPager()
+    public UnknownType getPager()
     {
         return this.pager;
-    } //-- Byte getPager()
+    } //-- UnknownType getPager()
 
     /**
      * Get sets position of the window relative to the the screen.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getPosition()
+    public String getPosition()
     {
         return this.position;
-    } //-- Byte getPosition()
+    } //-- String getPosition()
 
     /**
      * Get a handler that is called just after the page has been
      * completely parsed.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getReady()
+    public UnknownType getReady()
     {
         return this.ready;
-    } //-- Byte getReady()
+    } //-- UnknownType getReady()
 
     /**
      * Get positions a popup window relative to the component it's
      * connected with.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getRelative()
+    public String getRelative()
     {
         return this.relative;
-    } //-- Byte getRelative()
-
-    /**
-     * Get defines how to treat items in case of reloading.
-     * 
-     * @return Byte
-     */
-    public Byte getRemoveMissed()
-    {
-        return this.removeMissed;
-    } //-- Byte getRemoveMissed()
+    } //-- String getRelative()
 
     /**
      * Get set of validation rules for the component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getRules()
+    public UnknownType getRules()
     {
         return this.rules;
-    } //-- Byte getRules()
+    } //-- UnknownType getRules()
 
     /**
      * Get defines urls for datasaving.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getSave()
+    public String getSave()
     {
         return this.save;
-    } //-- Byte getSave()
+    } //-- String getSave()
 
     /**
      * Get defines schemes for data processing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getScheme()
+    public UnknownType getScheme()
     {
         return this.scheme;
-    } //-- Byte getScheme()
+    } //-- UnknownType getScheme()
 
     /**
      * Get enables/disables the scroll bar.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getScroll()
+    public UnknownType getScroll()
     {
         return this.scroll;
-    } //-- Byte getScroll()
+    } //-- UnknownType getScroll()
 
     /**
      * Get the time during which the component is scrolled to the
      * specified position (in milliseconds).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getScrollSpeed()
+    public String getScrollSpeed()
     {
         return this.scrollSpeed;
-    } //-- Byte getScrollSpeed()
+    } //-- String getScrollSpeed()
 
     /**
      * Get enables/disables item selection or multiselection in
      * grouplist.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getSelect()
+    public UnknownType getSelect()
     {
         return this.select;
-    } //-- Byte getSelect()
+    } //-- UnknownType getSelect()
 
     /**
      * Get aligns submenu towards main menu.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getSubMenuPos()
+    public String getSubMenuPos()
     {
         return this.subMenuPos;
-    } //-- Byte getSubMenuPos()
+    } //-- String getSubMenuPos()
 
     /**
      * Get defines submenu configuration.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getSubmenu()
+    public UnknownType getSubmenu()
     {
         return this.submenu;
-    } //-- Byte getSubmenu()
+    } //-- UnknownType getSubmenu()
 
     /**
      * Get the component template.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTemplate()
+    public UnknownType getTemplate()
     {
         return this.template;
-    } //-- Byte getTemplate()
+    } //-- UnknownType getTemplate()
 
     /**
      * Get sets the template according to which data will be copied
      * to the clipboard.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTemplateCopy()
+    public UnknownType getTemplateCopy()
     {
         return this.templateCopy;
-    } //-- Byte getTemplateCopy()
+    } //-- UnknownType getTemplateCopy()
 
     /**
      * Get sets a popup message appearing on pointing a mouse
      * cursor over the dedicated item.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTooltip()
+    public UnknownType getTooltip()
     {
         return this.tooltip;
-    } //-- Byte getTooltip()
+    } //-- UnknownType getTooltip()
 
     /**
      * Get the top offset of a window.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getTop()
+    public Integer getTop()
     {
         return this.top;
-    } //-- Byte getTop()
+    } //-- Integer getTop()
 
     /**
      * Get object that specifies items presentation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getType()
+    public UnknownType getType()
     {
         return this.type;
-    } //-- Byte getType()
+    } //-- UnknownType getType()
 
     /**
      * Get the url of a data feed which will be loaded after
      * component initialization.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getUrl()
+    public String getUrl()
     {
         return this.url;
-    } //-- Byte getUrl()
+    } //-- String getUrl()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
 
     /**
      * Get defines width of view in items.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getXCount()
+    public UnknownType getXCount()
     {
         return this.xCount;
-    } //-- Byte getXCount()
+    } //-- UnknownType getXCount()
 
     /**
      * Get defines height of view in items.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getYCount()
+    public Integer getYCount()
     {
         return this.yCount;
-    } //-- Byte getYCount()
+    } //-- Integer getYCount()
 
     /**
      * Get stack order of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getZIndex()
+    public Integer getZIndex()
     {
         return this.zIndex;
-    } //-- Byte getZIndex()
+    } //-- Integer getZIndex()
+
+    /**
+     * Get adjusts window size to the size of an html node it is
+     * initiated in.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutofit()
+    {
+        return this.autofit;
+    } //-- Boolean isAutofit()
+
+    /**
+     * Get sets focus on the window the moment it appears on the
+     * page.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutofocus()
+    {
+        return this.autofocus;
+    } //-- Boolean isAutofocus()
+
+    /**
+     * Get height of view will be adjusted to show all items.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutoheight()
+    {
+        return this.autoheight;
+    } //-- Boolean isAutoheight()
+
+    /**
+     * Get width of view will be adjusted to show all items.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutowidth()
+    {
+        return this.autowidth;
+    } //-- Boolean isAutowidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
+
+    /**
+     * Get switches window modality.
+     * 
+     * @return Boolean
+     */
+    public Boolean isModal()
+    {
+        return this.modal;
+    } //-- Boolean isModal()
+
+    /**
+     * Get makes view movable.
+     * 
+     * @return Boolean
+     */
+    public Boolean isMove()
+    {
+        return this.move;
+    } //-- Boolean isMove()
+
+    /**
+     * Get activates the selection keyboard navigation.
+     * 
+     * @return Boolean
+     */
+    public Boolean isNavigation()
+    {
+        return this.navigation;
+    } //-- Boolean isNavigation()
+
+    /**
+     * Get defines how to treat items in case of reloading.
+     * 
+     * @return Boolean
+     */
+    public Boolean isRemoveMissed()
+    {
+        return this.removeMissed;
+    } //-- Boolean isRemoveMissed()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set adjusts window size to the size of an html node it is
@@ -1100,10 +1103,10 @@ public class Submenu
      * 
      * @param autofit
      */
-    public void setAutofit( Byte autofit )
+    public void setAutofit( Boolean autofit )
     {
         this.autofit = autofit;
-    } //-- void setAutofit( Byte )
+    } //-- void setAutofit( Boolean )
 
     /**
      * Set sets focus on the window the moment it appears on the
@@ -1111,70 +1114,70 @@ public class Submenu
      * 
      * @param autofocus
      */
-    public void setAutofocus( Byte autofocus )
+    public void setAutofocus( Boolean autofocus )
     {
         this.autofocus = autofocus;
-    } //-- void setAutofocus( Byte )
+    } //-- void setAutofocus( Boolean )
 
     /**
      * Set height of view will be adjusted to show all items.
      * 
      * @param autoheight
      */
-    public void setAutoheight( Byte autoheight )
+    public void setAutoheight( Boolean autoheight )
     {
         this.autoheight = autoheight;
-    } //-- void setAutoheight( Byte )
+    } //-- void setAutoheight( Boolean )
 
     /**
      * Set width of view will be adjusted to show all items.
      * 
      * @param autowidth
      */
-    public void setAutowidth( Byte autowidth )
+    public void setAutowidth( Boolean autowidth )
     {
         this.autowidth = autowidth;
-    } //-- void setAutowidth( Byte )
+    } //-- void setAutowidth( Boolean )
 
     /**
      * Set the content of window body: template or view.
      * 
      * @param body
      */
-    public void setBody( Byte body )
+    public void setBody( UnknownType body )
     {
         this.body = body;
-    } //-- void setBody( Byte )
+    } //-- void setBody( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set sets an action happening on a button click.
      * 
      * @param click
      */
-    public void setClick( Byte click )
+    public void setClick( UnknownType click )
     {
         this.click = click;
-    } //-- void setClick( Byte )
+    } //-- void setClick( UnknownType )
 
     /**
      * Set enables/disables clipboard support.
      * 
      * @param clipboard
      */
-    public void setClipboard( Byte clipboard )
+    public void setClipboard( UnknownType clipboard )
     {
         this.clipboard = clipboard;
-    } //-- void setClipboard( Byte )
+    } //-- void setClipboard( UnknownType )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -1182,10 +1185,10 @@ public class Submenu
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -1193,10 +1196,10 @@ public class Submenu
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set an inline dataset that data to the component will be
@@ -1204,10 +1207,10 @@ public class Submenu
      * 
      * @param data
      */
-    public void setData( Byte data )
+    public void setData( UnknownType data )
     {
         this.data = data;
-    } //-- void setData( Byte )
+    } //-- void setData( UnknownType )
 
     /**
      * Set the url to the data source that the component will use
@@ -1215,10 +1218,10 @@ public class Submenu
      * 
      * @param dataFeed
      */
-    public void setDataFeed( Byte dataFeed )
+    public void setDataFeed( UnknownType dataFeed )
     {
         this.dataFeed = dataFeed;
-    } //-- void setDataFeed( Byte )
+    } //-- void setDataFeed( UnknownType )
 
     /**
      * Set sets the polling interval (the time period between the
@@ -1227,190 +1230,190 @@ public class Submenu
      * 
      * @param datathrottle
      */
-    public void setDatathrottle( Byte datathrottle )
+    public void setDatathrottle( Integer datathrottle )
     {
         this.datathrottle = datathrottle;
-    } //-- void setDatathrottle( Byte )
+    } //-- void setDatathrottle( Integer )
 
     /**
      * Set the type of loaded data.
      * 
      * @param datatype
      */
-    public void setDatatype( Byte datatype )
+    public void setDatatype( String datatype )
     {
         this.datatype = datatype;
-    } //-- void setDatatype( Byte )
+    } //-- void setDatatype( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set enables or disables drag-and-drop.
      * 
      * @param drag
      */
-    public void setDrag( Byte drag )
+    public void setDrag( UnknownType drag )
     {
         this.drag = drag;
-    } //-- void setDrag( Byte )
+    } //-- void setDrag( UnknownType )
 
     /**
      * Set enables autoscroll of component during drag-n-drop.
      * 
      * @param dragscroll
      */
-    public void setDragscroll( Byte dragscroll )
+    public void setDragscroll( UnknownType dragscroll )
     {
         this.dragscroll = dragscroll;
-    } //-- void setDragscroll( Byte )
+    } //-- void setDragscroll( UnknownType )
 
     /**
      * Set allows defining custom 'move' logic for the component.
      * 
      * @param externalData
      */
-    public void setExternalData( Byte externalData )
+    public void setExternalData( UnknownType externalData )
     {
         this.externalData = externalData;
-    } //-- void setExternalData( Byte )
+    } //-- void setExternalData( UnknownType )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the view header.
      * 
      * @param head
      */
-    public void setHead( Byte head )
+    public void setHead( UnknownType head )
     {
         this.head = head;
-    } //-- void setHead( Byte )
+    } //-- void setHead( UnknownType )
 
     /**
      * Set defines the header height (43 by default).
      * 
      * @param headHeight
      */
-    public void setHeadHeight( Byte headHeight )
+    public void setHeadHeight( Integer headHeight )
     {
         this.headHeight = headHeight;
-    } //-- void setHeadHeight( Byte )
+    } //-- void setHeadHeight( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set defines x or y orientation of layout.
      * 
      * @param layout
      */
-    public void setLayout( Byte layout )
+    public void setLayout( String layout )
     {
         this.layout = layout;
-    } //-- void setLayout( Byte )
+    } //-- void setLayout( String )
 
     /**
      * Set the left offset of the window.
      * 
      * @param left
      */
-    public void setLeft( Byte left )
+    public void setLeft( Integer left )
     {
         this.left = left;
-    } //-- void setLeft( Byte )
+    } //-- void setLeft( Integer )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set switches window modality.
      * 
      * @param modal
      */
-    public void setModal( Byte modal )
+    public void setModal( Boolean modal )
     {
         this.modal = modal;
-    } //-- void setModal( Byte )
+    } //-- void setModal( Boolean )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -1418,30 +1421,30 @@ public class Submenu
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set makes view movable.
      * 
      * @param move
      */
-    public void setMove( Byte move )
+    public void setMove( Boolean move )
     {
         this.move = move;
-    } //-- void setMove( Byte )
+    } //-- void setMove( Boolean )
 
     /**
      * Set activates the selection keyboard navigation.
      * 
      * @param navigation
      */
-    public void setNavigation( Byte navigation )
+    public void setNavigation( Boolean navigation )
     {
         this.navigation = navigation;
-    } //-- void setNavigation( Byte )
+    } //-- void setNavigation( Boolean )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -1449,10 +1452,10 @@ public class Submenu
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -1460,10 +1463,10 @@ public class Submenu
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -1471,10 +1474,10 @@ public class Submenu
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1482,10 +1485,10 @@ public class Submenu
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1493,20 +1496,20 @@ public class Submenu
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set sets paddings of the chart content.
      * 
      * @param padding
      */
-    public void setPadding( Byte padding )
+    public void setPadding( UnknownType padding )
     {
         this.padding = padding;
-    } //-- void setPadding( Byte )
+    } //-- void setPadding( UnknownType )
 
     /**
      * Set defines paging configuration ( creates a 'ui.pager'
@@ -1514,20 +1517,20 @@ public class Submenu
      * 
      * @param pager
      */
-    public void setPager( Byte pager )
+    public void setPager( UnknownType pager )
     {
         this.pager = pager;
-    } //-- void setPager( Byte )
+    } //-- void setPager( UnknownType )
 
     /**
      * Set sets position of the window relative to the the screen.
      * 
      * @param position
      */
-    public void setPosition( Byte position )
+    public void setPosition( String position )
     {
         this.position = position;
-    } //-- void setPosition( Byte )
+    } //-- void setPosition( String )
 
     /**
      * Set a handler that is called just after the page has been
@@ -1535,10 +1538,10 @@ public class Submenu
      * 
      * @param ready
      */
-    public void setReady( Byte ready )
+    public void setReady( UnknownType ready )
     {
         this.ready = ready;
-    } //-- void setReady( Byte )
+    } //-- void setReady( UnknownType )
 
     /**
      * Set positions a popup window relative to the component it's
@@ -1546,60 +1549,60 @@ public class Submenu
      * 
      * @param relative
      */
-    public void setRelative( Byte relative )
+    public void setRelative( String relative )
     {
         this.relative = relative;
-    } //-- void setRelative( Byte )
+    } //-- void setRelative( String )
 
     /**
      * Set defines how to treat items in case of reloading.
      * 
      * @param removeMissed
      */
-    public void setRemoveMissed( Byte removeMissed )
+    public void setRemoveMissed( Boolean removeMissed )
     {
         this.removeMissed = removeMissed;
-    } //-- void setRemoveMissed( Byte )
+    } //-- void setRemoveMissed( Boolean )
 
     /**
      * Set set of validation rules for the component.
      * 
      * @param rules
      */
-    public void setRules( Byte rules )
+    public void setRules( UnknownType rules )
     {
         this.rules = rules;
-    } //-- void setRules( Byte )
+    } //-- void setRules( UnknownType )
 
     /**
      * Set defines urls for datasaving.
      * 
      * @param save
      */
-    public void setSave( Byte save )
+    public void setSave( String save )
     {
         this.save = save;
-    } //-- void setSave( Byte )
+    } //-- void setSave( String )
 
     /**
      * Set defines schemes for data processing.
      * 
      * @param scheme
      */
-    public void setScheme( Byte scheme )
+    public void setScheme( UnknownType scheme )
     {
         this.scheme = scheme;
-    } //-- void setScheme( Byte )
+    } //-- void setScheme( UnknownType )
 
     /**
      * Set enables/disables the scroll bar.
      * 
      * @param scroll
      */
-    public void setScroll( Byte scroll )
+    public void setScroll( UnknownType scroll )
     {
         this.scroll = scroll;
-    } //-- void setScroll( Byte )
+    } //-- void setScroll( UnknownType )
 
     /**
      * Set the time during which the component is scrolled to the
@@ -1607,10 +1610,10 @@ public class Submenu
      * 
      * @param scrollSpeed
      */
-    public void setScrollSpeed( Byte scrollSpeed )
+    public void setScrollSpeed( String scrollSpeed )
     {
         this.scrollSpeed = scrollSpeed;
-    } //-- void setScrollSpeed( Byte )
+    } //-- void setScrollSpeed( String )
 
     /**
      * Set enables/disables item selection or multiselection in
@@ -1618,40 +1621,40 @@ public class Submenu
      * 
      * @param select
      */
-    public void setSelect( Byte select )
+    public void setSelect( UnknownType select )
     {
         this.select = select;
-    } //-- void setSelect( Byte )
+    } //-- void setSelect( UnknownType )
 
     /**
      * Set aligns submenu towards main menu.
      * 
      * @param subMenuPos
      */
-    public void setSubMenuPos( Byte subMenuPos )
+    public void setSubMenuPos( String subMenuPos )
     {
         this.subMenuPos = subMenuPos;
-    } //-- void setSubMenuPos( Byte )
+    } //-- void setSubMenuPos( String )
 
     /**
      * Set defines submenu configuration.
      * 
      * @param submenu
      */
-    public void setSubmenu( Byte submenu )
+    public void setSubmenu( UnknownType submenu )
     {
         this.submenu = submenu;
-    } //-- void setSubmenu( Byte )
+    } //-- void setSubmenu( UnknownType )
 
     /**
      * Set the component template.
      * 
      * @param template
      */
-    public void setTemplate( Byte template )
+    public void setTemplate( UnknownType template )
     {
         this.template = template;
-    } //-- void setTemplate( Byte )
+    } //-- void setTemplate( UnknownType )
 
     /**
      * Set sets the template according to which data will be copied
@@ -1659,10 +1662,10 @@ public class Submenu
      * 
      * @param templateCopy
      */
-    public void setTemplateCopy( Byte templateCopy )
+    public void setTemplateCopy( UnknownType templateCopy )
     {
         this.templateCopy = templateCopy;
-    } //-- void setTemplateCopy( Byte )
+    } //-- void setTemplateCopy( UnknownType )
 
     /**
      * Set sets a popup message appearing on pointing a mouse
@@ -1670,30 +1673,30 @@ public class Submenu
      * 
      * @param tooltip
      */
-    public void setTooltip( Byte tooltip )
+    public void setTooltip( UnknownType tooltip )
     {
         this.tooltip = tooltip;
-    } //-- void setTooltip( Byte )
+    } //-- void setTooltip( UnknownType )
 
     /**
      * Set the top offset of a window.
      * 
      * @param top
      */
-    public void setTop( Byte top )
+    public void setTop( Integer top )
     {
         this.top = top;
-    } //-- void setTop( Byte )
+    } //-- void setTop( Integer )
 
     /**
      * Set object that specifies items presentation.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( UnknownType type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( UnknownType )
 
     /**
      * Set the url of a data feed which will be loaded after
@@ -1701,50 +1704,50 @@ public class Submenu
      * 
      * @param url
      */
-    public void setUrl( Byte url )
+    public void setUrl( String url )
     {
         this.url = url;
-    } //-- void setUrl( Byte )
+    } //-- void setUrl( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Set defines width of view in items.
      * 
      * @param xCount
      */
-    public void setXCount( Byte xCount )
+    public void setXCount( UnknownType xCount )
     {
         this.xCount = xCount;
-    } //-- void setXCount( Byte )
+    } //-- void setXCount( UnknownType )
 
     /**
      * Set defines height of view in items.
      * 
      * @param yCount
      */
-    public void setYCount( Byte yCount )
+    public void setYCount( Integer yCount )
     {
         this.yCount = yCount;
-    } //-- void setYCount( Byte )
+    } //-- void setYCount( Integer )
 
     /**
      * Set stack order of the component.
      * 
      * @param zIndex
      */
-    public void setZIndex( Byte zIndex )
+    public void setZIndex( Integer zIndex )
     {
         this.zIndex = zIndex;
-    } //-- void setZIndex( Byte )
+    } //-- void setZIndex( Integer )
 
     /**
      * Adds an item to the store

@@ -98,26 +98,28 @@
 
 			<macro_print_header message="Download source, out: @{dest-dir}" />
 
-			<dependset>
-				<srcfilelist files="@{url-file}" />
-				<targetfileset dir="@{dest-dir}" includes="**/*.*" />
-			</dependset>
-
-			<local name="download_not_required" />
-			<condition property="download_not_required">
+			<local name="skip_download" />
+			<condition property="skip_download">
 				<or>
 					<resourcecount count="1" when="less">
-						<file file="@{url-file}.tmp" />
+						<resourcelist>
+							<file file="@{url-file}.tmp" />
+						</resourcelist>
 					</resourcecount>
 					<filesmatch file1="@{url-file}.tmp" file2="@{url-file}" />
 				</or>
 			</condition>
 
-			<echo if:set="download_not_required" message="Download skipped" />
+			<copy file="@{url-file}.tmp" tofile="@{url-file}" />
 
-			<copy unless:set="download_not_required" file="@{url-file}.tmp" tofile="@{url-file}" />
+			<echo if:set="skip_download" message="Download task skipped" />
 
-			<get unless:set="download_not_required" dest="@{dest-dir}">
+			<dependset unless:set="skip_download">
+				<srcfilelist files="@{url-file}" />
+				<targetfileset dir="@{dest-dir}" includes="**/*.*" />
+			</dependset>
+
+			<get unless:set="skip_download" dest="@{dest-dir}">
 				<resourcelist>
 					<file file="@{url-file}" />
 				</resourcelist>
@@ -134,6 +136,7 @@
 			<taskdef name="tidy" classname="org.w3c.tidy.ant.JTidyTask">
 				<classpath path="${lib.dir}/jtidy.jar" />
 			</taskdef>
+
 			<tidy destdir="@{dest-dir}" failonerror="true">
 				<parameter name="output-xhtml" value="true" />
 				<parameter name="output-encoding" value="utf8" />
@@ -202,13 +205,27 @@
 
 			<fileset id="fs" dir="${current_work_dir}/descriptor-source" includes="*.xml" />
 
-			<dependset>
+			<local name="skip_split_xml" />
+			<condition property="skip_split_xml">
+				<resourcecount when="less" count="1">
+					<restrict>
+						<fileset refid="fs" />
+						<modified>
+							<param name="cache.cachefile" value="${current_work_dir}/descriptor-source-cache.properties" />
+						</modified>
+					</restrict>
+				</resourcecount>
+			</condition>
+
+			<echo if:set="skip_split_xml" message="Split XML task skipped" />
+
+			<dependset unless:set="skip_split_xml">
 				<srcfileset refid="fs" />
 				<targetfileset dir="${current_work_dir}/descriptor-ready" includes="**/*.xml" />
 				<targetfileset dir="${current_work_dir}/model" includes="**/*.xml" />
 			</dependset>
 
-			<apply executable="java" failonerror="true" skipemptyfilesets="true" parallel="true" maxparallel="100">
+			<apply unless:set="skip_split_xml" executable="java" failonerror="true" skipemptyfilesets="true" parallel="true" maxparallel="100">
 				<arg value="-Xmx32m" />
 				<arg value="-classpath" />
 				<arg path="${tools.dir}/classes" />
@@ -266,6 +283,9 @@
 		<macro_init_step dest-dir="${work.dir}/step3" />
 		<macro_init_step dest-dir="${work.dir}/step4" />
 		<macro_init_step dest-dir="${work.dir}/step5" />
+
+		<mkdir dir="${work.dir}/generated-xml" />
+		<mkdir dir="${work.dir}/generated-sources" />
 	</target>
 
 	<target name="prepare_tools">
@@ -297,20 +317,49 @@
 		<macro_proceed_step current-step="step5" />
 	</target>
 
-	<target name="generate_api" depends="init,prepare_tools">
-		<macro_print_header message="Generating Webix UI API" />
+	<target name="prepare_model" depends="init">
+		<macro_print_header message="Preparing model file" />
 
-		<antcall target="step5" unless:set="generate_api.skip_steps" />
-
-		<macro_print_header message="Generating mdo file" />
-
-		<concat destfile="${work.dir}/model.xml">
+		<concat destfile="${work.dir}/model-cumulative.xml">
 			<fileset dir="${work.dir}" includes="step?/model/**/*.xml" />
 			<header>&lt;model&gt;</header>
 			<footer>&lt;/model&gt;</footer>
 		</concat>
+	</target>
 
-		<xslt in="${work.dir}/model.xml" out="${work.dir}/webix-api.mdo" style="${build.config.dir}/model2mdo.xsl" />
+	<target name="generate_xml" depends="init,prepare_tools,prepare_model">
+		<macro_print_header message="Transforming model file" />
+
+		<xslt in="${work.dir}/model-cumulative.xml" out="${work.dir}/generated-cumulative.xml" style="${build.config.dir}/model2generated.xsl" />
+
+		<java classname="utils.SplitXml" classpath="${tools.dir}/classes">
+			<arg path="${work.dir}/generated-xml" />
+			<arg path="${work.dir}/generated-cumulative.xml" />
+		</java>
+	</target>
+
+	<target name="generate_source" depends="init,generate_xml">
+		<macro_print_header message="Generating sources" />
+
+		<xslt destdir="${work.dir}/generated-sources" style="${build.config.dir}/xml2java.xsl" extension=".java" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
+			<fileset dir="${work.dir}/generated-xml">
+				<include name="**/*.xml" />
+			</fileset>
+		</xslt>
+
+		<copy todir="${src.dir}/main/java">
+			<fileset dir="${work.dir}/generated-sources">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="generate" depends="init,prepare_tools">
+		<macro_print_header message="Generating Webix UI API" />
+
+		<antcall target="step5" unless:set="generate_api.skip_steps" />
+
+		<antcall target="generate_source" />
 	</target>
 
 </project>

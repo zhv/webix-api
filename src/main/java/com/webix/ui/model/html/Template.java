@@ -9,6 +9,7 @@ package com.webix.ui.model.html;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -68,12 +69,14 @@ import com.webix.ui.model.layouts.Toolbar;
 /**
  * A view with some HTML content inside.The component is a simple
  * container (but with rich API support) where you can put any HTML
- * content. Check template documentation for more detailed
- * description.
+ * content. Check <a
+ * href="http://docs.webix.com/desktop__template.html">template</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_LOAD, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_BEFORE_LOAD, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_LOAD_ERROR, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Template
     implements java.io.Serializable
 {
@@ -85,145 +88,145 @@ public class Template
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * Lets the component autosize to its contents.
      */
-    private Byte autoheight;
+    private UnknownType autoheight;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The id or node, whose content will be moved to the view.
      */
-    private Byte content;
+    private UnknownType content;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * An inline dataset that data to the component will be load
      * from.
      */
-    private Byte data;
+    private UnknownType data;
 
     /**
      * The url to the data source that the component will use to
      * reload data from.
      */
-    private Byte dataFeed;
+    private UnknownType dataFeed;
 
     /**
      * The type of loaded data.
      */
-    private Byte datatype;
+    private String datatype;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * Enables/disables the scroll bar.
      */
-    private Byte scroll;
+    private UnknownType scroll;
 
     /**
      * The time during which the component is scrolled to the
      * specified position (in milliseconds).
      */
-    private Byte scrollSpeed;
+    private String scrollSpeed;
 
     /**
      * The path to an external template that is loaded by Ajax.
      */
-    private Byte src;
+    private String src;
 
     /**
      * The component template.
      */
-    private Byte template;
+    private UnknownType template;
 
     /**
      * Name of predefined styling type.
      */
-    private Byte type;
+    private String type;
 
     /**
      * The url of a data feed which will be loaded after component
      * initialization.
      */
-    private Byte url;
+    private String url;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
 
       //-----------/
@@ -233,310 +236,310 @@ public class Template
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get lets the component autosize to its contents.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAutoheight()
+    public UnknownType getAutoheight()
     {
         return this.autoheight;
-    } //-- Byte getAutoheight()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- UnknownType getAutoheight()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the id or node, whose content will be moved to the view.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContent()
+    public UnknownType getContent()
     {
         return this.content;
-    } //-- Byte getContent()
+    } //-- UnknownType getContent()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get an inline dataset that data to the component will be
      * load from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getData()
+    public UnknownType getData()
     {
         return this.data;
-    } //-- Byte getData()
+    } //-- UnknownType getData()
 
     /**
      * Get the url to the data source that the component will use
      * to reload data from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDataFeed()
+    public UnknownType getDataFeed()
     {
         return this.dataFeed;
-    } //-- Byte getDataFeed()
+    } //-- UnknownType getDataFeed()
 
     /**
      * Get the type of loaded data.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getDatatype()
+    public String getDatatype()
     {
         return this.datatype;
-    } //-- Byte getDatatype()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getDatatype()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get allows attaching custom handlers to inner events of the
      * component.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOn()
+    public UnknownType getOn()
     {
         return this.on;
-    } //-- Byte getOn()
+    } //-- UnknownType getOn()
 
     /**
      * Get attaches a click behavior for component items with the
      * specified CSS class.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getOnClick()
+    public UnknownType getOnClick()
     {
         return this.onClick;
-    } //-- Byte getOnClick()
+    } //-- UnknownType getOnClick()
 
     /**
      * Get enables/disables the scroll bar.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getScroll()
+    public UnknownType getScroll()
     {
         return this.scroll;
-    } //-- Byte getScroll()
+    } //-- UnknownType getScroll()
 
     /**
      * Get the time during which the component is scrolled to the
      * specified position (in milliseconds).
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getScrollSpeed()
+    public String getScrollSpeed()
     {
         return this.scrollSpeed;
-    } //-- Byte getScrollSpeed()
+    } //-- String getScrollSpeed()
 
     /**
      * Get the path to an external template that is loaded by Ajax.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getSrc()
+    public String getSrc()
     {
         return this.src;
-    } //-- Byte getSrc()
+    } //-- String getSrc()
 
     /**
      * Get the component template.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getTemplate()
+    public UnknownType getTemplate()
     {
         return this.template;
-    } //-- Byte getTemplate()
+    } //-- UnknownType getTemplate()
 
     /**
      * Get name of predefined styling type.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getType()
+    public String getType()
     {
         return this.type;
-    } //-- Byte getType()
+    } //-- String getType()
 
     /**
      * Get the url of a data feed which will be loaded after
      * component initialization.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getUrl()
+    public String getUrl()
     {
         return this.url;
-    } //-- Byte getUrl()
+    } //-- String getUrl()
 
     /**
      * Get sets the width of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getWidth()
+    public Integer getWidth()
     {
         return this.width;
-    } //-- Byte getWidth()
+    } //-- Integer getWidth()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set lets the component autosize to its contents.
      * 
      * @param autoheight
      */
-    public void setAutoheight( Byte autoheight )
+    public void setAutoheight( UnknownType autoheight )
     {
         this.autoheight = autoheight;
-    } //-- void setAutoheight( Byte )
+    } //-- void setAutoheight( UnknownType )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -544,20 +547,20 @@ public class Template
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the id or node, whose content will be moved to the view.
      * 
      * @param content
      */
-    public void setContent( Byte content )
+    public void setContent( UnknownType content )
     {
         this.content = content;
-    } //-- void setContent( Byte )
+    } //-- void setContent( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -565,10 +568,10 @@ public class Template
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set an inline dataset that data to the component will be
@@ -576,10 +579,10 @@ public class Template
      * 
      * @param data
      */
-    public void setData( Byte data )
+    public void setData( UnknownType data )
     {
         this.data = data;
-    } //-- void setData( Byte )
+    } //-- void setData( UnknownType )
 
     /**
      * Set the url to the data source that the component will use
@@ -587,110 +590,110 @@ public class Template
      * 
      * @param dataFeed
      */
-    public void setDataFeed( Byte dataFeed )
+    public void setDataFeed( UnknownType dataFeed )
     {
         this.dataFeed = dataFeed;
-    } //-- void setDataFeed( Byte )
+    } //-- void setDataFeed( UnknownType )
 
     /**
      * Set the type of loaded data.
      * 
      * @param datatype
      */
-    public void setDatatype( Byte datatype )
+    public void setDatatype( String datatype )
     {
         this.datatype = datatype;
-    } //-- void setDatatype( Byte )
+    } //-- void setDatatype( String )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -698,10 +701,10 @@ public class Template
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -709,20 +712,20 @@ public class Template
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set enables/disables the scroll bar.
      * 
      * @param scroll
      */
-    public void setScroll( Byte scroll )
+    public void setScroll( UnknownType scroll )
     {
         this.scroll = scroll;
-    } //-- void setScroll( Byte )
+    } //-- void setScroll( UnknownType )
 
     /**
      * Set the time during which the component is scrolled to the
@@ -730,40 +733,40 @@ public class Template
      * 
      * @param scrollSpeed
      */
-    public void setScrollSpeed( Byte scrollSpeed )
+    public void setScrollSpeed( String scrollSpeed )
     {
         this.scrollSpeed = scrollSpeed;
-    } //-- void setScrollSpeed( Byte )
+    } //-- void setScrollSpeed( String )
 
     /**
      * Set the path to an external template that is loaded by Ajax.
      * 
      * @param src
      */
-    public void setSrc( Byte src )
+    public void setSrc( String src )
     {
         this.src = src;
-    } //-- void setSrc( Byte )
+    } //-- void setSrc( String )
 
     /**
      * Set the component template.
      * 
      * @param template
      */
-    public void setTemplate( Byte template )
+    public void setTemplate( UnknownType template )
     {
         this.template = template;
-    } //-- void setTemplate( Byte )
+    } //-- void setTemplate( UnknownType )
 
     /**
      * Set name of predefined styling type.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( String type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( String )
 
     /**
      * Set the url of a data feed which will be loaded after
@@ -771,20 +774,20 @@ public class Template
      * 
      * @param url
      */
-    public void setUrl( Byte url )
+    public void setUrl( String url )
     {
         this.url = url;
-    } //-- void setUrl( Byte )
+    } //-- void setUrl( String )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Adjusts the component to the size of the parent HTML container

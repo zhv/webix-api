@@ -13,8 +13,8 @@
 	</properties>
 	<licenses>
 		<license>
-			<name>BSD 4-clause &quot;Original&quot; or &quot;Old&quot; License</name>
-			<url>http://www.spdx.org/licenses/BSD-4-Clause</url>
+			<name>BSD 3-clause &quot;New&quot; or &quot;Revised&quot; License</name>
+			<url>http://www.spdx.org/licenses/BSD-3-Clause</url>
 		</license>
 	</licenses>
 	<profiles>
@@ -51,7 +51,7 @@
 								<configuration>
 									<target>
 										<ant antfile="${basedir}/generate_api.xml">
-											<target name="generate_api" />
+											<target name="generate" />
 										</ant>
 									</target>
 								</configuration>
@@ -71,7 +71,7 @@
 								</goals>
 								<configuration>
 									<models>
-										<model>build/work/webix-api.mdo</model>
+										<model>build/work/generated-xml/webix-api.mdo</model>
 									</models>
 									<version>${webix.api.version}</version>
 									<outputDirectory>src/main/java</outputDirectory>

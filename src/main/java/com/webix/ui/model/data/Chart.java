@@ -9,6 +9,7 @@ package com.webix.ui.model.data;
  //- Imported classes and packages -/
 //---------------------------------/
 
+import com.webix.ui.model.UnknownType;
 import com.webix.ui.model.auxiliary.Calendar;
 import com.webix.ui.model.auxiliary.Colorboard;
 import com.webix.ui.model.auxiliary.Pager;
@@ -65,12 +66,14 @@ import com.webix.ui.model.layouts.Toolbar;
  * common chart types:line, spline, area, bar, pie, donut, scatter,
  * radar. You can customize appearance of a chart through colors,
  * tooltips, templates, scales, labels. It's possible to present
- * multiple data sets on the same chart. Check chart documentation
- * for more detailed description.
+ * multiple data sets on the same chart. Check <a
+ * href="http://docs.webix.com/desktop__chart.html">chart</a>
+ * documentation for more detailed description.
  * 
  * @version $Revision$ $Date$
  */
 @SuppressWarnings( "all" )
+@com.webix.ui.model.SupportsEvent({com.webix.ui.model.Event.ON_AFTER_ADD, com.webix.ui.model.Event.ON_AFTER_CONTEXT_MENU, com.webix.ui.model.Event.ON_AFTER_DELETE, com.webix.ui.model.Event.ON_AFTER_LOAD, com.webix.ui.model.Event.ON_AFTER_RENDER, com.webix.ui.model.Event.ON_AFTER_SCROLL, com.webix.ui.model.Event.ON_AFTER_SORT, com.webix.ui.model.Event.ON_BEFORE_ADD, com.webix.ui.model.Event.ON_BEFORE_CONTEXT_MENU, com.webix.ui.model.Event.ON_BEFORE_DELETE, com.webix.ui.model.Event.ON_BEFORE_LOAD, com.webix.ui.model.Event.ON_BEFORE_RENDER, com.webix.ui.model.Event.ON_BEFORE_SORT, com.webix.ui.model.Event.ON_BIND_REQUEST, com.webix.ui.model.Event.ON_DATA_REQUEST, com.webix.ui.model.Event.ON_DATA_UPDATE, com.webix.ui.model.Event.ON_DESTRUCT, com.webix.ui.model.Event.ON_ITEM_CLICK, com.webix.ui.model.Event.ON_ITEM_DBL_CLICK, com.webix.ui.model.Event.ON_LOAD_ERROR, com.webix.ui.model.Event.ON_LONG_TOUCH, com.webix.ui.model.Event.ON_MOUSE_MOVE, com.webix.ui.model.Event.ON_MOUSE_MOVING, com.webix.ui.model.Event.ON_MOUSE_OUT, com.webix.ui.model.Event.ON_ROTATE, com.webix.ui.model.Event.ON_SWIPE_X, com.webix.ui.model.Event.ON_SWIPE_Y, com.webix.ui.model.Event.ON_TOUCH_END, com.webix.ui.model.Event.ON_TOUCH_MOVE, com.webix.ui.model.Event.ON_TOUCH_START, com.webix.ui.model.Event.ON_VIEW_RESIZE})
 public class Chart
     implements java.io.Serializable
 {
@@ -82,349 +85,349 @@ public class Chart
     /**
      * Defines the opacity of chart items.
      */
-    private Byte alpha;
+    private Integer alpha;
 
     /**
      * Defines or disables view change animation.
      */
-    private Byte animate;
+    private UnknownType animate;
 
     /**
      * The width of bars.
      */
-    private Byte barWidth;
+    private Integer barWidth;
 
     /**
      * Enables/disables the bar borders.
      */
-    private Byte border;
+    private Boolean border;
 
     /**
      * Sets the border color of each item in the graph.
      */
-    private Byte borderColor;
+    private String borderColor;
 
     /**
      * Used to hide the component borders.
      */
-    private Byte borderless;
+    private Boolean borderless;
 
     /**
      * Defines the slope angle of 3D pie.
      */
-    private Byte cant;
+    private Integer cant;
 
     /**
      * Defines items colors.
      */
-    private Byte color;
+    private UnknownType color;
 
     /**
      * An html container (or its id) where the component needs
      * initializing.
      */
-    private Byte container;
+    private UnknownType container;
 
     /**
      * The name of a css class that will be applied to the view
      * container.
      */
-    private Byte css;
+    private String css;
 
     /**
      * An inline dataset that data to the component will be load
      * from.
      */
-    private Byte data;
+    private UnknownType data;
 
     /**
      * The url to the data source that the component will use to
      * reload data from.
      */
-    private Byte dataFeed;
+    private UnknownType dataFeed;
 
     /**
      * Sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      */
-    private Byte datathrottle;
+    private Integer datathrottle;
 
     /**
      * The type of loaded data.
      */
-    private Byte datatype;
+    private String datatype;
 
     /**
      * Disapbles graph lines with radar chart.
      */
-    private Byte disableLines;
+    private Boolean disableLines;
 
     /**
      * Disables item.
      */
-    private Byte disabled;
+    private Boolean disabled;
 
     /**
      * Sets the radius (in pixels) of the virtual circle which
      * events will fire for items within.
      */
-    private Byte eventRadius;
+    private Integer eventRadius;
 
     /**
      * Fills the chart area with the specified background color.
      */
-    private Byte fill;
+    private String fill;
 
     /**
      * Chart max limit mode.
      */
-    private Byte fixOverflow;
+    private Boolean fixOverflow;
 
     /**
      * Specifies the chart gradient.
      */
-    private Byte gradient;
+    private UnknownType gradient;
 
     /**
      * Sets the view gravity (1 by default).
      */
-    private Byte gravity;
+    private Integer gravity;
 
     /**
      * Sets the height of the component.
      */
-    private Byte height;
+    private Integer height;
 
     /**
      * Defines whether the view will be hidden initially.
      */
-    private Byte hidden;
+    private Boolean hidden;
 
     /**
      * The component ID.
      */
-    private Byte id;
+    private String id;
 
     /**
      * Defines markers that present chart's data items.
      */
-    private Byte item;
+    private UnknownType item;
 
     /**
      * Sets the template for items' labels.
      */
-    private Byte label;
+    private UnknownType label;
 
     /**
      * The offset of sector labels from the pie frame.
      */
-    private Byte labelOffset;
+    private Integer labelOffset;
 
     /**
      * Defines the chart legend.
      */
-    private Byte legend;
+    private UnknownType legend;
 
     /**
      * Defines chart lines.
      */
-    private Byte line;
+    private UnknownType line;
 
     /**
      * Sets the color for strips dividing the pie sectors.
      */
-    private Byte lineColor;
+    private String lineColor;
 
     /**
      * Sets the maximum height for the view.
      */
-    private Byte maxHeight;
+    private Integer maxHeight;
 
     /**
      * Sets the maximum width for the view.
      */
-    private Byte maxWidth;
+    private Integer maxWidth;
 
     /**
      * Sets the minimal height for the view.
      */
-    private Byte minHeight;
+    private Integer minHeight;
 
     /**
      * Sets the minimal width for the view.
      */
-    private Byte minWidth;
+    private Integer minWidth;
 
     /**
      * The delay between a real mouse action and invoking the
      * related events.
      */
-    private Byte mouseEventDelay;
+    private Integer mouseEventDelay;
 
     /**
      * Defines whether the first item of the scale will be drawn
      * with the offset equal to the half of the scale's step
      * (relative to the origin of the chart) or not.
      */
-    private Byte offset;
+    private Boolean offset;
 
     /**
      * Allows attaching custom handlers to inner events of the
      * component.
      */
-    private Byte on;
+    private UnknownType on;
 
     /**
      * Attaches a click behavior for component items with the
      * specified CSS class.
      */
-    private Byte onClick;
+    private UnknownType onClick;
 
     /**
      * A property used to define custom context-click (right click)
      * handlers for elements in the DataTable cells
      * .
      */
-    private Byte onContext;
+    private UnknownType onContext;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onDblClick;
+    private UnknownType onDblClick;
 
     /**
      * Attaches a dblclick behavior for component items with the
      * specified CSS class.
      */
-    private Byte onMouseMove;
+    private UnknownType onMouseMove;
 
     /**
      * Sets the scale origin.
      */
-    private Byte origin;
+    private Integer origin;
 
     /**
      * Sets paddings of the chart content.
      */
-    private Byte padding;
+    private UnknownType padding;
 
     /**
      * The height of the 3d pie.
      */
-    private Byte pieHeight;
+    private Integer pieHeight;
 
     /**
      * Sets the template for the pie inner labels.
      */
-    private Byte pieInnerText;
+    private UnknownType pieInnerText;
 
     /**
      * Applies the predefined chart configuration object with the
      * specified name.
      */
-    private Byte preset;
+    private String preset;
 
     /**
      * The radius of the bar's rounding.
      */
-    private Byte radius;
+    private Integer radius;
 
     /**
      * A handler that is called just after the page has been
      * completely parsed.
      */
-    private Byte ready;
+    private UnknownType ready;
 
     /**
      * Defines how to treat items in case of reloading.
      */
-    private Byte removeMissed;
+    private Boolean removeMissed;
 
     /**
      * Defines urls for datasaving.
      */
-    private Byte save;
+    private String save;
 
     /**
      * Type of chart scale, logarithic or plain.
      */
-    private Byte scale;
+    private String scale;
 
     /**
      * Defines schemes for data processing.
      */
-    private Byte scheme;
+    private UnknownType scheme;
 
     /**
-     * Defines graphs presented on the chart.
+     * Field series.
      */
-    private Byte series;
+    private java.util.List<UnknownType> series;
 
     /**
      * Enables/disables the pie shadow.
      */
-    private Byte shadow;
+    private Boolean shadow;
 
     /**
      * Sets a popup message appearing on pointing a mouse cursor
      * over the dedicated item.
      */
-    private Byte tooltip;
+    private UnknownType tooltip;
 
     /**
      * Sets the chart type.
      */
-    private Byte type;
+    private String type;
 
     /**
      * The url of a data feed which will be loaded after component
      * initialization.
      */
-    private Byte url;
+    private String url;
 
     /**
      * Defines values for the vertical axis.
      */
-    private Byte value;
+    private UnknownType value;
 
     /**
      * Sets the width of the component.
      */
-    private Byte width;
+    private Integer width;
 
     /**
      * The horizontal position of the pie center.
      */
-    private Byte x;
+    private Integer x;
 
     /**
      * Defines the horizontal axis.
      */
-    private Byte xAxis;
+    private UnknownType xAxis;
 
     /**
      * A property of the dataset that defines values for the
      * horizontal axis.
      */
-    private Byte xValue;
+    private String xValue;
 
     /**
      * The vertical position of the pie center.
      */
-    private Byte y;
+    private Integer y;
 
     /**
      * Defines the vertical axis.
      */
-    private Byte yAxis;
+    private UnknownType yAxis;
 
     /**
      * A property of the dataset that defines values for the
      * vertical axis.
      */
-    private Byte yValue;
+    private String yValue;
 
 
       //-----------/
@@ -432,756 +435,781 @@ public class Chart
     //-----------/
 
     /**
+     * Method addSery.
+     * 
+     * @param unknownType
+     */
+    public void addSery( UnknownType unknownType )
+    {
+        getSeries().add( unknownType );
+    } //-- void addSery( UnknownType )
+
+    /**
      * Get defines the opacity of chart items.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getAlpha()
+    public Integer getAlpha()
     {
         return this.alpha;
-    } //-- Byte getAlpha()
+    } //-- Integer getAlpha()
 
     /**
      * Get defines or disables view change animation.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getAnimate()
+    public UnknownType getAnimate()
     {
         return this.animate;
-    } //-- Byte getAnimate()
+    } //-- UnknownType getAnimate()
 
     /**
      * Get the width of bars.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getBarWidth()
+    public Integer getBarWidth()
     {
         return this.barWidth;
-    } //-- Byte getBarWidth()
-
-    /**
-     * Get enables/disables the bar borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorder()
-    {
-        return this.border;
-    } //-- Byte getBorder()
+    } //-- Integer getBarWidth()
 
     /**
      * Get sets the border color of each item in the graph.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getBorderColor()
+    public String getBorderColor()
     {
         return this.borderColor;
-    } //-- Byte getBorderColor()
-
-    /**
-     * Get used to hide the component borders.
-     * 
-     * @return Byte
-     */
-    public Byte getBorderless()
-    {
-        return this.borderless;
-    } //-- Byte getBorderless()
+    } //-- String getBorderColor()
 
     /**
      * Get defines the slope angle of 3D pie.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getCant()
+    public Integer getCant()
     {
         return this.cant;
-    } //-- Byte getCant()
+    } //-- Integer getCant()
 
     /**
      * Get defines items colors.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getColor()
+    public UnknownType getColor()
     {
         return this.color;
-    } //-- Byte getColor()
+    } //-- UnknownType getColor()
 
     /**
      * Get an html container (or its id) where the component needs
      * initializing.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getContainer()
+    public UnknownType getContainer()
     {
         return this.container;
-    } //-- Byte getContainer()
+    } //-- UnknownType getContainer()
 
     /**
      * Get the name of a css class that will be applied to the view
      * container.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getCss()
+    public String getCss()
     {
         return this.css;
-    } //-- Byte getCss()
+    } //-- String getCss()
 
     /**
      * Get an inline dataset that data to the component will be
      * load from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getData()
+    public UnknownType getData()
     {
         return this.data;
-    } //-- Byte getData()
+    } //-- UnknownType getData()
 
     /**
      * Get the url to the data source that the component will use
      * to reload data from.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getDataFeed()
+    public UnknownType getDataFeed()
     {
         return this.dataFeed;
-    } //-- Byte getDataFeed()
+    } //-- UnknownType getDataFeed()
 
     /**
      * Get sets the polling interval (the time period between the
      * completion of a network request and the next request for
      * data).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getDatathrottle()
+    public Integer getDatathrottle()
     {
         return this.datathrottle;
-    } //-- Byte getDatathrottle()
+    } //-- Integer getDatathrottle()
 
     /**
      * Get the type of loaded data.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getDatatype()
+    public String getDatatype()
     {
         return this.datatype;
-    } //-- Byte getDatatype()
-
-    /**
-     * Get disapbles graph lines with radar chart.
-     * 
-     * @return Byte
-     */
-    public Byte getDisableLines()
-    {
-        return this.disableLines;
-    } //-- Byte getDisableLines()
-
-    /**
-     * Get disables item.
-     * 
-     * @return Byte
-     */
-    public Byte getDisabled()
-    {
-        return this.disabled;
-    } //-- Byte getDisabled()
+    } //-- String getDatatype()
 
     /**
      * Get sets the radius (in pixels) of the virtual circle which
      * events will fire for items within.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getEventRadius()
+    public Integer getEventRadius()
     {
         return this.eventRadius;
-    } //-- Byte getEventRadius()
+    } //-- Integer getEventRadius()
 
     /**
      * Get fills the chart area with the specified background
      * color.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getFill()
+    public String getFill()
     {
         return this.fill;
-    } //-- Byte getFill()
-
-    /**
-     * Get chart max limit mode.
-     * 
-     * @return Byte
-     */
-    public Byte getFixOverflow()
-    {
-        return this.fixOverflow;
-    } //-- Byte getFixOverflow()
+    } //-- String getFill()
 
     /**
      * Get specifies the chart gradient.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getGradient()
+    public UnknownType getGradient()
     {
         return this.gradient;
-    } //-- Byte getGradient()
+    } //-- UnknownType getGradient()
 
     /**
      * Get sets the view gravity (1 by default).
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getGravity()
+    public Integer getGravity()
     {
         return this.gravity;
-    } //-- Byte getGravity()
+    } //-- Integer getGravity()
 
     /**
      * Get sets the height of the component.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getHeight()
+    public Integer getHeight()
     {
         return this.height;
-    } //-- Byte getHeight()
-
-    /**
-     * Get defines whether the view will be hidden initially.
-     * 
-     * @return Byte
-     */
-    public Byte getHidden()
-    {
-        return this.hidden;
-    } //-- Byte getHidden()
+    } //-- Integer getHeight()
 
     /**
      * Get the component ID.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getId()
+    public String getId()
     {
         return this.id;
-    } //-- Byte getId()
+    } //-- String getId()
 
     /**
      * Get defines markers that present chart's data items.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getItem()
+    public UnknownType getItem()
     {
         return this.item;
-    } //-- Byte getItem()
+    } //-- UnknownType getItem()
 
     /**
      * Get sets the template for items' labels.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getLabel()
+    public UnknownType getLabel()
     {
         return this.label;
-    } //-- Byte getLabel()
+    } //-- UnknownType getLabel()
 
     /**
      * Get the offset of sector labels from the pie frame.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getLabelOffset()
+    public Integer getLabelOffset()
     {
         return this.labelOffset;
-    } //-- Byte getLabelOffset()
+    } //-- Integer getLabelOffset()
 
     /**
      * Get defines the chart legend.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getLegend()
+    public UnknownType getLegend()
     {
         return this.legend;
-    } //-- Byte getLegend()
+    } //-- UnknownType getLegend()
 
     /**
      * Get defines chart lines.
      * 
-     * @return Byte
+     * @return UnknownType
      */
-    public Byte getLine()
+    public UnknownType getLine()
     {
         return this.line;
-    } //-- Byte getLine()
+    } //-- UnknownType getLine()
 
     /**
      * Get sets the color for strips dividing the pie sectors.
      * 
-     * @return Byte
+     * @return String
      */
-    public Byte getLineColor()
+    public String getLineColor()
     {
         return this.lineColor;
-    } //-- Byte getLineColor()
+    } //-- String getLineColor()
 
     /**
      * Get sets the maximum height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxHeight()
+    public Integer getMaxHeight()
     {
         return this.maxHeight;
-    } //-- Byte getMaxHeight()
+    } //-- Integer getMaxHeight()
 
     /**
      * Get sets the maximum width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMaxWidth()
+    public Integer getMaxWidth()
     {
         return this.maxWidth;
-    } //-- Byte getMaxWidth()
+    } //-- Integer getMaxWidth()
 
     /**
      * Get sets the minimal height for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinHeight()
+    public Integer getMinHeight()
     {
         return this.minHeight;
-    } //-- Byte getMinHeight()
+    } //-- Integer getMinHeight()
 
     /**
      * Get sets the minimal width for the view.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMinWidth()
+    public Integer getMinWidth()
     {
         return this.minWidth;
-    } //-- Byte getMinWidth()
+    } //-- Integer getMinWidth()
 
     /**
      * Get the delay between a real mouse action and invoking the
      * related events.
      * 
-     * @return Byte
+     * @return Integer
      */
-    public Byte getMouseEventDelay()
+    public Integer getMouseEventDelay()
     {
         return this.mouseEventDelay;
-    } //-- Byte getMouseEventDelay()
+    } //-- Integer getMouseEventDelay()
+
+    /**
+     * Get allows attaching custom handlers to inner events of the
+     * component.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getOn()
+    {
+        return this.on;
+    } //-- UnknownType getOn()
+
+    /**
+     * Get attaches a click behavior for component items with the
+     * specified CSS class.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getOnClick()
+    {
+        return this.onClick;
+    } //-- UnknownType getOnClick()
+
+    /**
+     * Get a property used to define custom context-click (right
+     * click) handlers for elements in the DataTable cells.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getOnContext()
+    {
+        return this.onContext;
+    } //-- UnknownType getOnContext()
+
+    /**
+     * Get attaches a dblclick behavior for component items with
+     * the specified CSS class.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getOnDblClick()
+    {
+        return this.onDblClick;
+    } //-- UnknownType getOnDblClick()
+
+    /**
+     * Get attaches a dblclick behavior for component items with
+     * the specified CSS class.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getOnMouseMove()
+    {
+        return this.onMouseMove;
+    } //-- UnknownType getOnMouseMove()
+
+    /**
+     * Get sets the scale origin.
+     * 
+     * @return Integer
+     */
+    public Integer getOrigin()
+    {
+        return this.origin;
+    } //-- Integer getOrigin()
+
+    /**
+     * Get sets paddings of the chart content.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getPadding()
+    {
+        return this.padding;
+    } //-- UnknownType getPadding()
+
+    /**
+     * Get the height of the 3d pie.
+     * 
+     * @return Integer
+     */
+    public Integer getPieHeight()
+    {
+        return this.pieHeight;
+    } //-- Integer getPieHeight()
+
+    /**
+     * Get sets the template for the pie inner labels.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getPieInnerText()
+    {
+        return this.pieInnerText;
+    } //-- UnknownType getPieInnerText()
+
+    /**
+     * Get applies the predefined chart configuration object with
+     * the specified name.
+     * 
+     * @return String
+     */
+    public String getPreset()
+    {
+        return this.preset;
+    } //-- String getPreset()
+
+    /**
+     * Get the radius of the bar's rounding.
+     * 
+     * @return Integer
+     */
+    public Integer getRadius()
+    {
+        return this.radius;
+    } //-- Integer getRadius()
+
+    /**
+     * Get a handler that is called just after the page has been
+     * completely parsed.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getReady()
+    {
+        return this.ready;
+    } //-- UnknownType getReady()
+
+    /**
+     * Get defines urls for datasaving.
+     * 
+     * @return String
+     */
+    public String getSave()
+    {
+        return this.save;
+    } //-- String getSave()
+
+    /**
+     * Get type of chart scale, logarithic or plain.
+     * 
+     * @return String
+     */
+    public String getScale()
+    {
+        return this.scale;
+    } //-- String getScale()
+
+    /**
+     * Get defines schemes for data processing.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getScheme()
+    {
+        return this.scheme;
+    } //-- UnknownType getScheme()
+
+    /**
+     * Method getSeries.
+     * 
+     * @return List
+     */
+    public java.util.List<UnknownType> getSeries()
+    {
+        if ( this.series == null )
+        {
+            this.series = new java.util.ArrayList<UnknownType>();
+        }
+
+        return this.series;
+    } //-- java.util.List<UnknownType> getSeries()
+
+    /**
+     * Get sets a popup message appearing on pointing a mouse
+     * cursor over the dedicated item.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getTooltip()
+    {
+        return this.tooltip;
+    } //-- UnknownType getTooltip()
+
+    /**
+     * Get sets the chart type.
+     * 
+     * @return String
+     */
+    public String getType()
+    {
+        return this.type;
+    } //-- String getType()
+
+    /**
+     * Get the url of a data feed which will be loaded after
+     * component initialization.
+     * 
+     * @return String
+     */
+    public String getUrl()
+    {
+        return this.url;
+    } //-- String getUrl()
+
+    /**
+     * Get defines values for the vertical axis.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getValue()
+    {
+        return this.value;
+    } //-- UnknownType getValue()
+
+    /**
+     * Get sets the width of the component.
+     * 
+     * @return Integer
+     */
+    public Integer getWidth()
+    {
+        return this.width;
+    } //-- Integer getWidth()
+
+    /**
+     * Get the horizontal position of the pie center.
+     * 
+     * @return Integer
+     */
+    public Integer getX()
+    {
+        return this.x;
+    } //-- Integer getX()
+
+    /**
+     * Get defines the horizontal axis.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getXAxis()
+    {
+        return this.xAxis;
+    } //-- UnknownType getXAxis()
+
+    /**
+     * Get a property of the dataset that defines values for the
+     * horizontal axis.
+     * 
+     * @return String
+     */
+    public String getXValue()
+    {
+        return this.xValue;
+    } //-- String getXValue()
+
+    /**
+     * Get the vertical position of the pie center.
+     * 
+     * @return Integer
+     */
+    public Integer getY()
+    {
+        return this.y;
+    } //-- Integer getY()
+
+    /**
+     * Get defines the vertical axis.
+     * 
+     * @return UnknownType
+     */
+    public UnknownType getYAxis()
+    {
+        return this.yAxis;
+    } //-- UnknownType getYAxis()
+
+    /**
+     * Get a property of the dataset that defines values for the
+     * vertical axis.
+     * 
+     * @return String
+     */
+    public String getYValue()
+    {
+        return this.yValue;
+    } //-- String getYValue()
+
+    /**
+     * Get enables/disables the bar borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorder()
+    {
+        return this.border;
+    } //-- Boolean isBorder()
+
+    /**
+     * Get used to hide the component borders.
+     * 
+     * @return Boolean
+     */
+    public Boolean isBorderless()
+    {
+        return this.borderless;
+    } //-- Boolean isBorderless()
+
+    /**
+     * Get disapbles graph lines with radar chart.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisableLines()
+    {
+        return this.disableLines;
+    } //-- Boolean isDisableLines()
+
+    /**
+     * Get disables item.
+     * 
+     * @return Boolean
+     */
+    public Boolean isDisabled()
+    {
+        return this.disabled;
+    } //-- Boolean isDisabled()
+
+    /**
+     * Get chart max limit mode.
+     * 
+     * @return Boolean
+     */
+    public Boolean isFixOverflow()
+    {
+        return this.fixOverflow;
+    } //-- Boolean isFixOverflow()
+
+    /**
+     * Get defines whether the view will be hidden initially.
+     * 
+     * @return Boolean
+     */
+    public Boolean isHidden()
+    {
+        return this.hidden;
+    } //-- Boolean isHidden()
 
     /**
      * Get defines whether the first item of the scale will be
      * drawn with the offset equal to the half of the scale's step
      * (relative to the origin of the chart) or not.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getOffset()
+    public Boolean isOffset()
     {
         return this.offset;
-    } //-- Byte getOffset()
-
-    /**
-     * Get allows attaching custom handlers to inner events of the
-     * component.
-     * 
-     * @return Byte
-     */
-    public Byte getOn()
-    {
-        return this.on;
-    } //-- Byte getOn()
-
-    /**
-     * Get attaches a click behavior for component items with the
-     * specified CSS class.
-     * 
-     * @return Byte
-     */
-    public Byte getOnClick()
-    {
-        return this.onClick;
-    } //-- Byte getOnClick()
-
-    /**
-     * Get a property used to define custom context-click (right
-     * click) handlers for elements in the DataTable cells.
-     * 
-     * @return Byte
-     */
-    public Byte getOnContext()
-    {
-        return this.onContext;
-    } //-- Byte getOnContext()
-
-    /**
-     * Get attaches a dblclick behavior for component items with
-     * the specified CSS class.
-     * 
-     * @return Byte
-     */
-    public Byte getOnDblClick()
-    {
-        return this.onDblClick;
-    } //-- Byte getOnDblClick()
-
-    /**
-     * Get attaches a dblclick behavior for component items with
-     * the specified CSS class.
-     * 
-     * @return Byte
-     */
-    public Byte getOnMouseMove()
-    {
-        return this.onMouseMove;
-    } //-- Byte getOnMouseMove()
-
-    /**
-     * Get sets the scale origin.
-     * 
-     * @return Byte
-     */
-    public Byte getOrigin()
-    {
-        return this.origin;
-    } //-- Byte getOrigin()
-
-    /**
-     * Get sets paddings of the chart content.
-     * 
-     * @return Byte
-     */
-    public Byte getPadding()
-    {
-        return this.padding;
-    } //-- Byte getPadding()
-
-    /**
-     * Get the height of the 3d pie.
-     * 
-     * @return Byte
-     */
-    public Byte getPieHeight()
-    {
-        return this.pieHeight;
-    } //-- Byte getPieHeight()
-
-    /**
-     * Get sets the template for the pie inner labels.
-     * 
-     * @return Byte
-     */
-    public Byte getPieInnerText()
-    {
-        return this.pieInnerText;
-    } //-- Byte getPieInnerText()
-
-    /**
-     * Get applies the predefined chart configuration object with
-     * the specified name.
-     * 
-     * @return Byte
-     */
-    public Byte getPreset()
-    {
-        return this.preset;
-    } //-- Byte getPreset()
-
-    /**
-     * Get the radius of the bar's rounding.
-     * 
-     * @return Byte
-     */
-    public Byte getRadius()
-    {
-        return this.radius;
-    } //-- Byte getRadius()
-
-    /**
-     * Get a handler that is called just after the page has been
-     * completely parsed.
-     * 
-     * @return Byte
-     */
-    public Byte getReady()
-    {
-        return this.ready;
-    } //-- Byte getReady()
+    } //-- Boolean isOffset()
 
     /**
      * Get defines how to treat items in case of reloading.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getRemoveMissed()
+    public Boolean isRemoveMissed()
     {
         return this.removeMissed;
-    } //-- Byte getRemoveMissed()
-
-    /**
-     * Get defines urls for datasaving.
-     * 
-     * @return Byte
-     */
-    public Byte getSave()
-    {
-        return this.save;
-    } //-- Byte getSave()
-
-    /**
-     * Get type of chart scale, logarithic or plain.
-     * 
-     * @return Byte
-     */
-    public Byte getScale()
-    {
-        return this.scale;
-    } //-- Byte getScale()
-
-    /**
-     * Get defines schemes for data processing.
-     * 
-     * @return Byte
-     */
-    public Byte getScheme()
-    {
-        return this.scheme;
-    } //-- Byte getScheme()
-
-    /**
-     * Get defines graphs presented on the chart.
-     * 
-     * @return Byte
-     */
-    public Byte getSeries()
-    {
-        return this.series;
-    } //-- Byte getSeries()
+    } //-- Boolean isRemoveMissed()
 
     /**
      * Get enables/disables the pie shadow.
      * 
-     * @return Byte
+     * @return Boolean
      */
-    public Byte getShadow()
+    public Boolean isShadow()
     {
         return this.shadow;
-    } //-- Byte getShadow()
+    } //-- Boolean isShadow()
 
     /**
-     * Get sets a popup message appearing on pointing a mouse
-     * cursor over the dedicated item.
+     * Method removeSery.
      * 
-     * @return Byte
+     * @param unknownType
      */
-    public Byte getTooltip()
+    public void removeSery( UnknownType unknownType )
     {
-        return this.tooltip;
-    } //-- Byte getTooltip()
-
-    /**
-     * Get sets the chart type.
-     * 
-     * @return Byte
-     */
-    public Byte getType()
-    {
-        return this.type;
-    } //-- Byte getType()
-
-    /**
-     * Get the url of a data feed which will be loaded after
-     * component initialization.
-     * 
-     * @return Byte
-     */
-    public Byte getUrl()
-    {
-        return this.url;
-    } //-- Byte getUrl()
-
-    /**
-     * Get defines values for the vertical axis.
-     * 
-     * @return Byte
-     */
-    public Byte getValue()
-    {
-        return this.value;
-    } //-- Byte getValue()
-
-    /**
-     * Get sets the width of the component.
-     * 
-     * @return Byte
-     */
-    public Byte getWidth()
-    {
-        return this.width;
-    } //-- Byte getWidth()
-
-    /**
-     * Get the horizontal position of the pie center.
-     * 
-     * @return Byte
-     */
-    public Byte getX()
-    {
-        return this.x;
-    } //-- Byte getX()
-
-    /**
-     * Get defines the horizontal axis.
-     * 
-     * @return Byte
-     */
-    public Byte getXAxis()
-    {
-        return this.xAxis;
-    } //-- Byte getXAxis()
-
-    /**
-     * Get a property of the dataset that defines values for the
-     * horizontal axis.
-     * 
-     * @return Byte
-     */
-    public Byte getXValue()
-    {
-        return this.xValue;
-    } //-- Byte getXValue()
-
-    /**
-     * Get the vertical position of the pie center.
-     * 
-     * @return Byte
-     */
-    public Byte getY()
-    {
-        return this.y;
-    } //-- Byte getY()
-
-    /**
-     * Get defines the vertical axis.
-     * 
-     * @return Byte
-     */
-    public Byte getYAxis()
-    {
-        return this.yAxis;
-    } //-- Byte getYAxis()
-
-    /**
-     * Get a property of the dataset that defines values for the
-     * vertical axis.
-     * 
-     * @return Byte
-     */
-    public Byte getYValue()
-    {
-        return this.yValue;
-    } //-- Byte getYValue()
+        getSeries().remove( unknownType );
+    } //-- void removeSery( UnknownType )
 
     /**
      * Set defines the opacity of chart items.
      * 
      * @param alpha
      */
-    public void setAlpha( Byte alpha )
+    public void setAlpha( Integer alpha )
     {
         this.alpha = alpha;
-    } //-- void setAlpha( Byte )
+    } //-- void setAlpha( Integer )
 
     /**
      * Set defines or disables view change animation.
      * 
      * @param animate
      */
-    public void setAnimate( Byte animate )
+    public void setAnimate( UnknownType animate )
     {
         this.animate = animate;
-    } //-- void setAnimate( Byte )
+    } //-- void setAnimate( UnknownType )
 
     /**
      * Set the width of bars.
      * 
      * @param barWidth
      */
-    public void setBarWidth( Byte barWidth )
+    public void setBarWidth( Integer barWidth )
     {
         this.barWidth = barWidth;
-    } //-- void setBarWidth( Byte )
+    } //-- void setBarWidth( Integer )
 
     /**
      * Set enables/disables the bar borders.
      * 
      * @param border
      */
-    public void setBorder( Byte border )
+    public void setBorder( Boolean border )
     {
         this.border = border;
-    } //-- void setBorder( Byte )
+    } //-- void setBorder( Boolean )
 
     /**
      * Set sets the border color of each item in the graph.
      * 
      * @param borderColor
      */
-    public void setBorderColor( Byte borderColor )
+    public void setBorderColor( String borderColor )
     {
         this.borderColor = borderColor;
-    } //-- void setBorderColor( Byte )
+    } //-- void setBorderColor( String )
 
     /**
      * Set used to hide the component borders.
      * 
      * @param borderless
      */
-    public void setBorderless( Byte borderless )
+    public void setBorderless( Boolean borderless )
     {
         this.borderless = borderless;
-    } //-- void setBorderless( Byte )
+    } //-- void setBorderless( Boolean )
 
     /**
      * Set defines the slope angle of 3D pie.
      * 
      * @param cant
      */
-    public void setCant( Byte cant )
+    public void setCant( Integer cant )
     {
         this.cant = cant;
-    } //-- void setCant( Byte )
+    } //-- void setCant( Integer )
 
     /**
      * Set defines items colors.
      * 
      * @param color
      */
-    public void setColor( Byte color )
+    public void setColor( UnknownType color )
     {
         this.color = color;
-    } //-- void setColor( Byte )
+    } //-- void setColor( UnknownType )
 
     /**
      * Set an html container (or its id) where the component needs
@@ -1189,10 +1217,10 @@ public class Chart
      * 
      * @param container
      */
-    public void setContainer( Byte container )
+    public void setContainer( UnknownType container )
     {
         this.container = container;
-    } //-- void setContainer( Byte )
+    } //-- void setContainer( UnknownType )
 
     /**
      * Set the name of a css class that will be applied to the view
@@ -1200,10 +1228,10 @@ public class Chart
      * 
      * @param css
      */
-    public void setCss( Byte css )
+    public void setCss( String css )
     {
         this.css = css;
-    } //-- void setCss( Byte )
+    } //-- void setCss( String )
 
     /**
      * Set an inline dataset that data to the component will be
@@ -1211,10 +1239,10 @@ public class Chart
      * 
      * @param data
      */
-    public void setData( Byte data )
+    public void setData( UnknownType data )
     {
         this.data = data;
-    } //-- void setData( Byte )
+    } //-- void setData( UnknownType )
 
     /**
      * Set the url to the data source that the component will use
@@ -1222,10 +1250,10 @@ public class Chart
      * 
      * @param dataFeed
      */
-    public void setDataFeed( Byte dataFeed )
+    public void setDataFeed( UnknownType dataFeed )
     {
         this.dataFeed = dataFeed;
-    } //-- void setDataFeed( Byte )
+    } //-- void setDataFeed( UnknownType )
 
     /**
      * Set sets the polling interval (the time period between the
@@ -1234,40 +1262,40 @@ public class Chart
      * 
      * @param datathrottle
      */
-    public void setDatathrottle( Byte datathrottle )
+    public void setDatathrottle( Integer datathrottle )
     {
         this.datathrottle = datathrottle;
-    } //-- void setDatathrottle( Byte )
+    } //-- void setDatathrottle( Integer )
 
     /**
      * Set the type of loaded data.
      * 
      * @param datatype
      */
-    public void setDatatype( Byte datatype )
+    public void setDatatype( String datatype )
     {
         this.datatype = datatype;
-    } //-- void setDatatype( Byte )
+    } //-- void setDatatype( String )
 
     /**
      * Set disapbles graph lines with radar chart.
      * 
      * @param disableLines
      */
-    public void setDisableLines( Byte disableLines )
+    public void setDisableLines( Boolean disableLines )
     {
         this.disableLines = disableLines;
-    } //-- void setDisableLines( Byte )
+    } //-- void setDisableLines( Boolean )
 
     /**
      * Set disables item.
      * 
      * @param disabled
      */
-    public void setDisabled( Byte disabled )
+    public void setDisabled( Boolean disabled )
     {
         this.disabled = disabled;
-    } //-- void setDisabled( Byte )
+    } //-- void setDisabled( Boolean )
 
     /**
      * Set sets the radius (in pixels) of the virtual circle which
@@ -1275,10 +1303,10 @@ public class Chart
      * 
      * @param eventRadius
      */
-    public void setEventRadius( Byte eventRadius )
+    public void setEventRadius( Integer eventRadius )
     {
         this.eventRadius = eventRadius;
-    } //-- void setEventRadius( Byte )
+    } //-- void setEventRadius( Integer )
 
     /**
      * Set fills the chart area with the specified background
@@ -1286,170 +1314,170 @@ public class Chart
      * 
      * @param fill
      */
-    public void setFill( Byte fill )
+    public void setFill( String fill )
     {
         this.fill = fill;
-    } //-- void setFill( Byte )
+    } //-- void setFill( String )
 
     /**
      * Set chart max limit mode.
      * 
      * @param fixOverflow
      */
-    public void setFixOverflow( Byte fixOverflow )
+    public void setFixOverflow( Boolean fixOverflow )
     {
         this.fixOverflow = fixOverflow;
-    } //-- void setFixOverflow( Byte )
+    } //-- void setFixOverflow( Boolean )
 
     /**
      * Set specifies the chart gradient.
      * 
      * @param gradient
      */
-    public void setGradient( Byte gradient )
+    public void setGradient( UnknownType gradient )
     {
         this.gradient = gradient;
-    } //-- void setGradient( Byte )
+    } //-- void setGradient( UnknownType )
 
     /**
      * Set sets the view gravity (1 by default).
      * 
      * @param gravity
      */
-    public void setGravity( Byte gravity )
+    public void setGravity( Integer gravity )
     {
         this.gravity = gravity;
-    } //-- void setGravity( Byte )
+    } //-- void setGravity( Integer )
 
     /**
      * Set sets the height of the component.
      * 
      * @param height
      */
-    public void setHeight( Byte height )
+    public void setHeight( Integer height )
     {
         this.height = height;
-    } //-- void setHeight( Byte )
+    } //-- void setHeight( Integer )
 
     /**
      * Set defines whether the view will be hidden initially.
      * 
      * @param hidden
      */
-    public void setHidden( Byte hidden )
+    public void setHidden( Boolean hidden )
     {
         this.hidden = hidden;
-    } //-- void setHidden( Byte )
+    } //-- void setHidden( Boolean )
 
     /**
      * Set the component ID.
      * 
      * @param id
      */
-    public void setId( Byte id )
+    public void setId( String id )
     {
         this.id = id;
-    } //-- void setId( Byte )
+    } //-- void setId( String )
 
     /**
      * Set defines markers that present chart's data items.
      * 
      * @param item
      */
-    public void setItem( Byte item )
+    public void setItem( UnknownType item )
     {
         this.item = item;
-    } //-- void setItem( Byte )
+    } //-- void setItem( UnknownType )
 
     /**
      * Set sets the template for items' labels.
      * 
      * @param label
      */
-    public void setLabel( Byte label )
+    public void setLabel( UnknownType label )
     {
         this.label = label;
-    } //-- void setLabel( Byte )
+    } //-- void setLabel( UnknownType )
 
     /**
      * Set the offset of sector labels from the pie frame.
      * 
      * @param labelOffset
      */
-    public void setLabelOffset( Byte labelOffset )
+    public void setLabelOffset( Integer labelOffset )
     {
         this.labelOffset = labelOffset;
-    } //-- void setLabelOffset( Byte )
+    } //-- void setLabelOffset( Integer )
 
     /**
      * Set defines the chart legend.
      * 
      * @param legend
      */
-    public void setLegend( Byte legend )
+    public void setLegend( UnknownType legend )
     {
         this.legend = legend;
-    } //-- void setLegend( Byte )
+    } //-- void setLegend( UnknownType )
 
     /**
      * Set defines chart lines.
      * 
      * @param line
      */
-    public void setLine( Byte line )
+    public void setLine( UnknownType line )
     {
         this.line = line;
-    } //-- void setLine( Byte )
+    } //-- void setLine( UnknownType )
 
     /**
      * Set sets the color for strips dividing the pie sectors.
      * 
      * @param lineColor
      */
-    public void setLineColor( Byte lineColor )
+    public void setLineColor( String lineColor )
     {
         this.lineColor = lineColor;
-    } //-- void setLineColor( Byte )
+    } //-- void setLineColor( String )
 
     /**
      * Set sets the maximum height for the view.
      * 
      * @param maxHeight
      */
-    public void setMaxHeight( Byte maxHeight )
+    public void setMaxHeight( Integer maxHeight )
     {
         this.maxHeight = maxHeight;
-    } //-- void setMaxHeight( Byte )
+    } //-- void setMaxHeight( Integer )
 
     /**
      * Set sets the maximum width for the view.
      * 
      * @param maxWidth
      */
-    public void setMaxWidth( Byte maxWidth )
+    public void setMaxWidth( Integer maxWidth )
     {
         this.maxWidth = maxWidth;
-    } //-- void setMaxWidth( Byte )
+    } //-- void setMaxWidth( Integer )
 
     /**
      * Set sets the minimal height for the view.
      * 
      * @param minHeight
      */
-    public void setMinHeight( Byte minHeight )
+    public void setMinHeight( Integer minHeight )
     {
         this.minHeight = minHeight;
-    } //-- void setMinHeight( Byte )
+    } //-- void setMinHeight( Integer )
 
     /**
      * Set sets the minimal width for the view.
      * 
      * @param minWidth
      */
-    public void setMinWidth( Byte minWidth )
+    public void setMinWidth( Integer minWidth )
     {
         this.minWidth = minWidth;
-    } //-- void setMinWidth( Byte )
+    } //-- void setMinWidth( Integer )
 
     /**
      * Set the delay between a real mouse action and invoking the
@@ -1457,10 +1485,10 @@ public class Chart
      * 
      * @param mouseEventDelay
      */
-    public void setMouseEventDelay( Byte mouseEventDelay )
+    public void setMouseEventDelay( Integer mouseEventDelay )
     {
         this.mouseEventDelay = mouseEventDelay;
-    } //-- void setMouseEventDelay( Byte )
+    } //-- void setMouseEventDelay( Integer )
 
     /**
      * Set defines whether the first item of the scale will be
@@ -1469,10 +1497,10 @@ public class Chart
      * 
      * @param offset
      */
-    public void setOffset( Byte offset )
+    public void setOffset( Boolean offset )
     {
         this.offset = offset;
-    } //-- void setOffset( Byte )
+    } //-- void setOffset( Boolean )
 
     /**
      * Set allows attaching custom handlers to inner events of the
@@ -1480,10 +1508,10 @@ public class Chart
      * 
      * @param on
      */
-    public void setOn( Byte on )
+    public void setOn( UnknownType on )
     {
         this.on = on;
-    } //-- void setOn( Byte )
+    } //-- void setOn( UnknownType )
 
     /**
      * Set attaches a click behavior for component items with the
@@ -1491,10 +1519,10 @@ public class Chart
      * 
      * @param onClick
      */
-    public void setOnClick( Byte onClick )
+    public void setOnClick( UnknownType onClick )
     {
         this.onClick = onClick;
-    } //-- void setOnClick( Byte )
+    } //-- void setOnClick( UnknownType )
 
     /**
      * Set a property used to define custom context-click (right
@@ -1502,10 +1530,10 @@ public class Chart
      * 
      * @param onContext
      */
-    public void setOnContext( Byte onContext )
+    public void setOnContext( UnknownType onContext )
     {
         this.onContext = onContext;
-    } //-- void setOnContext( Byte )
+    } //-- void setOnContext( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1513,10 +1541,10 @@ public class Chart
      * 
      * @param onDblClick
      */
-    public void setOnDblClick( Byte onDblClick )
+    public void setOnDblClick( UnknownType onDblClick )
     {
         this.onDblClick = onDblClick;
-    } //-- void setOnDblClick( Byte )
+    } //-- void setOnDblClick( UnknownType )
 
     /**
      * Set attaches a dblclick behavior for component items with
@@ -1524,50 +1552,50 @@ public class Chart
      * 
      * @param onMouseMove
      */
-    public void setOnMouseMove( Byte onMouseMove )
+    public void setOnMouseMove( UnknownType onMouseMove )
     {
         this.onMouseMove = onMouseMove;
-    } //-- void setOnMouseMove( Byte )
+    } //-- void setOnMouseMove( UnknownType )
 
     /**
      * Set sets the scale origin.
      * 
      * @param origin
      */
-    public void setOrigin( Byte origin )
+    public void setOrigin( Integer origin )
     {
         this.origin = origin;
-    } //-- void setOrigin( Byte )
+    } //-- void setOrigin( Integer )
 
     /**
      * Set sets paddings of the chart content.
      * 
      * @param padding
      */
-    public void setPadding( Byte padding )
+    public void setPadding( UnknownType padding )
     {
         this.padding = padding;
-    } //-- void setPadding( Byte )
+    } //-- void setPadding( UnknownType )
 
     /**
      * Set the height of the 3d pie.
      * 
      * @param pieHeight
      */
-    public void setPieHeight( Byte pieHeight )
+    public void setPieHeight( Integer pieHeight )
     {
         this.pieHeight = pieHeight;
-    } //-- void setPieHeight( Byte )
+    } //-- void setPieHeight( Integer )
 
     /**
      * Set sets the template for the pie inner labels.
      * 
      * @param pieInnerText
      */
-    public void setPieInnerText( Byte pieInnerText )
+    public void setPieInnerText( UnknownType pieInnerText )
     {
         this.pieInnerText = pieInnerText;
-    } //-- void setPieInnerText( Byte )
+    } //-- void setPieInnerText( UnknownType )
 
     /**
      * Set applies the predefined chart configuration object with
@@ -1575,20 +1603,20 @@ public class Chart
      * 
      * @param preset
      */
-    public void setPreset( Byte preset )
+    public void setPreset( String preset )
     {
         this.preset = preset;
-    } //-- void setPreset( Byte )
+    } //-- void setPreset( String )
 
     /**
      * Set the radius of the bar's rounding.
      * 
      * @param radius
      */
-    public void setRadius( Byte radius )
+    public void setRadius( Integer radius )
     {
         this.radius = radius;
-    } //-- void setRadius( Byte )
+    } //-- void setRadius( Integer )
 
     /**
      * Set a handler that is called just after the page has been
@@ -1596,70 +1624,70 @@ public class Chart
      * 
      * @param ready
      */
-    public void setReady( Byte ready )
+    public void setReady( UnknownType ready )
     {
         this.ready = ready;
-    } //-- void setReady( Byte )
+    } //-- void setReady( UnknownType )
 
     /**
      * Set defines how to treat items in case of reloading.
      * 
      * @param removeMissed
      */
-    public void setRemoveMissed( Byte removeMissed )
+    public void setRemoveMissed( Boolean removeMissed )
     {
         this.removeMissed = removeMissed;
-    } //-- void setRemoveMissed( Byte )
+    } //-- void setRemoveMissed( Boolean )
 
     /**
      * Set defines urls for datasaving.
      * 
      * @param save
      */
-    public void setSave( Byte save )
+    public void setSave( String save )
     {
         this.save = save;
-    } //-- void setSave( Byte )
+    } //-- void setSave( String )
 
     /**
      * Set type of chart scale, logarithic or plain.
      * 
      * @param scale
      */
-    public void setScale( Byte scale )
+    public void setScale( String scale )
     {
         this.scale = scale;
-    } //-- void setScale( Byte )
+    } //-- void setScale( String )
 
     /**
      * Set defines schemes for data processing.
      * 
      * @param scheme
      */
-    public void setScheme( Byte scheme )
+    public void setScheme( UnknownType scheme )
     {
         this.scheme = scheme;
-    } //-- void setScheme( Byte )
+    } //-- void setScheme( UnknownType )
 
     /**
      * Set defines graphs presented on the chart.
      * 
      * @param series
      */
-    public void setSeries( Byte series )
+    public void setSeries( java.util.List<UnknownType> series )
     {
         this.series = series;
-    } //-- void setSeries( Byte )
+    } //-- void setSeries( java.util.List )
 
     /**
      * Set enables/disables the pie shadow.
      * 
      * @param shadow
      */
-    public void setShadow( Byte shadow )
+    public void setShadow( Boolean shadow )
     {
         this.shadow = shadow;
-    } //-- void setShadow( Byte )
+    } //-- void setShadow( Boolean )
 
     /**
      * Set sets a popup message appearing on pointing a mouse
@@ -1667,20 +1695,20 @@ public class Chart
      * 
      * @param tooltip
      */
-    public void setTooltip( Byte tooltip )
+    public void setTooltip( UnknownType tooltip )
     {
         this.tooltip = tooltip;
-    } //-- void setTooltip( Byte )
+    } //-- void setTooltip( UnknownType )
 
     /**
      * Set sets the chart type.
      * 
      * @param type
      */
-    public void setType( Byte type )
+    public void setType( String type )
     {
         this.type = type;
-    } //-- void setType( Byte )
+    } //-- void setType( String )
 
     /**
      * Set the url of a data feed which will be loaded after
@@ -1688,50 +1716,50 @@ public class Chart
      * 
      * @param url
      */
-    public void setUrl( Byte url )
+    public void setUrl( String url )
     {
         this.url = url;
-    } //-- void setUrl( Byte )
+    } //-- void setUrl( String )
 
     /**
      * Set defines values for the vertical axis.
      * 
      * @param value
      */
-    public void setValue( Byte value )
+    public void setValue( UnknownType value )
     {
         this.value = value;
-    } //-- void setValue( Byte )
+    } //-- void setValue( UnknownType )
 
     /**
      * Set sets the width of the component.
      * 
      * @param width
      */
-    public void setWidth( Byte width )
+    public void setWidth( Integer width )
     {
         this.width = width;
-    } //-- void setWidth( Byte )
+    } //-- void setWidth( Integer )
 
     /**
      * Set the horizontal position of the pie center.
      * 
      * @param x
      */
-    public void setX( Byte x )
+    public void setX( Integer x )
     {
         this.x = x;
-    } //-- void setX( Byte )
+    } //-- void setX( Integer )
 
     /**
      * Set defines the horizontal axis.
      * 
      * @param xAxis
      */
-    public void setXAxis( Byte xAxis )
+    public void setXAxis( UnknownType xAxis )
     {
         this.xAxis = xAxis;
-    } //-- void setXAxis( Byte )
+    } //-- void setXAxis( UnknownType )
 
     /**
      * Set a property of the dataset that defines values for the
@@ -1739,30 +1767,30 @@ public class Chart
      * 
      * @param xValue
      */
-    public void setXValue( Byte xValue )
+    public void setXValue( String xValue )
     {
         this.xValue = xValue;
-    } //-- void setXValue( Byte )
+    } //-- void setXValue( String )
 
     /**
      * Set the vertical position of the pie center.
      * 
      * @param y
      */
-    public void setY( Byte y )
+    public void setY( Integer y )
     {
         this.y = y;
-    } //-- void setY( Byte )
+    } //-- void setY( Integer )
 
     /**
      * Set defines the vertical axis.
      * 
      * @param yAxis
      */
-    public void setYAxis( Byte yAxis )
+    public void setYAxis( UnknownType yAxis )
     {
         this.yAxis = yAxis;
-    } //-- void setYAxis( Byte )
+    } //-- void setYAxis( UnknownType )
 
     /**
      * Set a property of the dataset that defines values for the
@@ -1770,10 +1798,10 @@ public class Chart
      * 
      * @param yValue
      */
-    public void setYValue( Byte yValue )
+    public void setYValue( String yValue )
     {
         this.yValue = yValue;
-    } //-- void setYValue( Byte )
+    } //-- void setYValue( String )
 
     /**
      * Adds an item to the store
