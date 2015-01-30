@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:h="http://www.w3.org/1999/xhtml">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes" />
+	<xsl:strip-space elements="name description type return-type" />
+	<xsl:import href="import.xsl" />
 
 
 
@@ -8,62 +10,63 @@
 	<xsl:param name="step.next" />
 	<xsl:param name="sourcefile" />
 
+
+
 	<xsl:variable name="global_url_base" select="'http://docs.webix.com/'" />
 
+	<xsl:variable name="sourcefile_path_fixed">
+		<xsl:call-template name="replace_all">
+			<xsl:with-param name="str" select="$sourcefile" />
+			<xsl:with-param name="match" select="'\'" />
+			<xsl:with-param name="replacement" select="'/'" />
+		</xsl:call-template>
+	</xsl:variable>
 
-
-	<xsl:template name="substr_before_last">
-		<xsl:param name="str" />
-		<xsl:param name="needle" />
-		<xsl:param name="strm" select="''" />
-		<xsl:param name="tmp" select="substring-after($str, $needle)" />
-		<xsl:param name="tmp_length" select="string-length($tmp)" />
+	<xsl:variable name="sourcefile_fixed" select="">
 		<xsl:choose>
-			<xsl:when test="$tmp_length = 0">
-				<xsl:value-of select="substring($strm, 1, string-length($strm) - string-length($needle))" />
+			<xsl:when test="contains($sourcefile_path_fixed, '/')">
+				<xsl:value-of select="substring-after($sourcefile_path_fixed, '/')" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$tmp" />
-					<xsl:with-param name="needle" select="$needle" />
-					<xsl:with-param name="strm" select="concat($strm, substring($str, 1, (string-length($str) - $tmp_length)))" />
-				</xsl:call-template>
+				<xsl:value-of select="$sourcefile_path_fixed" />
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:variable>
+
+	<xsl:variable name="sourcefile_basename">
+		<xsl:call-template name="substr_before_last">
+			<xsl:with-param name="str" select="$sourcefile_fixed" />
+			<xsl:with-param name="needle" select="'.'" />
+		</xsl:call-template>
+	</xsl:variable>
+
+
+
+	<xsl:template name="process_version_page">
+		<file omit-xml-declaration="yes" location="model/version.xml">
+			<version>
+				<xsl:call-template name="replace_all">
+					<xsl:with-param name="str" select="normalize-space(//h:div[@id='doc_content']/h:ul/h:li[1]/h:a)" />
+					<xsl:with-param name="match" select="'Version '" />
+				</xsl:call-template>
+			</version>
+		</file>
 	</xsl:template>
 
-
-
 	<xsl:template name="process_toc_page">
-		<file>
-			<xsl:attribute name="location">
-				<xsl:value-of select="'descriptor-ready/type/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
+		<file location="descriptor-url/type/{$sourcefile_basename}.xml">
 			<descriptor>
-				<!-- ()[position()&gt;=19 and position()&lt;=27] -->
 				<xsl:for-each select="//h:div[@id='doc_content']/h:table[@class='webixtoc']/h:tbody/h:tr/h:td[position()=2]/h:a">
-					<source-url>
-						<xsl:value-of select="concat($global_url_base, @href)" />
-					</source-url>
+				<!-- <xsl:for-each
+					select="(//h:div[@id='doc_content']/h:table[@class='webixtoc']/h:tbody/h:tr/h:td[position()=2]/h:a)[position() &lt; 3]"> -->
+					<xsl:call-template name="process_source_url" />
 				</xsl:for-each>
 			</descriptor>
 		</file>
-		<file omit-xml-declaration="yes">
-			<xsl:attribute name="location">
-				<xsl:value-of select="'model/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
+		<file omit-xml-declaration="yes" location="model/packages.xml">
 			<packages>
-				<xsl:for-each select="//h:div[@id='doc_content']/h:div[@class='h2']">
+				<xsl:for-each
+					select="//h:div[@id='doc_content']/h:div[@class='h2' and following-sibling::h:table[@class='webixtoc' and position()=1]//h:tr/h:td/h:a]">
 					<package>
 						<name>
 							<xsl:value-of select="." />
@@ -79,43 +82,35 @@
 		</file>
 	</xsl:template>
 
+	<xsl:template name="process_mixins_page">
+		<file location="descriptor-url/type/{$sourcefile_basename}.xml">
+			<descriptor>
+				<xsl:for-each select="//h:div[@id='doc_content']/h:ul/h:li/h:a">
+					<xsl:call-template name="process_source_url" />
+				</xsl:for-each>
+			</descriptor>
+		</file>
+	</xsl:template>
+
 	<xsl:template name="process_type_page">
 		<!-- components -->
-		<file>
-			<xsl:attribute name="location">
-				<xsl:value-of select="'descriptor-ready/component/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
+		<file location="descriptor-url/component/{$sourcefile_basename}.xml">
 			<descriptor>
-				<xsl:for-each select="//h:div[@id='doc_content']/h:div[@class='h2']/following-sibling::h:table[1]/h:tr/h:td/h:a">
-					<source-url>
-						<xsl:value-of select="concat($global_url_base, @href)" />
-					</source-url>
+				<xsl:for-each select="//h:div[@id='doc_content']/h:div[@class='h2']/following-sibling::h:table[1]/h:tr/h:td[1]/h:a">
+					<xsl:call-template name="process_source_url" />
 				</xsl:for-each>
 			</descriptor>
 		</file>
 		<!-- types -->
-		<file omit-xml-declaration="yes">
-			<xsl:attribute name="location">
-				<xsl:value-of select="'model/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
+		<file omit-xml-declaration="yes" location="model/{$sourcefile_basename}.xml">
 			<types>
 				<xsl:for-each select="//h:div[@id='doc_content']">
-					<type ref="{$sourcefile}">
+					<type ref="{$sourcefile_fixed}">
 						<name>
 							<xsl:value-of select="h:h1[1]" />
 						</name>
 						<description>
-							<xsl:apply-templates select="h:p[position()&lt;3]" mode="description_text" />
+							<xsl:apply-templates select="h:p[position() &lt; 3]" mode="description_text" />
 						</description>
 						<references>
 							<xsl:for-each select="h:div[@class='webixdoc_parents']/h:a">
@@ -128,14 +123,16 @@
 							</xsl:for-each>
 						</references>
 						<fields>
-							<xsl:for-each select="h:div[@class='h2' and text()='Properties']/following-sibling::h:table[1]/h:tr[h:td[1]/h:a]">
+							<xsl:for-each
+								select="h:div[@class='h2' and text()='Properties']/following-sibling::h:table[1]/h:tr[h:td[1]/h:a and string-length(h:td[2]/text()) &gt; 0]">
 								<xsl:call-template name="process_type_component">
 									<xsl:with-param name="component_type" select="'field'" />
 								</xsl:call-template>
 							</xsl:for-each>
 						</fields>
 						<methods>
-							<xsl:for-each select="h:div[@class='h2' and text()='Methods']/following-sibling::h:table[1]/h:tr[h:td[1]/h:a]">
+							<xsl:for-each
+								select="h:div[@class='h2' and text()='Methods']/following-sibling::h:table[1]/h:tr[h:td[1]/h:a and string-length(h:td[2]/text()) &gt; 0]">
 								<xsl:call-template name="process_type_component">
 									<xsl:with-param name="component_type" select="'method'" />
 								</xsl:call-template>
@@ -162,23 +159,18 @@
 	</xsl:template>
 
 	<xsl:template name="process_component_page">
-		<file omit-xml-declaration="yes">
-			<xsl:attribute name="location">
-				<xsl:value-of select="'model/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
+		<file omit-xml-declaration="yes" location="model/{$sourcefile_basename}.xml">
 			<components>
 				<xsl:for-each select="//h:div[@id='doc_content']">
-					<component ref="{$sourcefile}">
+					<component ref="{$sourcefile_fixed}">
 						<name>
 							<xsl:value-of select="h:div[@class='signature']/h:b[1]" />
 						</name>
 						<return-type>
-							<xsl:value-of select="h:div[@class='signature']/h:em[1]" />
+							<xsl:call-template name="replace_all">
+								<xsl:with-param name="str" select="normalize-space(h:div[@class='signature']/h:em[1])" />
+								<xsl:with-param name="match" select="' '" />
+							</xsl:call-template>
 						</return-type>
 						<parameters>
 							<xsl:for-each select="h:div[@class='signature']/h:b[1]/following-sibling::h:b">
@@ -186,10 +178,16 @@
 								<xsl:variable name="next_text" select="following-sibling::text()[contains(self::node(), ']')]" />
 								<parameter>
 									<type>
-										<xsl:value-of select="preceding-sibling::h:em[1]" />
+										<xsl:call-template name="replace_all">
+											<xsl:with-param name="str" select="normalize-space(preceding-sibling::h:em[1])" />
+											<xsl:with-param name="match" select="' '" />
+										</xsl:call-template>
 									</type>
 									<name>
-										<xsl:value-of select="." />
+										<xsl:call-template name="replace_all">
+											<xsl:with-param name="str" select="normalize-space(.)" />
+											<xsl:with-param name="match" select="' '" />
+										</xsl:call-template>
 									</name>
 									<is-optional>
 										<xsl:choose>
@@ -239,29 +237,25 @@
 		</file>
 	</xsl:template>
 
-	<xsl:template name="process_version_page">
-		<file omit-xml-declaration="yes">
-			<xsl:attribute name="location">
-				<xsl:value-of select="'model/'" />
-				<xsl:call-template name="substr_before_last">
-					<xsl:with-param name="str" select="$sourcefile" />
-					<xsl:with-param name="needle" select="'.'" />
-				</xsl:call-template>
-				<xsl:value-of select="'.xml'" />
-			</xsl:attribute>
-			<version>
-				<xsl:value-of select="substring-after(//h:div[@id='doc_content']/h:ul/h:li[1]/h:a, 'Version ')" />
-			</version>
-		</file>
+
+
+	<xsl:template name="process_source_url">
+		<source-url>
+			<!-- <xsl:value-of select="$global_url_base" /> -->
+			<!-- ANT properties substitution workaround -->
+			<!-- <xsl:call-template name="replace_all">
+				<xsl:with-param name="str" select="@href" />
+				<xsl:with-param name="match" select="'$'" />
+				<xsl:with-param name="replacement" select="'%24'" />
+			</xsl:call-template> -->
+			<xsl:value-of select="concat($global_url_base, @href)" />
+		</source-url>
 	</xsl:template>
-
-
 
 	<xsl:template name="process_type_component">
 		<xsl:param name="component_type" />
 		<xsl:element name="{$component_type}">
 			<xsl:attribute name="ref">
-				<!-- <xsl:value-of select="concat($global_url_base, h:td[1]/h:a/@href)" /> -->
 				<xsl:value-of select="h:td[1]/h:a/@href" />
 			</xsl:attribute>
 			<name>
@@ -289,26 +283,28 @@
 
 
 
-	<xsl:template match="/" priority="1">
+	<xsl:template match="/">
 		<descriptor>
 			<xsl:choose>
-				<xsl:when test="$sourcefile = 'api__toc__ui.html'">
-					<xsl:call-template name="process_toc_page" />
-				</xsl:when>
-				<xsl:when test="$sourcefile = 'api__toc__ui_mixins.html'"></xsl:when>
-				<xsl:when test="$sourcefile = 'desktop__whats_new.html'">
+				<xsl:when test="$sourcefile_fixed = 'desktop__whats_new.html'">
 					<xsl:call-template name="process_version_page" />
 				</xsl:when>
-				<xsl:when test="starts-with($sourcefile, 'api__refs__ui.')">
+				<xsl:when test="$sourcefile_fixed = 'api__toc__ui.html'">
+					<xsl:call-template name="process_toc_page" />
+				</xsl:when>
+				<xsl:when test="$sourcefile_fixed = 'api__toc__ui_mixins.html'">
+					<xsl:call-template name="process_mixins_page" />
+				</xsl:when>
+				<xsl:when test="starts-with($sourcefile_fixed, 'api__refs__')">
 					<xsl:call-template name="process_type_page" />
 				</xsl:when>
 				<xsl:when
-					test="starts-with($sourcefile, 'api__link__ui.') or starts-with($sourcefile, 'api__ui.') or $sourcefile='datatable__frozen_columns.html'">
+					test="starts-with($sourcefile_fixed, 'api__link__ui.') or starts-with($sourcefile_fixed, 'api__ui.') or starts-with($sourcefile_fixed, 'api__')">
 					<xsl:call-template name="process_component_page" />
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:message terminate="yes">
-						<xsl:value-of select="concat('Unsupported element, sourcefile:', $sourcefile)" />
+					<xsl:message>
+						<xsl:value-of select="concat('XSLT Error: Unsupported element, sourcefile:', $sourcefile_fixed)" />
 					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>

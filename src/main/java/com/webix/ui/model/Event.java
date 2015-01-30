@@ -1,9 +1,9 @@
-
 package com.webix.ui.model;
 
+import com.webix.ui.utils.StringUtils;
 
-public enum Event
-{
+public enum Event {
+
     /**
      * Fires when the component is ready to receive data from the master component
      **/
@@ -15,9 +15,24 @@ public enum Event
     ON_DESTRUCT,
 
     /**
-     * Fires after the context menu was called in the item area
+     * Fires after adding item to datastore
      **/
-    ON_AFTER_CONTEXT_MENU,
+    ON_AFTER_ADD,
+
+    /**
+     * Fires after item deleting
+     **/
+    ON_AFTER_DELETE,
+
+    /**
+     * Fires after server side loading is complete
+     **/
+    ON_AFTER_LOAD,
+
+    /**
+     * Occurs immediately after the component has been rendered
+     **/
+    ON_AFTER_RENDER,
 
     /**
      * Occurs when some webix view has been scrolled
@@ -25,44 +40,64 @@ public enum Event
     ON_AFTER_SCROLL,
 
     /**
-     * Fires before the context menu is called in the item area
+     * Fires after sorting dataset
      **/
-    ON_BEFORE_CONTEXT_MENU,
+    ON_AFTER_SORT,
 
     /**
-     * Fires when a component item was clicked
+     * Fires before adding item to datastore
      **/
-    ON_ITEM_CLICK,
+    ON_BEFORE_ADD,
 
     /**
-     * Fires when a component item was double-clicked
+     * Fires before item deleting
      **/
-    ON_ITEM_DBL_CLICK,
+    ON_BEFORE_DELETE,
+
+    /**
+     * Occurs immediately before data loading has been started
+     **/
+    ON_BEFORE_LOAD,
+
+    /**
+     * Occurs immediately before the component has been rendered
+     **/
+    ON_BEFORE_RENDER,
+
+    /**
+     * Fires before sorting dataset
+     **/
+    ON_BEFORE_SORT,
+
+    /**
+     * Fires when data from the server side is requested (part of dynamic loading)
+     **/
+    ON_DATA_REQUEST,
+
+    /**
+     * Fires when data item is in update process
+     **/
+    ON_DATA_UPDATE,
+
+    /**
+     * For each item rendering, occurs only for items with custom templates
+     **/
+    ON_ITEM_RENDER,
+
+    /**
+     * Occurs when keyboard key is pressed for the control in focus
+     **/
+    ON_KEY_PRESS,
+
+    /**
+     * Fires when an error occurs during data loading ( invalid server side response )
+     **/
+    ON_LOAD_ERROR,
 
     /**
      * Fires on holding finger in some position for a certain period of time
      **/
     ON_LONG_TOUCH,
-
-    /**
-     * Fires when the mouse was moved over the specified component
-     **/
-    ON_MOUSE_MOVE,
-
-    /**
-     * Fires when the mouse was moved over the component
-     **/
-    ON_MOUSE_MOVING,
-
-    /**
-     * Fires when the mouse was moved out from the specified item
-     **/
-    ON_MOUSE_OUT,
-
-    /**
-     * Occurs on screen rotating
-     **/
-    ON_ROTATE,
 
     /**
      * Occurs on a horizontal swipe movement
@@ -73,6 +108,11 @@ public enum Event
      * Occurs on a vertical swipe movement
      **/
     ON_SWIPE_Y,
+
+    /**
+     * Fires after typing has been finished in the field
+     **/
+    ON_TIMED_KEY_PRESS,
 
     /**
      * Occurs when the touch event is ended
@@ -90,29 +130,59 @@ public enum Event
     ON_TOUCH_START,
 
     /**
+     * Fires when newly loaded/added/edited data fails to pass validation
+     **/
+    ON_VALIDATION_ERROR,
+
+    /**
+     * Fires after the newlyloaded/added/edited data has passes validation successfully
+     **/
+    ON_VALIDATION_SUCCESS,
+
+    /**
      * View size was changed by resizer
      **/
     ON_VIEW_RESIZE,
 
     /**
-     * Occurs immediately after the component has been rendered.
+     * Fires after the context menu was called in the item area
      **/
-    ON_AFTER_RENDER,
+    ON_AFTER_CONTEXT_MENU,
 
     /**
-     * Occurs immediately before the component has been rendered
+     * Fires before the context menu is called in the item area
      **/
-    ON_BEFORE_RENDER,
+    ON_BEFORE_CONTEXT_MENU,
+
+    /**
+     * Fires when a component item was clicked
+     **/
+    ON_ITEM_CLICK,
+
+    /**
+     * Fires when a component item was double-clicked
+     **/
+    ON_ITEM_DBL_CLICK,
+
+    /**
+     * Fires when the mouse was moved over the specified component
+     **/
+    ON_MOUSE_MOVE,
+
+    /**
+     * Fires when the mouse was moved over the component
+     **/
+    ON_MOUSE_MOVING,
+
+    /**
+     * Fires when the mouse was moved out from the specified item
+     **/
+    ON_MOUSE_OUT,
 
     /**
      * Fires when the value of the control is changed
      **/
     ON_CHANGE,
-
-    /**
-     * Occurs when keyboard key is pressed for the control in focus
-     **/
-    ON_KEY_PRESS,
 
     /**
      * Fires after a user has selected a date
@@ -145,74 +215,24 @@ public enum Event
     ON_BEFORE_ZOOM,
 
     /**
+     * Fires on clicking the [clear](Calendar) button
+     **/
+    ON_DATE_CLEAR,
+
+    /**
      * Fires when a user selects a date.
      **/
     ON_DATE_SELECT,
 
     /**
+     * Fires on clicking the [today](Calendar) button
+     **/
+    ON_TODAY_SET,
+
+    /**
      * Fires when a new view is shown in carousel
      **/
     ON_SHOW,
-
-    /**
-     * Fires after adding item to datastore
-     **/
-    ON_AFTER_ADD,
-
-    /**
-     * Fires after item deleting
-     **/
-    ON_AFTER_DELETE,
-
-    /**
-     * Fires after xml loading is complete
-     **/
-    ON_AFTER_LOAD,
-
-    /**
-     * Fires after sorting dataset
-     **/
-    ON_AFTER_SORT,
-
-    /**
-     * Fires before adding item to datastore
-     **/
-    ON_BEFORE_ADD,
-
-    /**
-     * Fires before item deleting
-     **/
-    ON_BEFORE_DELETE,
-
-    /**
-     * Occurs immediately before loading xml data has been started
-     **/
-    ON_BEFORE_LOAD,
-
-    /**
-     * Fires before sorting dataset
-     **/
-    ON_BEFORE_SORT,
-
-    /**
-     * Fires when data from the server side is requested (part of dynamic loading)
-     **/
-    ON_DATA_REQUEST,
-
-    /**
-     * Fires when data item is in update process
-     **/
-    ON_DATA_UPDATE,
-
-    /**
-     * Fires when an error occurs during data loading ( invalid server side response )
-     **/
-    ON_LOAD_ERROR,
-
-    /**
-     * Fires after typing has been finished in the field
-     **/
-    ON_TIMED_KEY_PRESS,
 
     /**
      * Fires the moment context menu is called
@@ -275,11 +295,6 @@ public enum Event
     ON_DRAG_OUT,
 
     /**
-     * For each item rendering, occurs only for items with custom templates
-     **/
-    ON_ITEM_RENDER,
-
-    /**
      * Fires when menu item has been clicked
      **/
     ON_MENU_ITEM_CLICK,
@@ -293,16 +308,6 @@ public enum Event
      * Fires after selection state was changed
      **/
     ON_SELECT_CHANGE,
-
-    /**
-     * Fires when newly loaded/added/edited data fails to pass validation
-     **/
-    ON_VALIDATION_ERROR,
-
-    /**
-     * Fires after the newlyloaded/added/edited data has passes validation successfully
-     **/
-    ON_VALIDATION_SUCCESS,
 
     /**
      * Some item selected in the suggest control
@@ -510,33 +515,11 @@ public enum Event
     ON_PARTIAL_RENDER;
 
     public String toWebixName() {
-        StringBuffer sb = new StringBuffer();
-    	String n = this.name();
-    	String nLower = n.toLowerCase();
-    	for (int i = 0, c = n.length() - 1; i < c; i++) {
-    		if (n.charAt(i + 1) == '_') {
-    			sb.append(n.charAt(i));
-    			i++;
-    		} else {
-    			sb.append(nLower.charAt(i));
-    		}
-    	}
-        return sb.toString();
+    return StringUtils.enumToCamelCase(name());
     }
 
     public Event fromWebixName(String webixName) {
-        StringBuffer sb = new StringBuffer();
-    	if (webixName.length() > 0) {
-    		sb.append(Character.toUpperCase(webixName.charAt(0)));
-    	}
-    	for (int i = 1, c = webixName.length(); i < c; i++) {
-    		char ch = webixName.charAt(i);
-    		if (Character.isLowerCase(webixName.charAt(i - 1)) && Character.isUpperCase(ch)) {
-    			sb.append('_');
-    		}
-    		sb.append(Character.toUpperCase(ch));
-    	}
-        return valueOf(Event.class, sb.toString());
+    return valueOf(Event.class, StringUtils.camelCaseToEnum(webixName));
     }
-}
 
+}
