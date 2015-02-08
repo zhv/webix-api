@@ -79,14 +79,16 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A menu of individually selectable items.The component can be
- * displayed in 2 modes: static (the menu is fully expanded all the
- * time) and dynamic (only the parent item is static, while its
- * childs are displayed only when the user holds the mouse pointer
- * over the parent). You can configure any nesting level
- * complexity. Check <a
+ * 
+ * A menu of individually selectable items.
+ * The component can be displayed in 2 modes: static (the menu is
+ * fully expanded all the time) and dynamic (only the parent item
+ * is static, while its childs are displayed only when the user
+ * holds the mouse pointer over the parent). You can configure any
+ * nesting level complexity. Check <a
  * href="http://docs.webix.com/desktop__menu.html">menu</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

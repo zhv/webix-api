@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A wrapper which renders an HTML fieldset.The control presents a
- * standard fieldset that combines several sense-connected UI
- * elements inside itself. Check <a
+ * 
+ * A wrapper which renders an HTML fieldset.
+ * The control presents a standard fieldset that combines several
+ * sense-connected UI elements inside itself. Check <a
  * href="http://docs.webix.com/desktop__controls.html#fieldset">fieldset</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

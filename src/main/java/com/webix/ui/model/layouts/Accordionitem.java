@@ -79,12 +79,14 @@ import com.webix.ui.model.html.Template;
 
 
 /**
- * A singular pane of the accordion component.Each accordion pane
- * consists of the header and body. The body of a pane can be
- * collapsed/expanded by clicking on the appropriate header. Check
- * <a
+ * 
+ * A singular pane of the accordion component.
+ * Each accordion pane consists of the header and body. The body of
+ * a pane can be collapsed/expanded by clicking on the appropriate
+ * header. Check <a
  * href="http://docs.webix.com/desktop__accordionitem.html">accordionitem</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

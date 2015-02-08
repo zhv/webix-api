@@ -79,13 +79,16 @@ import com.webix.ui.model.html.Template;
 
 
 /**
+ * 
  * A container control that keeps a set of views and displays one
- * view at a time.The component allows you to divide the page
- * content into multiple groups and display a specific view based
- * on some criteria. Often used in combination with a clickable
- * control to implement tabbar. Check <a
+ * view at a time.
+ * The component allows you to divide the page content into
+ * multiple groups and display a specific view based on some
+ * criteria. Often used in combination with a clickable control to
+ * implement tabbar. Check <a
  * href="http://docs.webix.com/desktop__multiview.html">multiview</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

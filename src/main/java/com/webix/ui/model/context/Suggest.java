@@ -79,10 +79,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A suggest control.Can be used standalone or as editor for other
- * components. Check <a
+ * 
+ * A suggest control.
+ * Can be used standalone or as editor for other components. Check
+ * <a
  * href="http://docs.webix.com/desktop__suggest.html">suggest</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

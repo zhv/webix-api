@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * An one-line, editable text field with the label inside it.A
- * label inside the control differs it from the input component.
+ * 
+ * An one-line, editable text field with the label inside it.
+ * A label inside the control differs it from the input component.
  * Check <a
  * href="http://docs.webix.com/desktop__controls.html#text">text</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

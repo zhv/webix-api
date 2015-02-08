@@ -74,10 +74,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * The very base class for UI components.The class defines
- * properties, methods, and events related to loading and rendering
- * data. Can serves as the base class while creating custom
- * multi-item components. Not intended for direct initialization.
+ * 
+ * The very base class for UI components.
+ * The class defines properties, methods, and events related to
+ * loading and rendering data. Can serves as the base class while
+ * creating custom multi-item components. Not intended for direct
+ * initialization.
+ * 
  * 
  * @version $Revision$ $Date$
  */
@@ -156,8 +159,8 @@ public class Proto
     private String css;
 
     /**
-     * An inline dataset that data to the component will be load
-     * from.<br /><br /><a
+     * JavaScript array containing data for the component<br /><br
+     * /><a
      * href="http://docs.webix.com/api__link__ui.proto_data_config.html">Webix
      * API Reference</a>
      */
@@ -165,7 +168,7 @@ public class Proto
     private String data;
 
     /**
-     * The url that the component will use to reload data during
+     * The URL that the component will use to reload data during
      * binding<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_datafeed_config.html">Webix
      * API Reference</a>
@@ -273,8 +276,8 @@ public class Proto
     private Pager pager;
 
     /**
-     * A handler that is called just after the page has been
-     * completely parsed<br /><br /><a
+     * Event handler called just after the component has been
+     * completely initialized<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_ready_config.html">Webix
      * API Reference</a>
      */
@@ -291,7 +294,7 @@ public class Proto
     private Boolean removeMissed;
 
     /**
-     * Defines urls for datasaving<br /><br /><a
+     * Defines URLs for data saving<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_save_config.html">Webix
      * API Reference</a>
      */
@@ -307,7 +310,7 @@ public class Proto
     private java.util.Map<String, String> scheme;
 
     /**
-     * The url the component will use to load data after its
+     * The URL the component will use to load data after its
      * initialization<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_url_config.html">Webix
      * API Reference</a>
@@ -367,8 +370,8 @@ public class Proto
     } //-- String getCss()
 
     /**
-     * Get an inline dataset that data to the component will be
-     * load from.<br /><br /><a
+     * Get javaScript array containing data for the component<br
+     * /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_data_config.html">Webix
      * API Reference</a>
      * 
@@ -380,7 +383,7 @@ public class Proto
     } //-- String getData()
 
     /**
-     * Get the url that the component will use to reload data
+     * Get the URL that the component will use to reload data
      * during binding<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_datafeed_config.html">Webix
      * API Reference</a>
@@ -515,8 +518,8 @@ public class Proto
     } //-- Pager getPager()
 
     /**
-     * Get a handler that is called just after the page has been
-     * completely parsed<br /><br /><a
+     * Get event handler called just after the component has been
+     * completely initialized<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_ready_config.html">Webix
      * API Reference</a>
      * 
@@ -528,7 +531,7 @@ public class Proto
     } //-- String getReady()
 
     /**
-     * Get defines urls for datasaving<br /><br /><a
+     * Get defines URLs for data saving<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_save_config.html">Webix
      * API Reference</a>
      * 
@@ -552,7 +555,7 @@ public class Proto
     } //-- java.util.Map<String, String> getScheme()
 
     /**
-     * Get the url the component will use to load data after its
+     * Get the URL the component will use to load data after its
      * initialization<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_url_config.html">Webix
      * API Reference</a>
@@ -678,8 +681,8 @@ public class Proto
     } //-- void setCss( String )
 
     /**
-     * Set an inline dataset that data to the component will be
-     * load from.<br /><br /><a
+     * Set javaScript array containing data for the component<br
+     * /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_data_config.html">Webix
      * API Reference</a>
      * 
@@ -691,7 +694,7 @@ public class Proto
     } //-- void setData( String )
 
     /**
-     * Set the url that the component will use to reload data
+     * Set the URL that the component will use to reload data
      * during binding<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_datafeed_config.html">Webix
      * API Reference</a>
@@ -852,8 +855,8 @@ public class Proto
     } //-- void setPager( Pager )
 
     /**
-     * Set a handler that is called just after the page has been
-     * completely parsed<br /><br /><a
+     * Set event handler called just after the component has been
+     * completely initialized<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_ready_config.html">Webix
      * API Reference</a>
      * 
@@ -878,7 +881,7 @@ public class Proto
     } //-- void setRemoveMissed( Boolean )
 
     /**
-     * Set defines urls for datasaving<br /><br /><a
+     * Set defines URLs for data saving<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_save_config.html">Webix
      * API Reference</a>
      * 
@@ -902,7 +905,7 @@ public class Proto
     } //-- void setScheme( java.util.Map<String, String> )
 
     /**
-     * Set the url the component will use to load data after its
+     * Set the URL the component will use to load data after its
      * initialization<br /><br /><a
      * href="http://docs.webix.com/api__link__ui.proto_url_config.html">Webix
      * API Reference</a>

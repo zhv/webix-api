@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A control that allows the user to select a date.The control
- * combines an editable text field with a drop-down calendar.
- * Supports all date and time formats. Besides the days of the
- * month, it can display hour and minite selectors. Check <a
+ * 
+ * A control that allows the user to select a date.
+ * The control combines an editable text field with a drop-down
+ * calendar. Supports all date and time formats. Besides the days
+ * of the month, it can display hour and minite selectors. Check <a
  * href="http://docs.webix.com/desktop__controls.html#datepicker">datepicker</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

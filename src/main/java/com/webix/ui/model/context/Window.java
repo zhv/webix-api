@@ -79,11 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A movable popup window.The window consists of the header and
- * body, can be modal or modaless. The window body can contain any
- * content. The header is set by a template. Check <a
+ * 
+ * A movable popup window.
+ * The window consists of the header and body, can be modal or
+ * modaless. The window body can contain any content. The header is
+ * set by a template. Check <a
  * href="http://docs.webix.com/desktop__window.html">window</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

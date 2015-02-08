@@ -8,21 +8,18 @@
 
 
 
-	<xsl:variable name="alpha_lower" select="'abcdefghqijklmnoprstuvwxyz'" />
-	<xsl:variable name="alpha_upper" select="'ABCDEFGHQIJKLMNOPRSTUVWXYZ'" />
-
 	<xsl:variable name="global_url_base" select="'http://docs.webix.com/'" />
 	<xsl:variable name="global_package_prefix" select="'com.webix.ui.model'" />
-	<xsl:variable name="global_model_version" select="/model/version" />
+	<xsl:variable name="global_model_version" select="/model/model/version" />
 
 	<xsl:variable name="EOL">
 		<xsl:text><![CDATA[
 ]]></xsl:text>
 	</xsl:variable>
 
-	<xsl:key name="get_type_by_ref" match="/model/types/type" use="@ref" />
-	<xsl:key name="get_type_by_name" match="/model/types/type" use="name" />
-	<xsl:key name="get_component_by_ref" match="/model/components/component" use="@ref" />
+	<xsl:key name="get_type_by_ref" match="/model/model/types/type" use="@ref" />
+	<xsl:key name="get_type_by_name" match="/model/model/types/type" use="name" />
+	<xsl:key name="get_component_by_ref" match="/model/model/components/component" use="@ref" />
 
 
 
@@ -293,17 +290,17 @@
 		<xsl:choose>
 			<xsl:when test="$name = 'ui.proto'" />
 			<xsl:when test="$name = 'ui.baseview'">
-				<xsl:value-of select="/model/types/type[name = 'ui.proto']/@ref" />
+				<xsl:value-of select="/model/model/types/type[name = 'ui.proto']/@ref" />
 			</xsl:when>
 			<xsl:when test="$name = 'ui.view'">
-				<xsl:value-of select="/model/types/type[name = 'ui.baseview']/@ref" />
+				<xsl:value-of select="/model/model/types/type[name = 'ui.baseview']/@ref" />
 			</xsl:when>
 			<!-- Layouts subpackage -->
-			<xsl:when test="/model/packages/package[types/type[@ref = $type_ref]]/name = 'Layouts'">
-				<xsl:value-of select="/model/types/type[name = 'ui.baselayout']/@ref" />
+			<xsl:when test="/model/model/packages/package[types/type[@ref = $type_ref]]/name = 'Layouts'">
+				<xsl:value-of select="/model/model/types/type[name = 'ui.baselayout']/@ref" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="/model/types/type[name = 'ui.view']/@ref" />
+				<xsl:value-of select="/model/model/types/type[name = 'ui.view']/@ref" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -340,7 +337,7 @@
 		<xsl:param name="type_ref" />
 		<xsl:param name="field_component" />
 
-		<xsl:for-each select="/model/types/type[@ref != $type_ref]">
+		<xsl:for-each select="/model/model/types/type[@ref != $type_ref]">
 			<xsl:variable name="current_type_ref" select="@ref" />
 			<xsl:variable name="parent_ref">
 				<xsl:call-template name="resolve_parent_ref" />
@@ -367,7 +364,7 @@
 
 	<xsl:template name="proceed_class">
 		<xsl:variable name="type_ref" select="@ref" />
-		<xsl:variable name="subpackage" select="/model/packages/package[types/type[@ref = $type_ref]]/name" />
+		<xsl:variable name="subpackage" select="/model/model/packages/package[types/type[@ref = $type_ref]]/name" />
 		<xsl:variable name="classname">
 			<xsl:call-template name="resolve_classname" />
 		</xsl:variable>
@@ -560,7 +557,7 @@
 		</xsl:variable>
 		<!-- Check name conflict -->
 		<xsl:if
-			test="not($is_accessor_method) or ($is_accessor_method and 0 = count(/model/types/type[@ref=$type_ref]/fields/field[name = $method_name_suffix]))">
+			test="not($is_accessor_method) or ($is_accessor_method and 0 = count(/model/model/types/type[@ref=$type_ref]/fields/field[name = $method_name_suffix]))">
 			<xsl:variable name="resolved_type">
 				<xsl:call-template name="resolve_type">
 					<xsl:with-param name="component" select="$component" />
@@ -848,7 +845,7 @@
 						</field>
 					</fields>
 				</class>
-				<xsl:for-each select="model/types/type">
+				<xsl:for-each select="model/model/types/type">
 					<xsl:call-template name="proceed_class" />
 				</xsl:for-each>
 			</classes>

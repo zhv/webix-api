@@ -6,9 +6,6 @@
 
 
 
-	<xsl:variable name="alpha_lower" select="'abcdefghqijklmnoprstuvwxyz'" />
-	<xsl:variable name="alpha_upper" select="'ABCDEFGHQIJKLMNOPRSTUVWXYZ'" />
-
 	<xsl:variable name="global_url_base" select="'http://docs.webix.com/'" />
 	<xsl:variable name="global_package_prefix" select="'com.webix.ui.model'" />
 
@@ -27,8 +24,8 @@
 					<enum>
 						<name>Event</name>
 						<constants>
-							<xsl:variable name="n" select="(model/types/type/events/event/name)" />
-							<xsl:for-each select="model/types/type/events/event">
+							<xsl:variable name="n" select="(model/model/types/type/events/event/name)" />
+							<xsl:for-each select="model/model/types/type/events/event">
 								<xsl:variable name="prev_node_name">
 									<xsl:call-template name="node_exists">
 										<xsl:with-param name="nodes" select="$n" />
@@ -153,10 +150,10 @@
 				</xml2java>
 			</file>
 			<!-- == debug files ================================================================= -->
-			<file location="../debug-type-hierarchy.xml">
+			<!-- <file location="../debug-type-hierarchy.xml">
 				<type-hierarchy>
 					<components-count>
-						<xsl:for-each select="/model/types/type">
+						<xsl:for-each select="/model/model/types/type">
 							<xsl:sort
 								select="concat(count(fields/field), '.', count(other-components/other-component), '.', count(methods/method), '.', count(events/event))" />
 							<type ref="{@ref}" xfields="{count(fields/field)}" xmethods="{count(methods/method)}" xevents="{count(events/event)}"
@@ -164,27 +161,27 @@
 						</xsl:for-each>
 					</components-count>
 					<inheritance-count>
-						<xsl:for-each select="/model/types/type">
+						<xsl:for-each select="/model/model/types/type">
 							<xsl:sort select="count(references/reference[type = 'based on'])" data-type="number" />
 							<xsl:variable name="r" select="@ref" />
 							<type ref="{$r}" xparents="{count(references/reference[type = 'based on'])}"
-								xchilds="{count(/model/types/type[references/reference[type = 'based on' and @ref = $r]])}" />
+								xchilds="{count(/model/model/types/type[references/reference[type = 'based on' and @ref = $r]])}" />
 						</xsl:for-each>
 					</inheritance-count>
 					<down-up>
-						<xsl:for-each select="/model/types/type/references/reference[type = 'based on']">
+						<xsl:for-each select="/model/model/types/type/references/reference[type = 'based on']">
 							<xsl:sort select="../../@ref" />
 							<hierarchy r="{../../@ref}" l="{@ref}" />
 						</xsl:for-each>
 					</down-up>
 					<up-down>
-						<xsl:for-each select="/model/types/type/references/reference[type = 'based on']">
+						<xsl:for-each select="/model/model/types/type/references/reference[type = 'based on']">
 							<xsl:sort select="@ref" />
 							<hierarchy r="{@ref}" l="{../../@ref}" />
 						</xsl:for-each>
 					</up-down>
 				</type-hierarchy>
-			</file>
+			</file> -->
 		</descriptor>
 	</xsl:template>
 </xsl:transform>

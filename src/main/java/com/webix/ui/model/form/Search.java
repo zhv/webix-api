@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A text edit field with the search icon in front.The component
- * presents a standard text input but with the icon. Supports
- * reqular HTML input's functionality. Check <a
+ * 
+ * A text edit field with the search icon in front.
+ * The component presents a standard text input but with the icon.
+ * Supports reqular HTML input's functionality. Check <a
  * href="http://docs.webix.com/desktop__controls.html#search">search</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

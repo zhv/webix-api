@@ -74,12 +74,15 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A base class for layout-based UI components.The component serves
- * as the base class that defines properties, methods, and events
- * common for all layout-based components. Not intended for direct
- * use. If you need to create a layout, please use (ui.layout)[<a
+ * 
+ * A base class for layout-based UI components.
+ * The component serves as the base class that defines properties,
+ * methods, and events common for all layout-based components. Not
+ * intended for direct use. If you need to create a layout, please
+ * use (ui.layout)[<a
  * href="http://docs.webix.com/api__refs__ui.layout.html">ui.layout</a>]
  * or its descendants.
+ * 
  * 
  * @version $Revision$ $Date$
  */

@@ -79,11 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A static popup window.The window can contain any content, be
- * modal or modeless. The main use case - displaying popup content
- * on some action (e.g. click). Check <a
+ * 
+ * A static popup window.
+ * The window can contain any content, be modal or modeless. The
+ * main use case - displaying popup content on some action (e.g.
+ * click). Check <a
  * href="http://docs.webix.com/desktop__popup.html">popup</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

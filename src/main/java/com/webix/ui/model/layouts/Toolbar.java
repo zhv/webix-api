@@ -79,11 +79,14 @@ import com.webix.ui.model.html.Template;
 
 
 /**
- * A horizontal toolbar.The component can contain various elements
- * inside it (actually, the same elements that the form can
- * contain): an icon, a button, a label, an input box etc. Check <a
+ * 
+ * A horizontal toolbar.
+ * The component can contain various elements inside it (actually,
+ * the same elements that the form can contain): an icon, a button,
+ * a label, an input box etc. Check <a
  * href="http://docs.webix.com/desktop__toolbar.html">toolbar</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

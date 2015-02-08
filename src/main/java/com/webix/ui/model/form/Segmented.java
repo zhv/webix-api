@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A holistic panel that contains multiple buttons (two or
- * more).The component can be used to build a multi-item menu for
+ * 
+ * A holistic panel that contains multiple buttons (two or more).
+ * The component can be used to build a multi-item menu for
  * navigating between views. Check <a
  * href="http://docs.webix.com/desktop__controls.html#segmented">segmented</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

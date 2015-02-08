@@ -79,13 +79,15 @@ import com.webix.ui.model.html.Template;
 
 
 /**
- * A vertical or horizontal layout without the headers.The
- * component allows you to programmatically define interface
+ * 
+ * A vertical or horizontal layout without the headers.
+ * The component allows you to programmatically define interface
  * structure by organizing views in a vertical or horizontal
  * layout. By including layouts one by one, it's possible to create
  * the final screen of any complexity. Check <a
  * href="http://docs.webix.com/desktop__layout.html">layout</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

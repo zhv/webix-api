@@ -81,7 +81,9 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * Video player view.
+ * 
  * 
  * @version $Revision$ $Date$
  */

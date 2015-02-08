@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A panel that contains multiple clickable items.Items of the
- * component combines an icon with the text label. The component
- * can be used to build a multi-item menu for navigating between
- * views. Check <a
+ * 
+ * A panel that contains multiple clickable items.
+ * Items of the component combines an icon with the text label. The
+ * component can be used to build a multi-item menu for navigating
+ * between views. Check <a
  * href="http://docs.webix.com/desktop__controls.html#tabbar">tabbar</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

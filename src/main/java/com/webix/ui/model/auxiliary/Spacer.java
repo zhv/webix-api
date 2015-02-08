@@ -81,11 +81,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A borderless empty view.The component has a pure API and only
- * used to fill a layout cell if it's supposed to be empty. Can be
- * initialized by simple [] construction. Check <a
+ * 
+ * A borderless empty view.
+ * The component has a pure API and only used to fill a layout cell
+ * if it's supposed to be empty. Can be initialized by simple []
+ * construction. Check <a
  * href="http://docs.webix.com/desktop__view.html">view</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

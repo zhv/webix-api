@@ -79,13 +79,15 @@ import com.webix.ui.model.html.Template;
 
 
 /**
+ * 
  * A container control with a navigation tab panel that keeps a set
- * of views and displays one view at a time.The component optimizes
- * the process of creating tabbed structures on the page - elements
- * that present multiple groups of content switched by tabs. Check
- * <a
+ * of views and displays one view at a time.
+ * The component optimizes the process of creating tabbed
+ * structures on the page - elements that present multiple groups
+ * of content switched by tabs. Check <a
  * href="http://docs.webix.com/desktop__tabview.html">tabview</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

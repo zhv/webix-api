@@ -79,11 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * A vertical list of items united into groups according a
- * template.Support for various data template formats, sorting and
- * filtering features. Check <a
+ * template.
+ * Support for various data template formats, sorting and filtering
+ * features. Check <a
  * href="http://docs.webix.com/desktop__unitlist.html">unitlist</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

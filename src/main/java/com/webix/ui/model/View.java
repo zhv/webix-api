@@ -74,12 +74,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A pure view with borders but without any content inside it.The
- * component serves as the base class that defines properties,
+ * 
+ * A pure view with borders but without any content inside it.
+ * The component serves as the base class that defines properties,
  * methods, and events common for not layout-based UI components.
  * Can be used as the placeholder in a layout. Check <a
  * href="http://docs.webix.com/desktop__view.html">view</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

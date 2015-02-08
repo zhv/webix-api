@@ -79,14 +79,17 @@ import com.webix.ui.model.html.Template;
 
 
 /**
+ * 
  * A container control that presents multiple horizontal or
- * vertical panes.A collection of panes that make up the component
- * allows you to organize the content in a space-saving way.
+ * vertical panes.
+ * A collection of panes that make up the component allows you to
+ * organize the content in a space-saving way.
  *  The main difference from a standard layout is that accordion
  * can be collapsed/expanded by clicking on the header of a pane.
  * Check <a
  * href="http://docs.webix.com/desktop__accordion.html">accordion</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

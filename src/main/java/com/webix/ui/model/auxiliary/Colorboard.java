@@ -81,12 +81,15 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A color palette.The component presents a div that contains a set
- * of color swatches. Used as a part of the <a
+ * 
+ * A color palette.
+ * The component presents a div that contains a set of color
+ * swatches. Used as a part of the <a
  * href="http://docs.webix.com/api__refs__ui.colorpicker.html">ui.colorpicker</a>
  * component. Check <a
  * href="http://docs.webix.com/desktop__colorboard.html">colorboard</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

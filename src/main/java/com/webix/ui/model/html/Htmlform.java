@@ -84,12 +84,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A control for integration with an HTML form.The component allows
- * you to get an HTML Form as a lib-based view, so that to use it
- * together with the other lib components (common API, techniques,
- * architecture etc.). Check <a
+ * 
+ * A control for integration with an HTML form.
+ * The component allows you to get an HTML Form as a lib-based
+ * view, so that to use it together with the other lib components
+ * (common API, techniques, architecture etc.). Check <a
  * href="http://docs.webix.com/desktop__htmlform.html">htmlform</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

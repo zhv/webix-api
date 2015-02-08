@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A spin box, aka an up-down control.The control allows users to
- * precisely change numeric data. It provides up/down buttons that
- * increment or decrement the value with a predefined step. Check
- * <a
+ * 
+ * A spin box, aka an up-down control.
+ * The control allows users to precisely change numeric data. It
+ * provides up/down buttons that increment or decrement the value
+ * with a predefined step. Check <a
  * href="http://docs.webix.com/desktop__controls.html#counter">counter</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

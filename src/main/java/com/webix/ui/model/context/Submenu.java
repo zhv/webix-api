@@ -79,10 +79,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A sub-menu.The component is a compliment to the menu component
- * and not intended for direct initialization. Check <a
+ * 
+ * A sub-menu.
+ * The component is a compliment to the menu component and not
+ * intended for direct initialization. Check <a
  * href="http://docs.webix.com/desktop__menu.html">menu</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

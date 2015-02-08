@@ -79,12 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A control for displaying data in a tabular format.The component
- * presents a collection of objects according to a user-defined
- * template. Support for various template forms and the possibility
- * to sort, filter data. Check <a
+ * 
+ * A control for displaying data in a tabular format.
+ * The component presents a collection of objects according to a
+ * user-defined template. Support for various template forms and
+ * the possibility to sort, filter data. Check <a
  * href="http://docs.webix.com/desktop__dataview.html">dataview</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

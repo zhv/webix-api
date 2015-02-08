@@ -84,9 +84,12 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A view with the IFRAME element inside it.If you want to place
- * some IFRAME content, note that the component provides much more
- * flexible way to do this than a usual layout.
+ * 
+ * A view with the IFRAME element inside it.
+ * If you want to place some IFRAME content, note that the
+ * component provides much more flexible way to do this than a
+ * usual layout.
+ * 
  * 
  * @version $Revision$ $Date$
  */

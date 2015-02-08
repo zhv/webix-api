@@ -79,11 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * A pop-up window displayed on firing the 'contextMenu' event
- * (mouse right-clicks).The component presents a plain window that
- * can contain any content. Check <a
+ * (mouse right-clicks).
+ * The component presents a plain window that can contain any
+ * content. Check <a
  * href="http://docs.webix.com/desktop__context.html">context</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

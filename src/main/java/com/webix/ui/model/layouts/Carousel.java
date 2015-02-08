@@ -79,14 +79,16 @@ import com.webix.ui.model.html.Template;
 
 
 /**
+ * 
  * A container control that provides continuous, circular
  * navigation through a set of pictorial content blocks. One block
- * is visible at a time.The control supports any content inside of
- * it. The content blocks can be arranged vertically or
- * horizontally, supplemented or not with the navigation control
- * panel. Check <a
+ * is visible at a time.
+ * The control supports any content inside of it. The content
+ * blocks can be arranged vertically or horizontally, supplemented
+ * or not with the navigation control panel. Check <a
  * href="http://docs.webix.com/desktop__carousel.html">carousel</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

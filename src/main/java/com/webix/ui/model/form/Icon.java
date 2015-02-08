@@ -67,10 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A static picture of an icon.The component provides a collection
- * of popular icons and API for their handling. Check <a
+ * 
+ * A static picture of an icon.
+ * The component provides a collection of popular icons and API for
+ * their handling. Check <a
  * href="http://docs.webix.com/desktop__controls.html#icon">icon</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

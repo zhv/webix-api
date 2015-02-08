@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A two-state check box.The control allows users to make multiple
- * choices from a number of options. Fully customizable and can be
- * used both as a stand-alone view and as a part of a form. Check
- * <a
+ * 
+ * A two-state check box.
+ * The control allows users to make multiple choices from a number
+ * of options. Fully customizable and can be used both as a
+ * stand-alone view and as a part of a form. Check <a
  * href="http://docs.webix.com/desktop__controls.html#checkbox">checkbox</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

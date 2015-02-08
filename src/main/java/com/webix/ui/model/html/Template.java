@@ -84,11 +84,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A view with some HTML content inside.The component is a simple
- * container (but with rich API support) where you can put any HTML
- * content. Check <a
+ * 
+ * A view with some HTML content inside.
+ * The component is a simple container (but with rich API support)
+ * where you can put any HTML content. Check <a
  * href="http://docs.webix.com/desktop__template.html">template</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

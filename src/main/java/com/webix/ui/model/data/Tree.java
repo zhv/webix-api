@@ -79,9 +79,11 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A hierarchical structure of nodes.Each node in the tree might
- * contain any number of nodes. Nodes that contain child nodes can
- * be expanded or collapsed.
+ * 
+ * A hierarchical structure of nodes.
+ * Each node in the tree might contain any number of nodes. Nodes
+ * that contain child nodes can be expanded or collapsed.
+ * 
  * 
  * 
  * @version $Revision$ $Date$

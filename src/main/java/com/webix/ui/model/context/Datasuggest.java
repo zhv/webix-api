@@ -79,10 +79,12 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A dataview-based suggest control..Offers select options in the
- * form of Webix <a
+ * 
+ * A dataview-based suggest control..
+ * Offers select options in the form of Webix <a
  * href="http://docs.webix.com/api__refs__ui.dataview.html">dataview</a>
  * component.
+ * 
  * 
  * @version $Revision$ $Date$
  */

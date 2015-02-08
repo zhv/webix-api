@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- initial descriptor configuration for 2.2 version -->
+<descriptor>
+	<file location="urllist-xml/urllist_initial.xml">
+		<urllist>
+			<!-- Catch actual version -->
+			<url>http://docs.webix.com/desktop__whats_new.html</url>
+			<!-- Types -->
+			<url>http://docs.webix.com/api__toc__ui.html</url>
+			<!-- Mixins -->
+			<url>http://docs.webix.com/api__refs__ui.baselayout.html</url>
+			<url>http://docs.webix.com/api__refs__ui.baseview.html</url>
+			<url>http://docs.webix.com/api__refs__ui.proto.html</url>
+			<url>http://docs.webix.com/api__refs__ui.view.html</url>
+		</urllist>
+	</file>
+</descriptor>

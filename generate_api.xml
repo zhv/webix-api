@@ -12,13 +12,71 @@
 	<!--===================================================================-->
 
 	<tstamp>
-		<format property="build.time" pattern="MM/dd/yyyy hh:mm:ss" />
+		<format property="build.time" pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ" />
 	</tstamp>
+
+	<macrodef name="macro_cached_action">
+		<attribute name="cache-file" />
+		<attribute name="verbose" default="false" />
+		<element name="src-resources" optional="true" />
+		<element name="tasks" />
+		<element name="target-resources" optional="true" />
+		<sequential>
+			<local name="skip_tasks" />
+			<condition property="skip_tasks">
+				<or>
+					<and>
+						<resourcecount when="greater" count="0">
+							<resources>
+								<src-resources />
+							</resources>
+						</resourcecount>
+						<uptodate targetfile="@{cache-file}">
+							<srcresources>
+								<src-resources />
+							</srcresources>
+						</uptodate>
+					</and>
+					<and>
+						<resourcecount when="equal" count="0">
+							<resources>
+								<src-resources />
+							</resources>
+						</resourcecount>
+						<not>
+							<resourceexists>
+								<file file="@{cache-file}" />
+							</resourceexists>
+						</not>
+					</and>
+				</or>
+			</condition>
+
+			<sequential unless:set="skip_tasks">
+				<local name="skip_delete" />
+				<condition property="skip_delete">
+					<resourcecount when="less" count="1">
+						<resources>
+							<target-resources />
+						</resources>
+					</resourcecount>
+				</condition>
+
+				<delete unless:set="skip_delete" verbose="@{verbose}">
+					<target-resources />
+				</delete>
+
+				<tasks />
+
+				<echo message="${build.time}" file="@{cache-file}" />
+			</sequential>
+		</sequential>
+	</macrodef>
 
 	<macrodef name="macro_print_header">
 		<attribute name="message" />
 		<sequential>
-			<!-- <echo message="==============================" /> -->
+			<echo message="==============================" />
 			<echo message="@{message}" />
 		</sequential>
 	</macrodef>
@@ -64,194 +122,6 @@
 		</sequential>
 	</macrodef>
 
-	<macrodef name="macro_init_step">
-		<attribute name="dest-dir" />
-		<sequential>
-			<mkdir dir="@{dest-dir}/descriptor-source" />
-			<mkdir dir="@{dest-dir}/descriptor-url" />
-			<mkdir dir="@{dest-dir}/descriptor-url/type" />
-			<mkdir dir="@{dest-dir}/descriptor-url/component" />
-			<mkdir dir="@{dest-dir}/source" />
-			<mkdir dir="@{dest-dir}/tidy" />
-			<mkdir dir="@{dest-dir}/model" />
-		</sequential>
-	</macrodef>
-
-	<macrodef name="macro_proceed_step">
-		<attribute name="current-step" />
-		<attribute name="next-step" default="" />
-		<sequential>
-			<macro_print_header message="Processing step, current: @{current-step}, next: @{next-step}" />
-
-			<local name="current_work_dir" />
-			<property name="current_work_dir" location="${work.dir}/@{current-step}" />
-
-			<macro_print_header message="Split source descriptor XML, out: ${current_work_dir}" />
-
-			<fileset id="fs" dir="${current_work_dir}/descriptor-source" includes="**/*.xml" />
-
-			<local name="skip_split_xml" />
-			<condition property="skip_split_xml">
-				<resourcecount when="less" count="1">
-					<restrict>
-						<fileset refid="fs" />
-						<modified>
-							<param name="cache.cachefile" value="${current_work_dir}/descriptor-source-cache.properties" />
-						</modified>
-					</restrict>
-				</resourcecount>
-			</condition>
-
-			<echo if:set="skip_split_xml" message="Split XML task skipped" />
-
-			<dependset unless:set="skip_split_xml">
-				<srcfileset refid="fs" />
-				<targetfileset dir="${current_work_dir}/descriptor-url" includes="**/*.xml" />
-				<targetfileset dir="${current_work_dir}/source" includes="**/*.xml" />
-				<targetfileset dir="${current_work_dir}/tidy" includes="**/*.xml" />
-				<targetfileset dir="${current_work_dir}/model" includes="**/*.xml" />
-			</dependset>
-
-			<apply unless:set="skip_split_xml" executable="java" failonerror="true" skipemptyfilesets="true" parallel="true" maxparallel="100">
-				<arg value="-Xmx32m" />
-				<arg value="-classpath" />
-				<arg path="${tools.dir}/classes" />
-				<arg value="utils.SplitXml" />
-				<arg path="${current_work_dir}" />
-				<srcfile />
-				<fileset refid="fs" />
-			</apply>
-
-			<local name="is_last_step" />
-			<condition property="is_last_step">
-				<equals arg1="@{next-step}" arg2="" />
-			</condition>
-
-			<macro_proceed_descriptors unless:set="is_last_step" current-step="@{current-step}" next-step="@{next-step}" />
-		</sequential>
-	</macrodef>
-
-	<macrodef name="macro_proceed_descriptors">
-		<attribute name="current-step" />
-		<attribute name="next-step" />
-		<sequential>
-			<local name="current_work_dir" />
-			<property name="current_work_dir" location="${work.dir}/@{current-step}" />
-
-			<macro_download_source unless:set="generate_api.skip_download" url-file="${current_work_dir}/url-list.txt" dest-dir="${current_work_dir}/source">
-				<src-fileset>
-					<fileset dir="${current_work_dir}/descriptor-url" includes="**/*.xml" />
-				</src-fileset>
-			</macro_download_source>
-
-			<macro_apply_tidy unless:set="generate_api.skip_tidy" dest-dir="${current_work_dir}/tidy">
-				<src-fileset>
-					<fileset dir="${current_work_dir}/source" includes="**/*.html" />
-				</src-fileset>
-			</macro_apply_tidy>
-
-			<macro_apply_xslt unless:set="generate_api.skip_xslt" dest-dir="${work.dir}/@{next-step}/descriptor-source" style-file="${build.config.dir}/source2descriptor.xsl" current-step="@{current-step}" next-step="@{next-step}">
-				<src-fileset>
-					<fileset dir="${current_work_dir}/tidy" includes="**/*.html" />
-				</src-fileset>
-			</macro_apply_xslt>
-		</sequential>
-	</macrodef>
-
-	<macrodef name="macro_download_source">
-		<attribute name="url-file" />
-		<attribute name="dest-dir" />
-		<element name="src-fileset" />
-		<sequential>
-			<macro_print_header message="Prepare url list, out: @{url-file}" />
-
-			<local name="dsc.descriptor.source-url" />
-			<xmlproperty prefix="dsc" keeproot="false">
-				<concat>
-					<src-fileset />
-					<header>&lt;descriptors&gt;</header>
-					<footer>&lt;/descriptors&gt;</footer>
-					<filterchain>
-						<replaceregex pattern="&lt;\?.*?\?&gt;" flags="gm" />
-					</filterchain>
-				</concat>
-			</xmlproperty>
-
-			<concat destfile="@{url-file}.tmp" ignoreempty="false" overwrite="true">
-				<propertyresource name="dsc.descriptor.source-url" />
-				<filterchain>
-					<tokenfilter delimoutput="\n">
-						<stringtokenizer delims="," />
-					</tokenfilter>
-					<fixcrlf eol="lf" tab="remove" tablength="2" />
-					<trim />
-					<ignoreblank />
-					<sortfilter />
-					<uniqfilter />
-				</filterchain>
-			</concat>
-
-			<macro_print_header message="Download source, out: @{dest-dir}" />
-
-			<local name="skip_download" />
-			<condition property="skip_download">
-				<or>
-					<resourcecount count="1" when="less">
-						<resourcelist>
-							<file file="@{url-file}.tmp" />
-						</resourcelist>
-					</resourcecount>
-					<filesmatch file1="@{url-file}.tmp" file2="@{url-file}" />
-				</or>
-			</condition>
-
-			<copy file="@{url-file}.tmp" tofile="@{url-file}" />
-
-			<echo if:set="skip_download" message="Download task skipped" />
-
-			<dependset unless:set="skip_download">
-				<srcfilelist files="@{url-file}" />
-				<targetfileset dir="@{dest-dir}" includes="**/*.*" />
-			</dependset>
-
-			<get unless:set="skip_download" dest="@{dest-dir}">
-				<resourcelist>
-					<file file="@{url-file}" />
-					<filterchain>
-						<replacestring from="$" to="$$" />
-					</filterchain>
-				</resourcelist>
-				<!--<firstmatchmapper>
-					<chainedmapper>
-						<regexpmapper from="^https?://[^/]+/(.*)$$" to="\1" />
-						<regexpmapper from="^(.*(.)\.[^.]*)$$" to="\2/\1" />
-						<filtermapper>
-							<replacestring from="\" to="/" />
-						</filtermapper>
-					</chainedmapper>
-					<identitymapper />
-				</firstmatchmapper>-->
-			</get>
-			<!--
-			<copy unless:set="skip_download" todir="@{dest-dir}" verbose="true">
-				<resourcelist>
-					<file file="@{url-file}" />
-				</resourcelist>
-				<firstmatchmapper>
-					<chainedmapper>
-						<regexpmapper from="^https?://[^/]+/(.*)$$" to="\1" />
-						<regexpmapper from="^(.*(.)\.[^.]*)$$" to="\2/\1" />
-						<filtermapper>
-							<replacestring from="\" to="/" />
-						</filtermapper>
-					</chainedmapper>
-					<identitymapper />
-				</firstmatchmapper>
-			</copy>
-			-->
-		</sequential>
-	</macrodef>
-
 	<macrodef name="macro_apply_tidy">
 		<attribute name="dest-dir" />
 		<element name="src-fileset" />
@@ -273,20 +143,190 @@
 		</sequential>
 	</macrodef>
 
-	<macrodef name="macro_apply_xslt">
-		<attribute name="dest-dir" />
-		<attribute name="style-file" />
-		<attribute name="current-step" />
-		<attribute name="next-step" />
-		<element name="src-fileset" />
-		<sequential>
-			<macro_print_header message="Apply XSLT, out: @{dest-dir}" />
+	<!--===================================================================-->
 
-			<xslt destdir="@{dest-dir}" style="@{style-file}" extension=".xml" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
-				<param name="step.current" expression="@{current-step}" />
-				<param name="step.next" expression="@{next-step}" />
-				<src-fileset />
-			</xslt>
+	<macrodef name="macro_init_step">
+		<attribute name="dest-dir" />
+		<sequential>
+			<mkdir dir="@{dest-dir}/descriptor" />
+			<mkdir dir="@{dest-dir}/urllist-xml" />
+			<mkdir dir="@{dest-dir}/urllist-xml/type" />
+			<mkdir dir="@{dest-dir}/urllist-xml/component" />
+			<mkdir dir="@{dest-dir}/urllist-txt" />
+			<mkdir dir="@{dest-dir}/sources" />
+			<mkdir dir="@{dest-dir}/tidy" />
+			<mkdir dir="@{dest-dir}/model" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="macro_proceed_step">
+		<attribute name="current-step" />
+		<attribute name="next-step" default="" />
+		<sequential>
+			<macro_print_header message="Processing step, current: @{current-step}, next: @{next-step}" />
+
+			<local name="current_work_dir" />
+			<property name="current_work_dir" location="${work.dir}/@{current-step}" />
+
+			<fileset id="descriptor_fs" dir="${current_work_dir}/descriptor" includes="**/*.xml" />
+
+			<macro_cached_action cache-file="${current_work_dir}/split_descriptor.cache">
+				<src-resources>
+					<fileset refid="descriptor_fs" />
+				</src-resources>
+				<tasks>
+					<macro_print_header message="Split source descriptor XML, out: ${current_work_dir}" />
+
+					<apply executable="java" failonerror="true" skipemptyfilesets="true" parallel="true" maxparallel="100">
+						<arg value="-Xmx32m" />
+						<arg value="-classpath" />
+						<arg path="${tools.dir}/classes" />
+						<arg value="utils.SplitXml" />
+						<arg path="${current_work_dir}" />
+						<srcfile />
+						<fileset refid="descriptor_fs" />
+					</apply>
+				</tasks>
+				<target-resources>
+					<fileset dir="${current_work_dir}">
+						<include name="urllist-xml/**/*.xml" />
+						<include name="model/**/*.xml" />
+					</fileset>
+				</target-resources>
+			</macro_cached_action>
+
+			<local name="is_last_step" />
+			<condition property="is_last_step">
+				<equals arg1="@{next-step}" arg2="" />
+			</condition>
+
+			<sequential unless:set="is_last_step">
+				<local name="current_work_dir" />
+				<property name="current_work_dir" location="${work.dir}/@{current-step}" />
+
+				<!-- urllist-xml to urllist-txt -->
+				<local name="urllist_txt_file" />
+				<property name="urllist_txt_file" location="${current_work_dir}/urllist-txt/urllist.txt" />
+
+				<fileset id="urllist_xml_fs" dir="${current_work_dir}/urllist-xml" includes="**/*.xml" />
+
+				<macro_cached_action unless:set="generate_api.skip_download" cache-file="${current_work_dir}/prepare_urllist_txt.cache">
+					<src-resources>
+						<fileset refid="urllist_xml_fs" />
+					</src-resources>
+					<tasks>
+						<macro_print_header message="Prepare urllist txt file, out: ${urllist_txt_file}" />
+
+						<local name="dsc.urllist.url" />
+
+						<xmlproperty prefix="dsc" keeproot="false">
+							<concat ignoreempty="false">
+								<fileset refid="urllist_xml_fs" />
+								<header>&lt;xml&gt;</header>
+								<footer>&lt;/xml&gt;</footer>
+								<filterchain>
+									<replaceregex pattern="&lt;\?.*?\?&gt;" flags="gm" />
+								</filterchain>
+							</concat>
+						</xmlproperty>
+
+						<property unless:set="dsc.urllist.url" name="dsc.urllist.url" value="" />
+
+						<concat destfile="${urllist_txt_file}" ignoreempty="false" overwrite="true">
+							<propertyresource name="dsc.urllist.url" />
+							<filterchain>
+								<tokenfilter delimoutput="\n">
+									<stringtokenizer delims="," />
+								</tokenfilter>
+								<fixcrlf eol="lf" tab="remove" tablength="2" />
+								<trim />
+								<ignoreblank />
+								<sortfilter />
+								<uniqfilter />
+							</filterchain>
+						</concat>
+					</tasks>
+					<target-resources>
+						<fileset file="${urllist_txt_file}" />
+					</target-resources>
+				</macro_cached_action>
+
+				<!-- download sources -->
+				<macro_cached_action cache-file="${current_work_dir}/download_sources.cache">
+					<src-resources>
+						<fileset file="${urllist_txt_file}" />
+					</src-resources>
+					<tasks>
+						<!--
+						<local name="skip_download" />
+						<condition property="skip_download">
+							<resourcecount when="less" count="1">
+								<resourcelist>
+									<file file="${urllist_txt_file}" />
+								</resourcelist>
+							</resourcecount>
+						</condition>
+
+						<sequential unless:set="skip_download">
+						-->
+						<macro_print_header message="Download source, out: ${current_work_dir}/sources" />
+
+						<get dest="${current_work_dir}/sources">
+							<resourcelist>
+								<file file="${urllist_txt_file}" />
+								<filterchain>
+									<replacestring from="$" to="$$" />
+								</filterchain>
+							</resourcelist>
+						</get>
+						<!-- </sequential> -->
+					</tasks>
+					<target-resources>
+						<fileset dir="${current_work_dir}/sources" includes="**" />
+					</target-resources>
+				</macro_cached_action>
+
+				<!-- apply tidy -->
+				<fileset id="sources_fs" dir="${current_work_dir}/sources" includes="**/*.html" />
+
+				<macro_cached_action unless:set="generate_api.skip_tidy" cache-file="${current_work_dir}/apply_tidy.cache">
+					<src-resources>
+						<fileset refid="sources_fs" />
+					</src-resources>
+					<tasks>
+						<macro_apply_tidy dest-dir="${current_work_dir}/tidy">
+							<src-fileset>
+								<fileset refid="sources_fs" />
+							</src-fileset>
+						</macro_apply_tidy>
+					</tasks>
+					<target-resources>
+						<fileset dir="${current_work_dir}/tidy" includes="**" />
+					</target-resources>
+				</macro_cached_action>
+
+				<!-- apply xslt -->
+				<fileset id="tidy_fs" dir="${current_work_dir}/tidy" includes="**/*.html" />
+
+				<macro_cached_action unless:set="generate_api.skip_xslt" cache-file="${current_work_dir}/apply_xslt.cache">
+					<src-resources>
+						<fileset refid="tidy_fs" />
+					</src-resources>
+					<tasks>
+						<macro_print_header message="Apply XSLT, out: ${work.dir}/@{next-step}/descriptor" />
+
+						<xslt destdir="${work.dir}/@{next-step}/descriptor" style="${build.config.dir}/source2descriptor.xsl" extension=".xml" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
+							<param name="step.current" expression="@{current-step}" />
+							<param name="step.next" expression="@{next-step}" />
+							<fileset refid="tidy_fs" />
+						</xslt>
+					</tasks>
+					<target-resources>
+						<fileset dir="${work.dir}/@{next-step}/descriptor" includes="**" />
+					</target-resources>
+				</macro_cached_action>
+
+			</sequential>
 		</sequential>
 	</macrodef>
 
@@ -307,20 +347,20 @@
 	</target>
 
 	<target name="clean_generated">
-		<mkdir dir="${build.dir}/source-bkp" />
+		<mkdir dir="${build.dir}/sources-bkp" />
 
-		<move todir="${build.dir}/source-bkp">
-			<fileset dir="${work.dir}" includes="step?/source/**/*" />
+		<move todir="${build.dir}/sources-bkp">
+			<fileset dir="${work.dir}" includes="step?/sources/**/*" />
 		</move>
 
 		<antcall target="clean" />
 		<antcall target="init" />
 
 		<move todir="${work.dir}">
-			<fileset dir="${build.dir}/source-bkp" includes="step?/source/**/*" />
+			<fileset dir="${build.dir}/sources-bkp" includes="step?/sources/**/*" />
 		</move>
 
-		<delete dir="${build.dir}/source-bkp" />
+		<delete dir="${build.dir}/sources-bkp" />
 	</target>
 
 	<target name="init">
@@ -345,7 +385,15 @@
 	</target>
 
 	<target name="step1" depends="init,prepare_tools">
-		<copy file="${build.config.dir}/initial_descriptor.xml" todir="${work.dir}/step1/descriptor-url" />
+		<macro_cached_action cache-file="${work.dir}/descriptor_initial.cache">
+			<src-resources>
+				<fileset file="${build.config.dir}/descriptor_initial.xml" />
+			</src-resources>
+			<tasks>
+				<copy file="${build.config.dir}/descriptor_initial.xml" todir="${work.dir}/step1/descriptor" />
+			</tasks>
+		</macro_cached_action>
+
 		<macro_proceed_step current-step="step1" next-step="step2" />
 	</target>
 
@@ -366,45 +414,83 @@
 	</target>
 
 	<target name="generate_model" depends="init">
-		<macro_print_header message="Generating model file" />
+		<fileset id="src_fs" dir="${work.dir}" includes="step?/model/**/*.xml" />
+		<macro_cached_action cache-file="${work.dir}/generate_model.cache">
+			<src-resources>
+				<fileset refid="src_fs" />
+			</src-resources>
+			<tasks>
+				<macro_print_header message="Generating model file: ${work.dir}/model/model-cumulative.xml" />
 
-		<concat destfile="${work.dir}/model/model-cumulative.xml">
-			<fileset dir="${work.dir}" includes="step?/model/**/*.xml" />
-			<header>&lt;model&gt;</header>
-			<footer>&lt;/model&gt;</footer>
-		</concat>
+				<concat destfile="${work.dir}/model/model-cumulative.xml" overwrite="true">
+					<fileset refid="src_fs" />
+					<header>&lt;model&gt;</header>
+					<footer>&lt;/model&gt;</footer>
+				</concat>
+			</tasks>
+		</macro_cached_action>
 	</target>
 
 	<target name="generate_mdo" depends="init,prepare_tools,generate_model">
-		<macro_print_header message="Transforming model file to Modello mdo file" />
+		<macro_cached_action cache-file="${work.dir}/generate_mdo.cache">
+			<src-resources>
+				<union>
+					<fileset file="${build.config.dir}/model2generated.xsl" />
+					<fileset file="${work.dir}/model/model-cumulative.xml" />
+				</union>
+			</src-resources>
+			<tasks>
+				<macro_print_header message="Transforming model file to Modello mdo file" />
 
-		<xslt in="${work.dir}/model/model-cumulative.xml" out="${work.dir}/mdo/webix-api.mdo" style="${build.config.dir}/model2generated.xsl" />
+				<xslt in="${work.dir}/model/model-cumulative.xml" out="${work.dir}/mdo/webix-api.mdo" style="${build.config.dir}/model2generated.xsl" />
+			</tasks>
+		</macro_cached_action>
 	</target>
 
 	<target name="generate_xml" depends="init,prepare_tools,generate_mdo">
-		<macro_print_header message="Transforming model file to xml2java file" />
+		<macro_cached_action cache-file="${work.dir}/generate_xml.cache">
+			<src-resources>
+				<union>
+					<file name="${build.config.dir}/model2xml2java.xsl" />
+					<file name="${work.dir}/model/model-cumulative.xml" />
+				</union>
+			</src-resources>
+			<tasks>
+				<macro_print_header message="Transforming model file to xml2java file" />
 
-		<xslt in="${work.dir}/model/model-cumulative.xml" out="${work.dir}/xml2java-cumulative.xml" style="${build.config.dir}/model2xml2java.xsl" />
+				<xslt in="${work.dir}/model/model-cumulative.xml" out="${work.dir}/xml2java-cumulative.xml" style="${build.config.dir}/model2xml2java.xsl" />
 
-		<java classname="utils.SplitXml" classpath="${tools.dir}/classes">
-			<arg path="${work.dir}/xml2java" />
-			<arg path="${work.dir}/xml2java-cumulative.xml" />
-		</java>
+				<java classname="utils.SplitXml" classpath="${tools.dir}/classes">
+					<arg path="${work.dir}/xml2java" />
+					<arg path="${work.dir}/xml2java-cumulative.xml" />
+				</java>
+			</tasks>
+			<target-resources>
+				<fileset dir="${work.dir}/xml2java" includes="**" />
+			</target-resources>
+		</macro_cached_action>
 	</target>
 
 	<target name="generate_java" depends="init,generate_xml">
-		<macro_print_header message="Generating java sources" />
+		<fileset id="src_fs" dir="${work.dir}/xml2java" includes="**/*.xml" />
+		<macro_cached_action cache-file="${work.dir}/generate_java.cache">
+			<src-resources>
+				<union>
+					<fileset file="${build.config.dir}/xml2java.xsl" />
+					<fileset refid="src_fs" />
+				</union>
+			</src-resources>
+			<tasks>
+				<macro_print_header message="Generating java sources" />
 
-		<dependset>
-			<srcfileset dir="${work.dir}/xml2java" includes="**/*.xml" />
-			<targetfileset dir="${work.dir}/java" includes="**/*" />
-		</dependset>
-
-		<xslt destdir="${work.dir}/java" style="${build.config.dir}/xml2java.xsl" extension=".java" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
-			<fileset dir="${work.dir}/xml2java">
-				<include name="**/*.xml" />
-			</fileset>
-		</xslt>
+				<xslt destdir="${work.dir}/java" style="${build.config.dir}/xml2java.xsl" extension=".java" useimplicitfileset="false" filenameparameter="sourcefile" failonnoresources="false">
+					<fileset refid="src_fs" />
+				</xslt>
+			</tasks>
+			<target-resources>
+				<fileset dir="${work.dir}/java" includes="**" />
+			</target-resources>
+		</macro_cached_action>
 	</target>
 
 	<target name="generate" depends="init">

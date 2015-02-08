@@ -155,10 +155,11 @@
 			<xsl:call-template name="block_enum_constant">
 				<xsl:with-param name="indent_text" select="$indent_text" />
 			</xsl:call-template>
-			<xsl:if test="position() = last()">
-				<xsl:value-of select="concat(';', $EOL)" />
-			</xsl:if>
 		</xsl:for-each>
+
+		<xsl:if test="self::enum">
+			<xsl:value-of select="concat(';', $EOL)" />
+		</xsl:if>
 
 		<xsl:for-each select="self::class/fields/field">
 			<xsl:value-of select="$EOL" />

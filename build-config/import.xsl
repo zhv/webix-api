@@ -83,6 +83,9 @@
 		<xsl:value-of select="$nodes[position() &lt; $pos and . = $text]" />
 	</xsl:template>
 
+	<xsl:variable name="alpha_lower" select="'abcdefghqijklmnoprstuvwxyz'" />
+	<xsl:variable name="alpha_upper" select="'ABCDEFGHQIJKLMNOPRSTUVWXYZ'" />
+
 	<xsl:template name="java_constant_name">
 		<xsl:param name="name" />
 		<xsl:param name="pos" select="1" />

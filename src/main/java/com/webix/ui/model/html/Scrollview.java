@@ -84,11 +84,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A container with scrolls.Place it in the layout if you want to
- * have a scroll around few other views (not necessary if you need
- * a scroll in one single view). Check <a
+ * 
+ * A container with scrolls.
+ * Place it in the layout if you want to have a scroll around few
+ * other views (not necessary if you need a scroll in one single
+ * view). Check <a
  * href="http://docs.webix.com/desktop__scrollview.html">scrollview</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

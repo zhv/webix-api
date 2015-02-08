@@ -79,14 +79,16 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * An editable table that can easily display huge data sets.The
- * component is full of various possibilities: filtering, sorting,
- * pagination, editing, nadigation, drag-and-drop,
+ * 
+ * An editable table that can easily display huge data sets.
+ * The component is full of various possibilities: filtering,
+ * sorting, pagination, editing, nadigation, drag-and-drop,
  * internatialization, export to PDF, Excel etc. It also provides
  * the dynamic mode for fast handling thousands of records. Check
  * <a
  * href="http://docs.webix.com/datatable__index.html">datatable</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

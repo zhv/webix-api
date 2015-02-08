@@ -79,11 +79,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A regular list of items.The component serves as the base class
- * that defines properties, methods, and events common for all
- * list-type controls. Check <a
+ * 
+ * A regular list of items.
+ * The component serves as the base class that defines properties,
+ * methods, and events common for all list-type controls. Check <a
  * href="http://docs.webix.com/desktop__list.html">list</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

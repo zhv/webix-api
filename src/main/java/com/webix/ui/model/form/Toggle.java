@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A two-state button.The component is fully customizable and can
- * be used both as a stand-alone view and as a part of the form or
- * toolbar. Check <a
+ * 
+ * A two-state button.
+ * The component is fully customizable and can be used both as a
+ * stand-alone view and as a part of the form or toolbar. Check <a
  * href="http://docs.webix.com/desktop__controls.html#toggle">toggle</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

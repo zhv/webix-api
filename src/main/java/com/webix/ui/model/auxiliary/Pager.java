@@ -81,12 +81,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * Page navigation controls.The component has a little sense on its
- * own, but can be used with other data-based components such as
- * DataTable, DataView, List. Not purposed for direct
- * initialization. Check <a
+ * 
+ * Page navigation controls.
+ * The component has a little sense on its own, but can be used
+ * with other data-based components such as DataTable, DataView,
+ * List. Not purposed for direct initialization. Check <a
  * href="http://docs.webix.com/desktop__paging.html">pager</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

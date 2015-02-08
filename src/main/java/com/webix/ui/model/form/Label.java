@@ -67,10 +67,12 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A non-editable text control.The component is used to display
- * static text on a page. Check <a
+ * 
+ * A non-editable text control.
+ * The component is used to display static text on a page. Check <a
  * href="http://docs.webix.com/desktop__controls.html#label">label</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

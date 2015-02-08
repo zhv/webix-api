@@ -67,11 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A clickable button.The control has a collection of preset looks
- * and can be used both as a stand-alone view and as a part of a
- * form or toolbar. Fully customizable. Check <a
+ * 
+ * A clickable button.
+ * The control has a collection of preset looks and can be used
+ * both as a stand-alone view and as a part of a form or toolbar.
+ * Fully customizable. Check <a
  * href="http://docs.webix.com/desktop__controls.html#button">button</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

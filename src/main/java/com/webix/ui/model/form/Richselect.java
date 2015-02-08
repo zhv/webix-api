@@ -67,10 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A non-editable combo box.The control combines a non-editable
- * text field with a drop-down list of predefined values. Check <a
+ * 
+ * A non-editable combo box.
+ * The control combines a non-editable text field with a drop-down
+ * list of predefined values. Check <a
  * href="http://docs.webix.com/desktop__controls.html#richselect">richselect</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

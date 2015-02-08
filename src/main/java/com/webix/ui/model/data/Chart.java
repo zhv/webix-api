@@ -79,13 +79,16 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A tool for creating various charts.The library supports the most
- * common chart types:line, spline, area, bar, pie, donut, scatter,
- * radar. You can customize appearance of a chart through colors,
- * tooltips, templates, scales, labels. It's possible to present
- * multiple data sets on the same chart. Check <a
+ * 
+ * A tool for creating various charts.
+ * The library supports the most common chart types:line, spline,
+ * area, bar, pie, donut, scatter, radar. You can customize
+ * appearance of a chart through colors, tooltips, templates,
+ * scales, labels. It's possible to present multiple data sets on
+ * the same chart. Check <a
  * href="http://docs.webix.com/desktop__chart.html">chart</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

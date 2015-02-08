@@ -81,13 +81,16 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * A static text that is rendered in the absolutely positioned
- * container.Generally, the component isn't intended for direct
+ * container.
+ * Generally, the component isn't intended for direct
  * initialization. But if you decide to use it, use mouse events
  * (onMouseOut, onMouseIn, onMouseMove etc.) to show/hide the
  * tooltip box in the specified position. Check <a
  * href="http://docs.webix.com/desktop__tooltip.html">tooltip</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

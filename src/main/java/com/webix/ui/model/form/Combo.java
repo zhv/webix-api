@@ -67,12 +67,15 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * An editable combo box.The control combines an editable text
- * field with a drop-down list of predefined values. Provides
- * autocomplete feature that suggests possible matches while a user
- * types in the text field. Check <a
+ * 
+ * An editable combo box.
+ * The control combines an editable text field with a drop-down
+ * list of predefined values. Provides autocomplete feature that
+ * suggests possible matches while a user types in the text field.
+ * Check <a
  * href="http://docs.webix.com/desktop__controls.html#combo">combo</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

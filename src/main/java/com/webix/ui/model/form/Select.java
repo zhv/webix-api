@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A single-selection drop-down list box.The component can be
- * populated with data from the server side or a file: each item in
- * the list will correspond to an item in the data source.
- * Multi-selection mode isn't supported. Check <a
+ * 
+ * A single-selection drop-down list box.
+ * The component can be populated with data from the server side or
+ * a file: each item in the list will correspond to an item in the
+ * data source. Multi-selection mode isn't supported. Check <a
  * href="http://docs.webix.com/desktop__controls.html#select">select</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

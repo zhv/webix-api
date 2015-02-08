@@ -177,6 +177,7 @@
 					</models>
 					<version>${webix.api.version}</version>
 					<useJava5>true</useJava5>
+					<lineLength>120</lineLength>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -193,9 +194,6 @@
 				</executions>
 				<configuration>
 					<tokenValueMap>replacer_tokens.properties</tokenValueMap>
-					<!-- <regexFlags>
-						<regexFlag>CANON_EQ</regexFlag>
-					</regexFlags> -->
 					<includes>
 						<include>${project.build.sourceDirectory}/${generated.src.dir}/**/*.java</include>
 					</includes>

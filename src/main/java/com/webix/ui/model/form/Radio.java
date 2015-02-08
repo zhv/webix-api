@@ -67,10 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A radio button.You can group multiple component instances
- * together to provide the desired set of choices. Check <a
+ * 
+ * A radio button.
+ * You can group multiple component instances together to provide
+ * the desired set of choices. Check <a
  * href="http://docs.webix.com/desktop__controls.html#radio">radio</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

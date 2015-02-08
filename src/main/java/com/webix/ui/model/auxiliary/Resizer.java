@@ -81,11 +81,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A draggable border in a layout.The component is used to make
- * some view placed into a layout draggable by a specific border.
- * Draggable borders differs visually from the undraggable. Check
- * <a href="http://docs.webix.com/desktop__layout.html">layout</a>
+ * 
+ * A draggable border in a layout.
+ * The component is used to make some view placed into a layout
+ * draggable by a specific border. Draggable borders differs
+ * visually from the undraggable. Check <a
+ * href="http://docs.webix.com/desktop__layout.html">layout</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

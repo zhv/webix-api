@@ -67,10 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * An editable text control with dynamically added removable
- * fields.Check <a
+ * fields.
+ * Check <a
  * href="http://docs.webix.com/desktop__controls.html#multitext">multitext</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

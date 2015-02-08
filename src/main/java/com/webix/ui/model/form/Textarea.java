@@ -67,9 +67,11 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * A multiline, editable text field. Check <a
  * href="http://docs.webix.com/desktop__controls.html#textarea">textarea</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

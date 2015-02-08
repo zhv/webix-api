@@ -79,11 +79,13 @@ import com.webix.ui.model.html.Template;
 
 
 /**
- * A form that supports an extended set of elements.The component
- * provides validation and the ability to save user input to the
- * backend database. Check <a
+ * 
+ * A form that supports an extended set of elements.
+ * The component provides validation and the ability to save user
+ * input to the backend database. Check <a
  * href="http://docs.webix.com/desktop__form.html">form</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

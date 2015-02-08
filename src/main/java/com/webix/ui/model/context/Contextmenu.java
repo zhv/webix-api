@@ -79,12 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A context menu.The component presents a pop-up menu that is
- * displayed when the user clicks the right mouse button in the
- * client area. You can configure any nesting level complexity.
- * Check <a
+ * 
+ * A context menu.
+ * The component presents a pop-up menu that is displayed when the
+ * user clicks the right mouse button in the client area. You can
+ * configure any nesting level complexity. Check <a
  * href="http://docs.webix.com/desktop__contextmenu.html">contextmenu</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

@@ -79,12 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A vertical list of items grouped into sections by some
- * category.The component provides navigation within the list and
- * between the sections. Support for various data template formats,
- * sorting and filtering features. Check <a
+ * 
+ * A vertical list of items grouped into sections by some category.
+ * The component provides navigation within the list and between
+ * the sections. Support for various data template formats, sorting
+ * and filtering features. Check <a
  * href="http://docs.webix.com/desktop__grouplist.html">grouplist</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

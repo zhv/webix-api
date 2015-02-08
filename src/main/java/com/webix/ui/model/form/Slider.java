@@ -67,12 +67,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
+ * 
  * Horizontal slider for choosing numeric values from a range of
- * predefined ones.The control allows changing numeric data by
- * dragging a marker over a line, with a defined step (optionally).
- * Check <a
+ * predefined ones.
+ * The control allows changing numeric data by dragging a marker
+ * over a line, with a defined step (optionally). Check <a
  * href="http://docs.webix.com/desktop__controls.html#slider">slider</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

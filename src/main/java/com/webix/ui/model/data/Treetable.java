@@ -79,12 +79,14 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A control for presenting tree in a grid cell.The component is
- * used to integrate a tree into an editable grid. There is a
- * support for in-line node editing, drag-and-drop, filtering,
- * checkboxes etc. Check <a
+ * 
+ * A control for presenting tree in a grid cell.
+ * The component is used to integrate a tree into an editable grid.
+ * There is a support for in-line node editing, drag-and-drop,
+ * filtering, checkboxes etc. Check <a
  * href="http://docs.webix.com/desktop__treetable.html">treetable</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */

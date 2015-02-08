@@ -67,11 +67,13 @@ import com.webix.ui.model.layouts.Toolbar;
 
 
 /**
- * A control for selecting a color from a swatch palette.The
- * component handles RGB, HSL, and hex formats and allows setting
- * custom colors blocks. Check <a
+ * 
+ * A control for selecting a color from a swatch palette.
+ * The component handles RGB, HSL, and hex formats and allows
+ * setting custom colors blocks. Check <a
  * href="http://docs.webix.com/desktop__controls.html#colorpicker">colorpicker</a>
  * documentation for more detailed description.
+ * 
  * 
  * @version $Revision$ $Date$
  */
